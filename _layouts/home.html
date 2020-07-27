@@ -13,7 +13,7 @@ layout: home
 
   
 <p><strong>Editors: {% assign lastone = site.editor | last %}{% for person in site.editor %}{% include listperson.html %}{% endfor %}</strong></p>
-<p>[<a href="./assets/bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', '{{ site.url }}{{site.baseurl}}/assets/bibliography.bib', 14);">bib</a>][<a href="./assets/citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', '{{ site.url }}{{site.baseurl}}/assets/citeproc.yaml', 14);">citeproc</a>]</p>
+<p>[<a href="./assets/bib/bibliography.bib" target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', '{{ site.url }}{{site.baseurl}}/assets/bib/bibliography.bib', 14);">bib</a>][<a href="./assets/bib/citeproc.yaml"  target="_blank" onclick="ga('send', 'event', 'Download File', 'Download', '{{ site.url }}{{site.baseurl}}/assets/bib/citeproc.yaml', 14);">citeproc</a>]</p>
 <div id="sectionnav">{% if site.sections %}
   <p>Contents:</p>
   <ul>
@@ -35,15 +35,9 @@ layout: home
 {% assign sorted = site.posts | sort: 'order' %}
 {% if site.sections %}{% for section in site.sections %}
 <h3 id="{{ section.name }}">{{ section.title }}</h3>
-{% for post in sorted %}{% if section.name == post.section %}
-{% include listpaper.html %}{% endif %}
-{% endfor %}
-{% endfor %}
-{% endif %}
+{% for post in sorted %}{% if section.name == post.section %}{% include listpaper.html %}{% endif %}{% endfor %}{% endfor %}{% endif %}
 
-{% for post in sorted %}{% unless post.section %} 
-{% include listpaper.html %}{% endunless %}
-{% endfor %}
+{% for post in sorted %}{% unless post.section %}{% include listpaper.html %}{% endunless %}{% endfor %}
 
 <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
