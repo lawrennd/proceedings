@@ -2,13 +2,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
-
-  {%- include custom-head.html -%}
   
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" type="text/css" href="{{site.url}}{{site.baseurl}}/css/main.css" />
+  <link rel="shortcut icon" href="{{site.url}}{{site.baseurl}}/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="{{site.url}}{{site.baseurl}}/img/favicon.ico" type="image/x-icon">  
+  {% include google_tracking_code.html %}
+  
+  {% include mathjax_code.html %}
+
+  {% include hidden_copy_code.html %}
+  {% if page.layout == 'inproceedings' %}  {% include paper_google_scholar.html %}{% include paper_twitter_meta.html %} {% include paper_open_graph_meta.html %}{% endif %}
+
 </head>
+
