@@ -6,8 +6,8 @@ layout: default
 {% assign startmonth = site.conference.dates.first | date: "%B" %}
 {% assign endmonth = site.conference.dates.first | date: "%B" %}
 <h2>Volume {{ site.volume }}: {{ site.conference.name }}, {% if days > 1 %}{% if startmonth == endmonth %}{{ site.conference.dates.first | date: "%-d" }}-{{ site.conference.dates.last | date: "%-d %B %Y" }}{% else %}{{ site.conference.dates.first | date: "%-d %B" }} to {{ site.conference.dates.last | date: "%-d %B %Y" }}{% endif %}{% else %}{{ site.conference.dates.first | date: "%d %B %Y" }}{% endif %}, {{ site.conference.location }}</h2>
-{% if site.github.edit %}
-{% capture url %}https://github.com/{{ site.github_username }}/{% if site.github.repository %}{{ site.github.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{% if site.github.repository contains 'github.io' %}master{% else %}gh-pages{% endif %}/_config.yml{% endcapture %}
+{% if site.ghub.edit %}
+{% capture url %}https://github.com/{{ site.github_username }}/{% if site.ghub.repository %}{{ site.ghub.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{% if site.ghub.repository contains 'github.io' %}master{% else %}gh-pages{% endif %}/_config.yml{% endcapture %}
 <p align="right">[<a href="{{ url }}" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', '{{ url }}', 13);">edit</a>]</p>
 {% endif %}
 
