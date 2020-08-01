@@ -14,7 +14,8 @@ layout: default
 
 <p>Since its inception in 1985, AISTATS has been an interdisciplinary gathering of researchers at the intersection of artificial intelligence, machine learning, statistics, and related areas.</p>
 
-<p>The <a href="http://proceedings.mlr.press/v84/">Proceedings of AISTATS2018</a> is now available.
+{%if site.conference.proceedings.show %}
+<p>The <a href="{{ site.conference.proceedings.url }}">Proceedings of {{ site.conference.name }} {{ site.conference.year }}</a> are now available.
 </p>
 
 {{ content }}
