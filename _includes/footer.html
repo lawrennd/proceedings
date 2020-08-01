@@ -3,11 +3,11 @@
     <center>This site last compiled {{ site.time | date_to_rfc822 }}</center>
 
     <table width="100%">
-      <tr>
+      <tr>{%if site.github_username %}
 	<td align="left"><font size="-1">
-	    <i><a href="https://github.com/{{ site.github_username }}{{ site.baseurl }}">Github Account</a></i></font></td>
+	    <i><a href="https://github.com/{{ site.github_username }}{{ site.baseurl }}">Github Account</a></i></font></td>{%endif%}{%if site.author.name %}
 	<td align="right"><font size="-1">
-	    Copyright &copy <a href="{{site.url}}">PMLR</a> {{ site.time | date: "%Y" }}. All rights reserved.</font></td>
+	    Copyright &copy <a href="{{site.url}}">{{ site.author.name }}</a> {{ site.time | date: "%Y" }}. All rights reserved.</font></td>{%endif%}
       </tr>
     </table>
   </div>
