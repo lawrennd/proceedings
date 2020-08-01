@@ -1,0 +1,203 @@
+// AISTATS Mods
+// Site header
+
+body {
+  margin:0 auto; 
+  padding:0;
+  background-color: $background-color ;
+  background-repeat: tile ;
+  background-position: top left ;      
+}
+
+
+/******************* Main Contents ***************/
+
+.page-content {
+    padding: $menu-width 0;
+}
+
+
+.wrapper h1{
+    font-size: 1.6em;
+    padding-bottom: 3px ;
+  color: #001862;
+}
+.wrapper h2{
+  font-size:1.4em;
+  margin:0 0 0.5em 0;
+  padding-bottom: 3px ;
+  color: #003399;
+}
+.wrapper h3 {
+  font-size: 1.2em ;
+  color: #444444;
+}
+.wrapper h4 {
+  font-size: 1.1em ;
+  margin:0 0 0.5em 0;
+  padding: 0 0 0 30px ;
+  color: #3399FF;
+}
+.wrapper img{
+  margin: 7px ;
+  padding:0px;
+  display:inline;
+  color:#303030;
+  border:0px solid #0033cc;
+}
+.wrapper a{
+  text-decoration:underline;
+  color:#0033cc;
+  font-weight: bold ;
+  font-size: 105% ;
+}
+.wrapper a:hover{
+  text-decoration: none;
+  color:#000;
+}
+
+.hero-image {
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-image img {
+  padding-right: 10px;
+  margin: 10px 0 5px 10px;
+  float: right;
+}
+
+.hero-text {
+  margin-left: 0.6em ;
+  padding-left: 10px ;
+  padding-top: 10px ;
+  padding-bottom: 30px ;
+  font-weight: bold ;
+  text-align: left ;
+  color: white;
+  font-size: 2em;
+}
+
+
+/******************* Left Nav ***************/
+
+
+.leftmenu{
+  clear: left;
+  float: left;
+  width: $menu-width;
+  margin: 10px 0px 10px 5px;
+  padding-left: 10px;
+  padding-right: 5px;
+  font-size: 0.9em;
+}
+.leftmenu ul{
+  list-style: none;
+  width: $menu-width;
+  margin: 0 5px 20px 0px;
+  padding: 0;
+  font-size: 1em;
+}
+.leftmenu li{
+  margin-bottom: 4px;
+}
+.leftmenu li div{
+  font-weight: bold;
+  min-height: 20px;
+  text-decoration: none;
+  color: #999;
+  display: block;
+  padding: 6px 10px 0 0px;
+  border-bottom: 3px solid #efefef;
+}
+.leftmenu li a{
+  font-weight: bold;
+  min-height: 20px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 6px 10px 0 0px;
+  border-bottom: 3px solid #efefef;
+}
+.leftmenu li a:hover, #leftcurrent {
+  background-color: #eaeaea;
+  color: #0033cc;
+  border-bottom: 3px solid #3333aa;
+  text-decoration: none ;
+}
+#leftcurrent {
+  background-color: $background-color ;
+}
+
+
+/******************* Main Contents ***************/
+
+.wrapper {
+  height: 100%;
+  padding: 0px 10px 15px 20px;
+  line-height: 1.6em;
+  text-align: left;
+  background-color: $background-color;
+ }
+
+.wrapper img{
+  margin: 7px ;
+  padding: 0px;
+  display: inline;
+  color: #303030;
+  border:0px solid #0033cc;
+}
+.wrapper a{
+  text-decoration:underline;
+  color: #0033cc;
+  font-weight: bold ;
+  font-size: 105% ;
+}
+.wrapper a:hover{
+  text-decoration: none;
+  color: #000;
+}
+a img{
+  border: 0;
+}
+.noborders img{
+  padding: 0;
+  border: 0;
+}
+
+/******************* Footer Details ***************/
+
+
+/******************* Image Display Settings ***************/
+
+.left{
+  margin: 10px 10px 5px 0;
+  float: left;
+}
+.textright{
+  text-align: right;
+}
+.center{
+  text-align: center;
+}
+.small{
+  font-size: 0.8em;
+}
+.bold{
+  font-weight: bold;
+}
+.hide{
+  display: none;
+}
+
+td.tweet {
+  vertical-align: top;
+}
+
+td.tweet div {
+  margin-top: 149px;
+}
+
+
