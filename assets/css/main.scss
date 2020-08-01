@@ -25,51 +25,6 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-.menuItem{
-text-decoration:none;
-color:#31639c;
-font-family:arial,helvetica,sans-serif;
-font-size:125%;
-font-weight:bold;
-}
-
-.volume{
-font-size:115%;
-font-weight:bold;
-}
-
-a{
-text-decoration:none;
-color:#3030a0
-}
-
-.aNoUnder{
-text-decoration:none;
-color:#3030a0
-}
-
-.anchor{
-color:#000000
-}
-
-.tiny{
-font-size:75%;
-}
-
-.codebox {
-    /* Below are styles for the codebox (not the code itself) */
-    border:1px solid black;
-    background-color:#EEEEFF;
-    width:3em;
-    height:1.5ex;
-    overflow:hidden;
-    padding:1px;
-}
-.codebox code {
-    /* Styles in here affect the text of the codebox */
-    font-size:0.7em;
-    /* You could also put all sorts of styling here, like different font, color, underline, etc. for the code. */
-}
 
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
@@ -79,6 +34,7 @@ font-size:75%;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+"pmlr",
         "base",
         "layout",
         "syntax-highlighting"

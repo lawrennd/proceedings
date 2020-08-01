@@ -2,6 +2,8 @@
  * Site header
  */
 .site-header {
+    border-top: 5px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -11,6 +13,7 @@
 .site-title {
     font-size: 26px;
     line-height: 56px;
+    letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
 
@@ -18,16 +21,6 @@
     &:visited {
         color: $grey-color-dark;
     }
-}
-.site-logo {
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    margin-bottom: 0;
-    target: _top;
-    float: left;
-    width: 7em;
 }
 
 .site-nav {
@@ -169,7 +162,7 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 1;
+    padding: $spacing-unit 0;
 }
 
 .page-heading {
@@ -183,11 +176,6 @@
     > li {
         margin-bottom: $spacing-unit;
     }
-}
-
-.proceedings-list {
-    margin-left: 0;
-    list-style: none;
 }
 
 .post-meta {
@@ -245,55 +233,4 @@
             font-size: 18px;
         }
     }
-}
-
-.authors,
-#authors {
-    font-weight: bold;
-    font-style: italic;
-    display: inline;
-}
-.info,
-#info {
-    display: inline;
-}
-.details,
-.links {
-    margin-left: 2em;
-}
-#note {
-    font-weight: bold;
-    color: #444477;
-}
-#footer {
-    border-top: 1px solid gray;
-    padding-top: 1em;
-    margin-top: 1em;
-    font-size: smaller;
-}
-a {
-    text-decoration: none;
-    color: #3030a0
-}
-#content {
-    margin-top: 1em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-}
-#fixed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 8em;
-    height: 100%;
-}
-#sectionnav {
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-}
-img.jmlr {
-    width: 7em;
-}
-img.rss {
-    width: 2em;
 }
