@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<h1>The {{ site.conference.instance }} {{ site.conference.styling }} <br> {{site.conference.full_name }}</h1>
+
+<h3>{{ site.conference.dates[0] | date: "%B %-d"}} - {{ site.conference.dates.last | date: "%-d, %Y" }}<br>
+    {{ site.conference.location }}</h3>
+
+<center><img src="{{ site.baseurl }}/image/{{ site.image.file }}" alt="Conference image" width={{ site.image.width }}></center>
+
+  
+<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} ({{ site.conference.name }} {{ site.conference.year }}) will be held in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
+
+<p>Since its inception in 1985, AISTATS has been an interdisciplinary gathering of researchers at the intersection of artificial intelligence, machine learning, statistics, and related areas.</p>
+
+<p>The <a href="http://proceedings.mlr.press/v84/">Proceedings of AISTATS2018</a> is now available.
+</p>
+
+{{ content }}
