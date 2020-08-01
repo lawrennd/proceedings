@@ -1,0 +1,8 @@
+<h3>{{ chair.type }}</h3>
+<div>
+  <ul>
+{% for person in chair.people %}
+{% include listperson.html %}
+{%endfor%}
+  </ul>
+</div>
