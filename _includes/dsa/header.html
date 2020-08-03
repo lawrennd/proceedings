@@ -1,0 +1,54 @@
+<!-- Start Header -->
+{% for file in site.pages %}
+{% if file.path == 'video.html' %}
+        {% assign video = true %}
+    {% endif %}
+{% if file.path == 'committee.html' %}
+        {% assign committee = true %}
+    {% endif %}
+{% if file.path == 'accommodation.html' %}
+        {% assign acc = true %}
+    {% endif %}
+{% endfor %}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand scroll" href="#top"><img src="/{{ site.logo_url }}" alt="{{ site.title }} {{ site.year }}" style="height: 115px; margin-top-top: 5px;"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse scrollspy" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="scroll" href="/">HOME</a></li>
+		{% if video %}
+                <li><a class="scroll" href="./video.html">EVENT VIDEO</a></li>
+		{% endif %}
+		{% if site.school %}
+                <li><a class="scroll" href="#summer_school">SCHOOL</a></li>
+		{% endif %}
+		{% if site.conference %}
+                <li><a class="scroll" href="#workshop">WORKSHOP</a></li>
+		{% endif %}
+		{% if committee %}
+                <li><a class="scroll" href="./committee.html">TECHNICAL COMMITTEE</a></li>
+		{% endif %}
+                <li><a class="scroll" href="#sponsors">COLLABORATORS &amp; SPONSORSHIP</a></li>
+		{% if site.social.text %}
+                <li><a class="scroll" href="#social_event">SOCIAL EVENT</a></li>
+		{% endif %}
+		{% if acc %}
+                <li><a class="scroll" href="./accommodation.html">ACCOMMODATION</a></li>
+		{% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Header -->

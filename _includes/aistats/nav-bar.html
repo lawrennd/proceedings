@@ -1,0 +1,11 @@
+<nav class="site-nav">
+  <ul id="leftnavlist">
+    <li><a id="home" href="./index.html">Home</a></li>
+    {% assign pages = site.pages | sort: "title" | sort: "title" %}
+    {% for page in pages%}{% if page.title %}{% unless page.hide %}{% unless page.title == 'Home' %}{% assign pageid = page.title | downcase | replace:' ','-' | replace:',','' | replace: '/','' %}<li><a id="{{ pageid }}" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endunless %}{% endunless %}{% endif %}{% endfor %}
+    {% if site.conference.submission.show %}
+    {% if site.conference.submission.url %}<li><a href="{{ site.conference.submission.url }}" target="_blank">Submission Site</a></li>{% endif %}{% endif %}
+    {% if site.conference.proceedings.show %}
+    {% if site.conference.proceedings.url %}<li><a href="{{ site.conference.proceedings.url }}" target="_blank">Proceedings</a></li>{% endif %}{% endif %}
+  </ul>
+</nav>

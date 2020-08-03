@@ -1,13 +1,10 @@
----
-layout: default
----
 
 <h1>The {{ site.conference.instance }} {{ site.conference.styling }} <br> {{site.conference.full_name }}</h1>
 
 <h3>{{ site.conference.dates[0] | date: "%B %-d"}} - {{ site.conference.dates.last | date: "%-d, %Y" }}<br>
     {{ site.conference.location }}</h3>
 
-<center><img src="{{ site.baseurl }}/assets/image/{{ site.conference.image }}" alt="Conference image" width="60%"></center>
+<center><img src="{{ site.baseurl }}/assets/images/{{ site.conference.image }}" alt="Conference image" width="60%"></center>
 
   
 <p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} ({{ site.conference.name }} {{ site.conference.year }}) will be held in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
