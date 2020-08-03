@@ -1,0 +1,6 @@
+{% assign default_include = true %}
+{% if site.style %}
+{% assign include_file = site.style | append: '/' | append: include.include %}
+{% include {{ include_file }} %}
+{% assign default_include = false %}
+{% endif %}
