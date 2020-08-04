@@ -1,12 +1,14 @@
-
 <h1>The {{ site.conference.instance }} {{ site.conference.styling }} <br> {{site.conference.full_name }}</h1>
+{% if site.ghub.edit %}
+{% capture url %}https://github.com/{{ site.github_username }}/{% if site.ghub.repository %}{{ site.ghub.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{% if site.ghub.repository contains 'github.io' %}master{% else %}gh-pages{% endif %}/_config.yml{% endcapture %}
+<p align="right">[<a href="{{ url }}" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', '{{ url }}', 13);">edit</a>]</p>
+{% endif %}
 
 <h3>{{ site.conference.dates[0] | date: "%B %-d"}} - {{ site.conference.dates.last | date: "%-d, %Y" }}<br>
     {{ site.conference.location }}</h3>
 
 <center><img src="{{ site.baseurl }}/assets/images/{{ site.conference.image }}" alt="Conference image" width="60%"></center>
 
-  
 <p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} ({{ site.conference.name }} {{ site.conference.year }}) will be held in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
 
 <p>Since its inception in 1985, AISTATS has been an interdisciplinary gathering of researchers at the intersection of artificial intelligence, machine learning, statistics, and related areas.</p>

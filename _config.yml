@@ -17,7 +17,7 @@ author:
   name: lawrennd
 
 comments: false
-style: aistats
+style:
 
 ghub:
   edit: true
@@ -42,7 +42,8 @@ conference:
   venue_url: 
   location: City, Country
   full_name: Conference Full Name
-  name: ConfAbbrv
+  short_name: ConfAbbrv
+  name: Conference Name
   year: 20XX
   instance: 1st
   styling: International Conference on
