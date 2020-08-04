@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<h1>Submission Site</h1>
+
+{% if site.conference.submission.show %}<p>The submission site is <a href="{{ site.conference.submission.url }}">{{ site.conference.submission.name }}</a></p>{% endif %}
+
+{{ content }}
