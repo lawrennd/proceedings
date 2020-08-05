@@ -12,6 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   This is the website of the AISTATS conference.
 baseurl: "/proceedings" # the subpath of your site, e.g. /blog/
 github_username:  lawrennd
+style: aistats
 
 author:
   name: lawrennd
