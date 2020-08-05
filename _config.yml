@@ -7,18 +7,14 @@ description: > # this means to ignore newlines until "show_excerpts:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
-email: aistats2019@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This is the website of the AISTATS conference.
 baseurl: "/proceedings" # the subpath of your site, e.g. /blog/
 github_username:  lawrennd
-style: aistats
+style: 
 
-author:
-  name: lawrennd
 
 comments: false
-style:
 
 ghub:
   edit: true
