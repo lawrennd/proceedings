@@ -4,6 +4,8 @@
 <p align="right">[<a href="{{ url }}" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', '{{ url }}', 13);">edit</a>]</p>
 {% endif %}
 
+{%if site.conference.proceedings.show %}<p>The <a href="{{ site.conference.proceedings.url }}">Proceedings of {{ site.conference.short_name }} {{ site.conference.year }}</a> are now available.</p>{% endif %}
+
 <h3>{{ site.conference.dates[0] | date: "%B %-d"}} - {{ site.conference.dates.last | date: "%-d, %Y" }}<br>
     {{ site.conference.location }}</h3>
 
@@ -13,6 +15,5 @@
 
 <p>Since its inception in 1985, AISTATS has been an interdisciplinary gathering of researchers at the intersection of artificial intelligence, machine learning, statistics, and related areas.</p>
 
-{%if site.conference.proceedings.show %}<p>The <a href="{{ site.conference.proceedings.url }}">Proceedings of {{ site.conference.short_name }} {{ site.conference.year }}</a> are now available.</p>{% endif %}
 
 {{ content }}
