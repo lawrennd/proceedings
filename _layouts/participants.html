@@ -1,0 +1,22 @@
+---
+layout: default
+---
+	
+{% if site.draft %}
+<h2>Draft Version</h2>
+{% endif %}
+
+{{ content }}
+
+
+<p><strong>List of participants for {{ site.conference.short_name }} {{ site.conference.year }}:</strong></p>
+<ul>
+{% for person in site.data.participants %}
+<li> {%- include listperson.html %}</li>
+{% endfor %}
+</ul>    
+  
+
+
+	
+	
