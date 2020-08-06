@@ -7,9 +7,9 @@
 <h3>{{ site.conference.dates[0] | date: "%B %-d"}} - {{ site.conference.dates.last | date: "%-d, %Y" }}<br>
     {{ site.conference.location }}</h3>
 
-<center><img src="{{ site.baseurl }}/assets/images/{{ site.conference.image }}" alt="Conference image" width="60%"></center>
+{%if site.conference.image %}<center><img src="{{ site.baseurl }}/assets/images/{{ site.conference.image }}" alt="Conference image" width="60%"></center>{% endif %}
 
-<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} {{ site.conference.year }}) will be held in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
+<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} {{ site.conference.year }}) will be held in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b>{% if site.conference.venue %} at the {% if site.conference.venue_url %}<a href="{{ site.conference.venue_url }}">{% endif %}{{ site.conference.venue }}{% if site.conference.venue_url %}</a>{% endif %}{% endif %}.</p>
 
 <p>Since its inception in 1985, AISTATS has been an interdisciplinary gathering of researchers at the intersection of artificial intelligence, machine learning, statistics, and related areas.</p>
 
