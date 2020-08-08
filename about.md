@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+This is a base theme for creating proceedings and conference websites.  You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [http://github.com/lawrennd/proceedings](http://github.com/lawrennd/proceedings)
 
-You can find the source code for Minima at GitHub:
+The theme is based on the Jekyll Minima theme. You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
 [minima](https://github.com/jekyll/minima)
 
