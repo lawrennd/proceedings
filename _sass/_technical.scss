@@ -1,0 +1,70 @@
+/* added by neil for edit section links (inspired by wikipedia style)*/
+.editsection{
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+}
+.editsection-bracket{
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+}
+
+/* For the code boxes.*/
+.codebox {
+    /* Below are styles for the codebox (not the code itself) */
+    border:1px solid black;
+    background-color:#EEEEFF;
+    width:3em;
+    height:1.5ex;
+    overflow:hidden;
+    padding:1px;
+}
+.codebox code {
+    /* Styles in here affect the text of the codebox */
+    font-size:0.7em;
+    /* You could also put all sorts of styling here, like different font, color, underline, etc. for the code. */
+}
+
+/* for figures and images */
+.thumbinner{
+//    position:relative
+}
+
+.figure {
+    border: 1px solid black;
+    margin: 25px;
+    background-color: CornSilk
+}
+.figure object {
+    display: block;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.figure img {
+    display: block;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.figure table {
+    display: block;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+.figure .caption {
+    font-size: $small-font-size;
+}
