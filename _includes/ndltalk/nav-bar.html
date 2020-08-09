@@ -5,8 +5,8 @@
   <div class="trigger">
     <a id="home" href="./index.html">Home</a>
     {% assign pages = site.pages | sort:"weight"  %}     
-    {% for page in pages %}
-    {% include listmenupage.html %}
+    {% for pg in pages %}
+    {% include listmenupg.html %}
     {% endfor %}
   </div>
 </nav>
