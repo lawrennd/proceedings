@@ -1,12 +1,12 @@
 <nav class="site-nav">
   <a href="#" class="menu-icon">
-    {% include icons/menu-icon-minima.svg %}
+    {% include svg/menu-icon-minima.svg %}
   </a>
   <div class="trigger">
     <a id="home" href="./index.html">Home</a>
     {% assign pages = site.pages | sort:"weight"  %}     
     {% for page in pages %}
-    {% if page.title %}{% unless page.hide %}{% unless page.title == 'Home' %}{% unless page.layout=="slides" %}{% assign pageid = page.title | downcase | replace:' ','-' | replace:',','' | replace: '/','' %}<a id="{{ pageid }}" class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endunless %}{% endunless %}{% endunless %}{% endif %}
+    {% include listmenupage.html %}
     {% endfor %}
   </div>
 </nav>
