@@ -1,0 +1,1 @@
+{% if page.title %}{% unless page.hide %}{% unless page.title == 'Home' %}{% unless page.layout=="slides" %}{% assign pageid = page.title | downcase | replace:' ','-' | replace:',','' | replace: '/','' %}<a id="{{ pageid }}" class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endunless %}{% endunless %}{% endunless %}{% endif %}
