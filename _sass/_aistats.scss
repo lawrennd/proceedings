@@ -82,14 +82,20 @@ body {
 
 /******************* Left Nav ***************/
 
+.page-content .wrapper {
+    padding-left: $menu-width;
+    @include media-query($on-palm) {
+	padding-left: -webkit-calc(#{$spacing-unit});
+	padding-left:         calc(#{$spacing-unit});
+    }
+}
 
 .leftmenu{
     float: left;
-  height: 200vh;
-  margin: 10px 0px 10px 5px;
-  padding-left: 10px;
-  padding-right: 5px;
-  font-size: 0.9em;
+    margin: 10px 0px 10px 5px;
+    padding-left: 10px;
+    padding-right: 5px;
+    font-size: 0.9em;
 }
 .leftmenu ul{
   list-style: none;
@@ -130,13 +136,6 @@ body {
 
 /******************* Main Contents ***************/
 
-.wrapper {
-  height: 100%;
-  padding: 0px 10px 15px 20px;
-  line-height: 1.6em;
-  text-align: left;
-  background-color: $background-color;
- }
 
 .wrapper img{
   margin: 7px ;

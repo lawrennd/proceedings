@@ -1,11 +1,13 @@
+<div class="wrapper">
 {% include aistats/banner.html %}
-<div class="leftmenu">
+  <div class="leftmenu">
   {% include aistats/nav-bar.html %}
-</div>
+  </div>
 
-{% if page.title %}
-{% assign label = page.title | downcase | replace:' ','-' | replace:',','' | replace: '/','' %}
-<script type="text/javascript">
+  {% if page.title %}
+  {% assign label = page.title | downcase | replace:' ','-' | replace:',','' | replace: '/','' %}
+  <script type="text/javascript">
   document.getElementById('{{ label }}').id='leftcurrent';
 </script>
 {% endif %}
+</div>
