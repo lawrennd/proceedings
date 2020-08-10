@@ -84,7 +84,8 @@ body {
 
 
 .leftmenu{
-  float: left;
+    float: left;
+    position: fixed;
   height: 100vh;
   margin: 10px 0px 10px 5px;
   padding-left: 10px;
