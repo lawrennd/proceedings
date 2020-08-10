@@ -13,9 +13,6 @@ ul,ol {
 }
 /******************* Main Contents ***************/
 
-.page-content {
-    padding-left: $menu-width;
-}
 
 main {
     display: inline;
@@ -88,16 +85,22 @@ main {
 /******************* Left Nav ***************/
 
 .page-content {
-    flex: 0 1 auto;
-    padding-left: $menu-width;
-    @include media-query($on-palm) {
-	padding-left: $spacing-unit;
-    }
+    padding: 0 $spacing-unit/2;
 }
 
+.page-content .wrapper {
+    padding-left: $spacing-unit;
+  @media screen and (min-width: $on-medium) {
+      background-color: inherit;
+      padding: 0;
+      flex: 0 1 auto;
+      padding-left: $menu-width + 2*$spacing-unit;
+      position: static;
+  }
+}
 .leftmenu{
     float: left;
-    margin: 10px 0px 10px $spacing-unit/2;
+    margin: 10px 0px 10px 0px;
     font-size: 0.9em;
 }
 .leftmenu ul{
@@ -202,10 +205,16 @@ td.tweet div {
 .site-nav {
   text-align: left;
 
+  .page-link {
+      margin-right: 0px;
+      margin-left: 0px;
+  }
+
   @media screen and (min-width: $on-medium) {
-    position: static;
+    position: relative;
+    left: $spacing-unit;
+    top: 0px;
     float: left;
-    border: 2px solid $border-color-01;
     background-color: inherit;
     padding: 0;
     
@@ -221,6 +230,13 @@ td.tweet div {
       display: block;
     }
 
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+      margin-right: 0px;
+      margin-left: 0px;
+
+    }
   }
 }
 

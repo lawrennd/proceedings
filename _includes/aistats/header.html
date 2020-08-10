@@ -1,9 +1,6 @@
 <div class="wrapper">
 {% include aistats/banner.html %}
 </div>
-  <div class="leftmenu">
-  {% include aistats/nav-bar.html %}
-  </div>
 
   {% if page.title %}
   {% assign label = page.title | downcase | replace:' ','-' | replace:',','' | replace: '/','' %}
