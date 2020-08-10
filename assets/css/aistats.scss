@@ -7,13 +7,16 @@
 
 @charset "UTF-8";
 
-// Our variables
-$base-font-family: Verdana,Tahoma,Arial,sans-serif;
-$base-font-size:   14px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+// Define defaults for each variable.
 
-$spacing-unit:     10px;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
+$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px !default;
 $menu-width:       150px;
 
 $text-color:       #303030;
@@ -24,24 +27,34 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$table-text-align: left !default;
+
 // Width of the content area
-$content-width:    800px;
+$content-width:    800px !default;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
 
-// Using media queries with like this:
+$on-medium:        $on-palm !default;
+$on-large:         $on-laptop !default;
+
+// Use media queries like this:
 // @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
 // }
-
+// Notice the following mixin uses max-width, in a deprecated, desktop-first
+// approach, whereas media queries used elsewhere now use min-width.
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
   }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: #{$ratio}rem;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
