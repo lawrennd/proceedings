@@ -10,9 +10,9 @@
     {% assign pages = site.pages | sort:"weight"  %}     
     {% for pg in pages %}{% include listmenupg.html prefix="<li>" postfix="</li>"%}{% endfor %}
     {% if site.conference.submission.show %}
-    {% if site.conference.submission.url %}<li><a href="{{ site.conference.submission.url }}" target="_blank">Submission Site</a></li>{% endif %}{% endif %}
+    {% if site.conference.submission.url %}<li><a class="page-link" href="{{ site.conference.submission.url }}" target="_blank">Submission Site</a></li>{% endif %}{% endif %}
     {% if site.conference.proceedings.show %}
-    {% if site.conference.proceedings.url %}<li><a href="{{ site.conference.proceedings.url }}" target="_blank">Proceedings</a></li>{% endif %}{% endif %}
+    {% if site.conference.proceedings.url %}<li><a class="page-link" href="{{ site.conference.proceedings.url }}" target="_blank">Proceedings</a></li>{% endif %}{% endif %}
   </ul>
   </div>
 </nav>
