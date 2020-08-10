@@ -14,7 +14,7 @@ ul,ol {
 /******************* Main Contents ***************/
 
 .page-content {
-    padding: 0 $menu-width;
+    padding-left: $menu-width;
 }
 
 
@@ -84,7 +84,7 @@ ul,ol {
 
 /******************* Left Nav ***************/
 
-.page-content .wrapper {
+.page-content {
     padding-left: $menu-width+2*$spacing-unit;
     @include media-query($on-palm) {
 	padding-left: $spacing-unit;
