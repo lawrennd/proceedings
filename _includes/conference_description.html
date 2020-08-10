@@ -1,3 +1,7 @@
 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
 {% capture conftime %}{{ site.conference.dates.last | date: '%s'}}{% endcapture %}
+This is the home page of {{ site.conference.styling }} {{ site.conference.full_name }} {{ site.conference.year }}.
+
 {{ site.conference.short_name }} {{ site.conference.year }} {% if conftime > nowunix %}will take place{% else %}took place{% endif %} in the {{site.conference.venue }}, {{ site.conference.location }} from {{ site.conference.dates[0] | date: "%A, %B %-d" }} to {{ site.conference.dates.last | date: "%A, %B %-d, %Y" }}.
+
+{% if conftime < nowunix %}This webpage acts as a record of the program and talks given.{% endif %}
