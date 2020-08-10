@@ -86,9 +86,8 @@ ul,ol {
 
 .page-content {
     flex: 0 auto;
-    padding-left: $menu-width+$spacing-unit;
+    padding-left: $menu-width;
     @include media-query($on-palm) {
-	padding-left: $spacing-unit;
 	padding-left: $spacing-unit;
     }
 }
@@ -203,7 +202,7 @@ td.tweet div {
   @media screen and (min-width: $on-medium) {
     position: static;
     float: left;
-    border: none;
+    border: 2px;
     background-color: inherit;
     padding: 0;
     
