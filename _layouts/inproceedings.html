@@ -5,10 +5,9 @@ layout: default
 {% include paper_abstract.html %}
 
 {% capture id %}pmlr-v{{ site.volume }}-{{ page.id | remove_first: '/' }}{% endcapture %}
-{% include bibtex_copy_section.html %}
-{% include endnote_copy_section.html %}
-{% include ris_copy_section.html %}
-{% include apa_copy_section.html %}
+
+{% include copy_sections.html %}
+
 {% include disqus_comment_code.html %}
 
 {{ content }}
