@@ -83,7 +83,7 @@ body {
 /******************* Left Nav ***************/
 
 .page-content .wrapper {
-    padding-left: $menu-width+$spacing-unit;
+    padding-left: $menu-width+2*$spacing-unit;
     @include media-query($on-palm) {
 	padding-left: $spacing-unit;
 	padding-left: $spacing-unit;
