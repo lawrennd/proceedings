@@ -220,13 +220,11 @@ td.tweet div {
     }
 
     .page-link {
-      display: inline;
-      padding: 0;
+      display: block;
+      padding: 5px 10px;
+      margin-right: 0px;
+      margin-left: 0px;
 
-      &:not(:last-child) {
-        margin-right: 5px;
-      }
-      margin-left: 5px;
     }
   }
 }

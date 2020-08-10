@@ -73,16 +73,18 @@
     padding-bottom: 5px;
   }
 
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-	display: inline;
+  .page-link {
+    color: $text-color;
+    line-height: $base-line-height;
+    display: block;
+    padding: 5px 10px;
 
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 0;
     }
+    margin-left: 20px;
+  }
 
   @media screen and (min-width: $on-medium) {
     position: static;
