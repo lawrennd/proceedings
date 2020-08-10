@@ -2,17 +2,17 @@
 // Site header
 
 body {
-  margin:0 auto; 
+  margin:0; 
   padding:0;
   background-color: $background-color ;
-  background-position: top left ;      
+  background-position: top left ;
 }
 
 
 /******************* Main Contents ***************/
 
 .page-content {
-    padding: $menu-width 0;
+    padding: 0 $menu-width;
 }
 
 
@@ -84,9 +84,8 @@ body {
 
 
 .leftmenu{
-  clear: left;
   float: left;
-  width: $menu-width;
+  height: 100vh;
   margin: 10px 0px 10px 5px;
   padding-left: 10px;
   padding-right: 5px;

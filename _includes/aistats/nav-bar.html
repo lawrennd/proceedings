@@ -1,14 +1,14 @@
 <nav class="site-nav">
-  <a href="#" class="menu-icon">
-    {% include svg/menu-icon-minima.svg %}
-  </a>
+  <label for="nav-trigger">
+    <span class="menu-icon">
+      {% include svg/menu-icon-minima.svg %}
+    </span>
+  </label>
   <div class="trigger">
   <ul id="leftnavlist">
-    <li><a id="home" href="./index.html">Home</a></li>
+    <li><a id="home" class="page-link" href="./index.html">Home</a></li>
     {% assign pages = site.pages | sort:"weight"  %}     
-    {% for pg in pages %}
-    {% include listmenupg.html %}
-    {% endfor %}
+    {% for pg in pages %}{% include listmenupg.html prefix="<li>" postfix="</li>"%}{% endfor %}
     {% if site.conference.submission.show %}
     {% if site.conference.submission.url %}<li><a href="{{ site.conference.submission.url }}" target="_blank">Submission Site</a></li>{% endif %}{% endif %}
     {% if site.conference.proceedings.show %}
