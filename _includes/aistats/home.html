@@ -11,7 +11,7 @@
 
 {%if site.conference.image %}<center><img src="{{ site.baseurl }}/assets/images/{{ site.conference.image }}" alt="Conference image" width="60%"></center>{% endif %}
 
-<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} {{ site.conference.year }}) will be held in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b>{% if site.conference.venue %} at the {% if site.conference.venue_url %}<a href="{{ site.conference.venue_url }}">{% endif %}{{ site.conference.venue }}{% if site.conference.venue_url %}</a>{% endif %}{% endif %}.</p>
+{% include conference_description.html %}
 
 <p>Since its inception in 1985, AISTATS has been an interdisciplinary gathering of researchers at the intersection of artificial intelligence, machine learning, statistics, and related areas.</p>
 
