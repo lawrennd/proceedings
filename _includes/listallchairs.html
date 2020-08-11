@@ -1,5 +1,5 @@
 {% if site.conference.chairs %}
 {% for chair in site.conference.chairs %}
-  {% include listchairs.html header=include.header %}
+  {%- include listchairs.html header=include.header -%}
 {% endfor %}
 {% endif %}
