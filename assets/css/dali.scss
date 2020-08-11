@@ -2,7 +2,19 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('{{ "/assets/icons/fonts/icomoon.eot?2vj544" | relative_url | prepend: site.url }}');
+  src:  url('{{ "/assets/icons/fonts/icomoon.eot?2vj544#iefix" | relative_url | prepend: site.url }}') format('embedded-opentype'),
+    url('{{ "/assets/icons/fonts/icomoon.ttf?2vj544" | relative_url | prepend: site.url }}') format('truetype'),
+    url('{{ "/assets/icons/fonts/icomoon.woff?2vj544" | relative_url | prepend: site.url }}') format('woff'),
+    url('{{ "/assets/icons/fonts/icomoon.svg?2vj544#icomoon" | relative_url | prepend: site.url }}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
-  "minima/initialize";
+  "minima/initialize",
+  "icons";
