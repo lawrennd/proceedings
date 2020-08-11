@@ -13,20 +13,21 @@
 
    {% if site.previous_meeting.name %}{% if site.previous_meeting.url %}<p><a href="{{ site.previous_meeting.url }}">Link to {{ site.previous_meeting.name }}</a> </p>{% endif %}{% endif %}
 
-  <p><strong>Sponsors</strong></p>
-
   {% if site.conference.sponsors %}
-  <p>This event is sponsored and co-organized by
+  <h3>Sponsors</h3>
+
+  <p>This event is sponsored by
   {% for sponsor in site.conference.sponsors %}
   <br>{% include listsponsor.html %}</br>
   {% endfor %}
-  {% endif %}
   </p>
+  {% endif %}
 
-  <p><strong>Organizers</strong></p>
+  {% if site.conference.chairs %}
+  <h3>Organizers</h3>
 
   {% include listallchairs.html %}
-
+  {% endif %}
 </article>
 
 
