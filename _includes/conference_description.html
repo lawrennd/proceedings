@@ -1,5 +1,5 @@
 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}{% assign nowunix = nowunix | plus: 0%}
 {% capture conftime %}{{ site.conference.dates.last | date: '%s'}}{% endcapture %}{% assign conftime = conftime | plus: 0%}
-<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} {% if conftime > nowunix %}will be held{% else %}was held{% endif %}  in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
+<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} {% if conftime > nowunix %}will be held{% else %}was held{% endif %} in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
 
 {% if conftime < nowunix %}<p>This webpage acts as a record of the program and talks given.</p>{% endif %}
