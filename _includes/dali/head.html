@@ -15,7 +15,7 @@
   <link rel="icon" href="{{site.url}}{{site.baseurl}}/assets/images/favicon-{{ site.style }}.ico" type="image/x-icon">  
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/assets/rss/feed.xml' | relative_url }}" />
 
   {% include google_tracking_code.html %}
   {% include mathjax_code.html %}
