@@ -3,10 +3,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- capture description -%}
+  <p>This is the home page of {{ site.conference.styling }} {{ site.conference.short_name }} {{ site.conference.year }}.</p>
   
+  {% include conference_description.html %}
+  {%- endcapture -%}
   <!-- Title, description and favicon -->
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% include conference_description.html %}">
+  <meta name="description" content="{{ description | strip_html }}">
   <link rel="shortcut icon" href="{{ '/assets/images/favicon-aistats.ico' | relative_url }}" type="image/x-icon">
   <link rel="icon" href="{{ '/assets/images/favicon-aistats.ico' | relative_url }}" type="image/x-icon">  
 

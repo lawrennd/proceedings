@@ -1,7 +1,7 @@
 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
 {% capture conftime %}{{ site.conference.dates.last | date: '%s'}}{% endcapture %}
-This is the home page of {{ site.conference.styling }} {{ site.conference.full_name }} {{ site.conference.year }}.
+<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} {{ site.conference.year }}) {% if conftime > nowunix %}will be held{% else %}was held{% endif %}  in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
 
-{{ site.conference.short_name }} {{ site.conference.year }} {% if conftime > nowunix %}will take place{% else %}took place{% endif %} in the {{site.conference.venue }}, {{ site.conference.location }} from {{ site.conference.dates[0] | date: "%A, %B %-d" }} to {{ site.conference.dates.last | date: "%A, %B %-d, %Y" }}.
+{% if conftime < nowunix %}<p>This webpage acts as a record of the program and talks given.</p>{% endif %}
 
-{% if conftime < nowunix %}This webpage acts as a record of the program and talks given.{% endif %}
+

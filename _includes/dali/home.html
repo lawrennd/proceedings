@@ -8,8 +8,7 @@
 
   {{ content }}
 
-<p>The {{ site.conference.instance }} {{ site.conference.styling }} {{site.conference.full_name }} {{ site.conference.year }}) will be held in {{ site.conference.location }} from <b>{{ site.conference.dates[0] | date: "%A, %-d %B %Y" }} to {{ site.conference.dates.last | date: "%A, %-d %B %Y" }}</b> at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a>.</p>
-
+  {% include conference_description %}
 
    {% if site.previous_meeting.name %}{% if site.previous_meeting.url %}<p><a href="{{ site.previous_meeting.url }}">Link to {{ site.previous_meeting.name }}</a> </p>{% endif %}{% endif %}
 
