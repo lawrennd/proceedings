@@ -1,8 +1,7 @@
-<h3>{{ chair.type }}</h3>
-<div>
-  <ul>
-    {% for person in chair.people %}
-    {% include listperson.html prefix='<li>' postfix='</li>' separator='' %}
-    {%endfor%}
-  </ul>
-</div>
+{% if include.header %}{% assign header=include.header %}{% else %}{% assign header='h3' %}{% endif %}
+<{{ header }}>{{ chair.type }}</{{ header }}>
+<ul>
+  {% for person in chair.people %}
+  {% include listperson.html prefix='<li>' postfix='</li>' separator='' %}
+  {%endfor%}
+</ul>
