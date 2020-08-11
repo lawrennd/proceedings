@@ -11,7 +11,7 @@
     </span>
   </label>
   <div class="trigger">
-    {% assign pages = site.pages | sort: "weight" %}
+    {% assign pages = site.html_pages | sort: "weight" %}
     {% for pg in pages %}{% include listmenupg.html separator="<i class=\"page-link-separator\"></i>" %}{% endfor %}
   </div>
 </nav>
