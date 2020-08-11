@@ -8,7 +8,7 @@
 
   {{ content }}
 
-  {% include conference_description %}
+  {% include conference_description.html %}
 
    {% if site.previous_meeting.name %}{% if site.previous_meeting.url %}<p><a href="{{ site.previous_meeting.url }}">Link to {{ site.previous_meeting.name }}</a> </p>{% endif %}{% endif %}
 
