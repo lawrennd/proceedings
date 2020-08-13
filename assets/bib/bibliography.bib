@@ -8,9 +8,9 @@ layout: null
 @Proceedings{{o}}{{ site.shortname }}{{ site.year }},
   title =     {{o}}{{ site.title }}{{c}},
   booktitle = {{o}}{{ site.title }}{{c}},
-  editor =    {{o}}{% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %} and {%endunless %}{% endfor %}{{c}},
-  publisher = {PMLR},
-  series =    {Proceedings of Machine Learning Research},
+  editor =    {{o}}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}},{% if site.style=='pmlr' %}
+  publisher = {{o}}PMLR{{c}},
+  series =    {{o}}Proceedings of Machine Learning Research{{c}},{% endif %}
   volume =    {{ site.volume }}
 {{c}}
 {% assign sorted = site.posts | sort: 'order' %}
