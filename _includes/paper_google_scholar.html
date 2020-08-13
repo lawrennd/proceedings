@@ -1,29 +1,26 @@
-{% if page.author %}{% assign authors=page.author %}{% else %}{% if page.authors %}{% assign authors=page.authors %}{% endif %}{% endif %}
-{% if site.conference.publisher %}<meta name="citation_publisher" content="{{ site.conference.publisher }}"/>{% endif %}
+{% if page.author %}{% assign authors=page.author %}{% elsif page.authors %}{% assign authors=page.authors %}{% endif %}
+{% if site.conference.publisher %}<meta name="citation_publisher" content="{{ site.conference.publisher }}"/>{% elsif site.publisher %}<meta name="citation_publisher" content="{{ site.publisher }}"/>{% endif %}
 <meta name="citation_title" content="{{ page.title }}"/>{% if page.doi %}
 <meta name="citation_doi" content="{{ page.doi }}"/>{% endif %}
 <meta name="citation_language" content="en"/>
 <meta name="citation_abstract_html_url" content="{{site.url}}{{site.baseurl}}{{ page.url }}"/>{% if page.fulltext %}
-<meta name="citation_fulltext_html_url" content="{{ page.fulltext }}"/>{% endif %}
-<meta name="citation_pdf_url" content="{{ page.pdf }}">
-<meta name="citation_firstpage" content="{{ page.firstpage }}">
-<meta name="citation_lastpage" content="{{ page.lastpage }}">{% for author in authors %}{% if author.consortium %}
-<meta name="citation_author" content="{{ authors.consortium.name }}">{% else %}
+<meta name="citation_fulltext_html_url" content="{{ page.fulltext }}"/>{% endif %}{% if page.pdf %}
+<meta name="citation_pdf_url" content="{{ page.pdf }}">{% endif %}{% if page.firstpage %}
+<meta name="citation_firstpage" content="{{ page.firstpage }}">{% if page.lastpage %}
+<meta name="citation_lastpage" content="{{ page.lastpage }}">{% endif %}{% endif %}{% for author in authors %}{% if author.consortium %}
+<meta name="citation_author" content="{{ author.consortium.name }}">{% else %}
 <meta name="citation_author" content="{{ author.given }} {{ author.family }}">{% endif %}{% if author.institute %}
 <meta name="citation_author_institution" content="{{ author.institute }}">{% endif %}{%if author.email %}
-<meta name="citation_author_email" content="{{ author.email }}">{% endif %}{% endfor %}
-<meta name="citation_publication_date" content="{{ site.published | date: "%Y/%m/%d" }}">
-<meta name="citation_inbook_title" content="{{ site.conference.name }}"/>{% if site.conference.abbreviation %}
-<meta name="citation_conference_series_id" content="pmlr/{{ site.conference.abbreviation | downcase }}"/>{% endif %}
+<meta name="citation_author_email" content="{{ author.email }}">{% endif %}{% endfor %}{% if page.date %}<meta name="citation_publication_date" content="{{ page.date | date: "%Y/%m/%d" }}">{% endif %}{% if site.conference.name %}
+<meta name="citation_inbook_title" content="{{ site.conference.name }}"/>{% endif %}{% if site.conference.abbreviation %}
+<meta name="citation_conference_series_id" content="{% if site.publisher %}{{ site.publisher | downcase }}{% endif %}/{{ site.conference.abbreviation | downcase }}"/>{% endif %}
 <meta name="citation_conference_title" content="{{ site.conference.name }}"/>{% if site.conference.number %}
 <meta name="citation_conference_sequence_num" content="{{ site.conference.number }}"/>{% endif %}{% if site.conference.abbreviation %}
 <meta name="citation_conference_abbrev" content="{{ site.conference.abbreviation }}"/>{% else %}{% if site.conference.short_name %}
-<meta name="citation_conference_abbrev" content="{{ site.conference.abbreviation }}"/>{% endif %}{% if site.issn %}
-<meta name="citation_issn" content="{{ site.issn }}">{% endif %}{% if false %}
+<meta name="citation_conference_abbrev" content="{{ site.conference.short_name }}"/>{% endif %}{% endif %}{% if site.issn %}
+<meta name="citation_issn" content="{{ site.issn }}">{% endif %}{% if page.layout=='article' %}{% if page.volume %}
 <meta name="citation_volume" content="{{ site.volume }}">{% if page.number %}
-<meta name="citation_issue" content="{{ page.number }}">{%endif%}{% endif %}
-
-<meta name="citation_pdf_url" content="{{ page.pdf }}">
+<meta name="citation_issue" content="{{ page.number }}">{%endif%}{% endif %}{% endif %}
 
 {% if site.booktitle %}
 {% if site.booktitle contains 'Proceedings of' %}
@@ -33,4 +30,6 @@
 {% endif %}
 {% else %}
 <meta name="description" content="{{ site.title }}">
-{% end %}
+{% endif %}
+
+
