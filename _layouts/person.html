@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{% include edit_link.html %}
+
+<h1>{{ page.title }}</h1>
+
+{% assign person=page %}
+
+<p>{% if person.webpage %}<a href="{{ person.webpage }}">Webpage</a>{% endif %}{% if person.orcid %} <a href="https://orcid.org/{{ person.orcid }}">ORCID</a>{% endif %}{% if person.scholar %} <a href="https://scholar.google.co.uk/citations?user={{ person.scholar }}">Google Scholar</a>{% endif %}{% if person.twitter %} <a href="https://twitter.com/{{ person.twitter }}">Twitter</a>{% endif %}{% if person.github %} <a href="https://github.com/{{ person.github }}">GitHub</a>{% endif %}</p>
+
+
+{{ content }}

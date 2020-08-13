@@ -1,0 +1,24 @@
+---
+layout: post
+---
+
+{% include mathjax_code.html %}
+
+{% if page.update %}
+<p><b><i>An update to this report is now <a href="{{ page.update }}">available here.</a></i></b></p>
+{% endif %}
+
+{% if page.note %}
+<p><i>{{ page.note | markdownify }}</i><p>
+{% endif %}
+  
+{% if page.abstract %}
+
+<h2>Summary</h2>
+
+{{ page.abstract | markdownify }}
+{% endif %}
+
+{% include cite-as.html %}
+
+{{ content }}

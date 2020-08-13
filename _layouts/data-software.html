@@ -1,0 +1,20 @@
+---
+layout: post
+---
+
+{% include mathjax_code.html %}
+
+{% if page.authors %}
+{% assign authors=page.authors %}
+<p><i>Prepared for the DELVE Initiative by {% include listauthors.html %}</i></p>{% endif %}
+
+{% if page.abstract %}
+
+<h2>Summary</h2>
+
+{{ page.abstract | markdownify }}
+{% endif %}
+
+{% include cite-as.html %}
+
+{{ content }}
