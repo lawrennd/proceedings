@@ -1,10 +1,12 @@
 {% if page.author %}{% assign authors=page.author %}{% elsif page.authors %}{% assign authors=page.authors %}{% endif %}
+{% if page.layout=='report'%}{% assign pageurl="{{ site.url }}{{ site.baseurl }}/{{ page.url }}" %}{% endif %}
+{% if page.fulltext %}{% assign pageurl=page.fulltext %}{% endif %}
 {% if site.conference.publisher %}<meta name="citation_publisher" content="{{ site.conference.publisher }}"/>{% elsif site.publisher %}<meta name="citation_publisher" content="{{ site.publisher }}"/>{% endif %}
 <meta name="citation_title" content="{{ page.title }}"/>{% if page.doi %}
 <meta name="citation_doi" content="{{ page.doi }}"/>{% endif %}
 <meta name="citation_language" content="en"/>
-<meta name="citation_abstract_html_url" content="{{site.url}}{{site.baseurl}}{{ page.url }}"/>{% if page.fulltext %}
-<meta name="citation_fulltext_html_url" content="{{ page.fulltext }}"/>{% endif %}{% if page.pdf %}
+<meta name="citation_abstract_html_url" content="{{site.url}}{{site.baseurl}}{{ page.url }}"/>{% if pageurl %}
+<meta name="citation_fulltext_html_url" content="{{ pageurl }}"/>{% endif %}{% if page.pdf %}
 <meta name="citation_pdf_url" content="{{ page.pdf }}">{% endif %}{% if page.firstpage %}
 <meta name="citation_firstpage" content="{{ page.firstpage }}">{% if page.lastpage %}
 <meta name="citation_lastpage" content="{{ page.lastpage }}">{% endif %}{% endif %}{% for author in authors %}{% if author.consortium %}
