@@ -1,5 +1,5 @@
 {% if page.author %}{% assign authors=page.author %}{% elsif page.authors %}{% assign authors=page.authors %}{% endif %}
-{% if page.layout=='report'%}{% assign pageurl="{{ site.url }}{{ site.baseurl }}/{{ page.url }}" %}{% endif %}
+{% if page.layout=='report'%}{% assign pageurl=site.url | append: site.baseurl | append: '/' | append: page.url %}" %}{% endif %}
 {% if page.fulltext %}{% assign pageurl=page.fulltext %}{% endif %}
 {% if site.conference.publisher %}<meta name="citation_publisher" content="{{ site.conference.publisher }}"/>{% elsif site.publisher %}<meta name="citation_publisher" content="{{ site.publisher }}"/>{% endif %}
 <meta name="citation_title" content="{{ page.title }}"/>{% if page.doi %}
