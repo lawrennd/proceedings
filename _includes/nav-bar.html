@@ -15,8 +15,6 @@
     {% for pg in pages %}{% if pg.title %}{% unless pg.hide %}
     <a class="page-link" href="{{ pg.url | relative_url }}">{{ pg.title }}</a>{% endunless %}{% endif %}
     {% endfor %}
-    <a class="page-link" href="/talks/">Talks</a>
-    <a class="page-link" href="/publications/">Publications</a>
   </div>
 </nav>
 {%- endif -%}
