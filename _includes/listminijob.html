@@ -1,0 +1,1 @@
+{% if job.url %}<a href="{{ job.url }}">{% endif %}{% if job.title %}{{ job.title }}{% endif %}{% if job.name %}{{ job.name }}{% elsif job.given %}{{ job.given }} {{ job.family }}{% endif %}{% if job.url %}</a>{% endif %}{% if job.institute %} {{ job.institute }}{% endif %}{% unless job == lastone %}{% endunless %}
