@@ -1,7 +1,7 @@
 {%if page.layout=='inproceedings' or page.layout=='report' or page.layout=='techreport' or page.layout=='article' or page.layout=='misc' %}
 {% capture description %}
 {{ page.title }}
-
+{% if page.authors %}{% assign authors=page.authors %}{% elsif page.author %}{% assign authors=page.author %}{% endif %}
 {% include listauthors.html %}
 
 {{ page.abstract | markdownify | strip_html }}
