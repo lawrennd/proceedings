@@ -13,7 +13,8 @@
 <meta name="citation_author" content="{{ author.consortium.name }}">{% else %}
 <meta name="citation_author" content="{{ author.given }} {{ author.family }}">{% endif %}{% if author.institute %}
 <meta name="citation_author_institution" content="{{ author.institute }}">{% endif %}{%if author.email %}
-<meta name="citation_author_email" content="{{ author.email }}">{% endif %}{% endfor %}{% if page.date %}<meta name="citation_publication_date" content="{{ page.date | date: "%Y/%m/%d" }}">{% endif %}{% if site.conference.name %}
+<meta name="citation_author_email" content="{{ author.email }}">{% endif %}{% endfor %}{% if page.date %}
+<meta name="citation_publication_date" content="{{ page.date | date: "%Y/%m/%d" }}">{% endif %}{% if site.conference.name %}
 <meta name="citation_inbook_title" content="{{ site.conference.name }}"/>{% endif %}{% if site.conference.abbreviation %}
 <meta name="citation_conference_series_id" content="{% if site.publisher %}{{ site.publisher | downcase }}{% endif %}/{{ site.conference.abbreviation | downcase }}"/>{% endif %}
 <meta name="citation_conference_title" content="{{ site.conference.name }}"/>{% if site.conference.number %}
