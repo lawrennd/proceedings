@@ -6,7 +6,7 @@
 
 {{ page.abstract | markdownify | strip_html }}
 {% endcapture %}
-<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+<meta name="description" content="{{ description | strip_html | strip_newlines | truncate: 160 }}">
 
 
 
