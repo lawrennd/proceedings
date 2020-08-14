@@ -1,17 +1,17 @@
-{%if include.separator=='table' %}
+{%-if include.separator=='table' -%}
 <tr>
-  {% if talk.hide_time %}
+  {%- if talk.hide_time -%}
   <td colspan="3" class="centered-td">
     {{ talk.title }}
   </td>
-  {% else %}
-  <td class="time-td">{{ talk.start }}{% if talk.end %}&thinsp;–&thinsp;{{ talk.end }}{% endif %}</td>
+  {%- else -%}
+  <td class="time-td">{{ talk.start }}{%- if talk.end -%}&thinsp;–&thinsp;{{ talk.end }}{%- endif -%}</td>
   <td class="separator-td">—</td>
   <td class="title-td">{{ talk.title }}</td>
-  {% endif %}
+  {%- endif -%}
 </tr>
-{% else %}
-{% if include.prefix %}<br>{{ talk.start }}{% if talk.end %}- {{ talk.end }}{% endif %} {% if talk.title %}<b>{% if talk.abstract and page.show_abstracts%}<a class='talk' href='#{{ talk.title | remove: ' ' | remove: ':' }}'>{{ talk.title }}</a>{% else %}{{talk.title}}{% endif %}</b> {% endif %}{% for person in talk.author %}{% include listperson.html %}{% endfor %}{% if talk.slides %} [<a href="{{ site.url }}{{ site.baseurl }}/slides/{{ talk.slides }}">slides</a>]{% endif %}{% if talk.ipynb %}[<a href=https://nbviewer.jupyter.org/github/{{ site.github_username }}/{{ site.ghub.repository }}/blob/gh-pages/slides/{{ talk.ipynb }}>jupyter notebook</a>]{% endif %}</br> 
-{% if talk.youtube %} <iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ talk.youtube }}" frameborder="0" allowfullscreen></iframe>
-{% endif %}
-{% endif %} 
+{%- else -%}
+{%- if include.prefix -%}{{ include.prefix }}{%- else -%}<br>{%- endif -%}{{ talk.start }}{%-if talk.end-%}-{{ talk.end }}{%- endif -%}&nbsp;{%- if talk.title -%}<b>{%-if talk.abstract and page.show_abstracts-%}<a class='talk' href='#{{ talk.title | remove: ' ' | remove: ':' }}'>{{ talk.title }}</a>{%- else -%}{{talk.title}}{%- endif -%}</b> {%- endif -%}{%-if talk.author-%}{%-assign authors=talk.author%}{%-elsif talk.authors-%}{%-assign authors=talk.authors-%}{%-else-%}{%assign authors=false %}{%-endif-%}{%-include listauthors.html details=true-%}{%- if talk.slides -%} [<a href="{{ site.url }}{{ site.baseurl }}/slides/{{ talk.slides }}">slides</a>]{%- endif -%}{%- if talk.ipynb -%}[<a href=https://nbviewer.jupyter.org/github/{{ site.github_username }}/{{ site.ghub.repository }}/blob/gh-pages/slides/{{ talk.ipynb }}>jupyter notebook</a>]{%- endif -%}{%- if include.postfix -%}{{ include.postfix }}{%-else-%}</br> {%-endif-%}
+{%- if talk.youtube -%} <iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ talk.youtube }}" frameborder="0" allowfullscreen></iframe>
+{%- endif -%}
+{%- endif -%} 
