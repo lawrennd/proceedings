@@ -17,10 +17,15 @@ layout: default
           {{ mdate | date: date_format }}
         </time>
       {%- endif -%}
-      {%- if page.author -%}
-        • {% for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+	{%- if page.author -%}
+	{%- assign authors=page.author -%}
+	{%- elsif page.authors -%}
+	{%- assign authors=page.authors -%}
+	{%- endif -%}
+	{% if authors %}
+        • {% for author in authors %}
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{%-if author.name %}{{ author.name }}{% elsif author.given %}{{ author.given }} {{ author.family }}{% else %}{{ author }}{%-endif-%}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
