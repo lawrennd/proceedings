@@ -1,26 +1,25 @@
 <head>
-  <!-- Charset and viewport -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- capture description -%}
+  {%-capture description-%}
   <p>This is the home page of {{ site.conference.short_name }} {{ site.conference.year }}.</p>
   
-  {% include conference_description.html %}
-  {%- endcapture -%}
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description | strip_html }}{% endif %}">
-  <link rel="shortcut icon" href="{{ '/assets/images/favicon-aistats.ico' | relative_url }}" type="image/x-icon">
-  <link rel="icon" href="{{ '/assets/images/favicon-aistats.ico' | relative_url }}" type="image/x-icon">  
-
-  <!-- Canonical link and RSS feed -->
-  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" />
+  {%-include conference_description.html-%}
+  {%-endcapture-%}
+  <!-- Title, description and favicon -->
+  <title>{%-if page.title-%}{{ page.title }}{%-endif-%} | {{ site.title }}</title>
+  <meta name="description" content="{%-if page.excerpt-%}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{%-else-%}{{ description | strip_html | strip_newlines | truncate: 160}}{%-endif-%}">
+  <link rel="stylesheet" type="text/css" href="{{ site.style | prepend: "/assets/css/" | append: '.css' | relative_url}}" />
+  <link rel="shortcut icon" href="{{ site.style | prepend: '/assets/images/favicon-' | append: '.ico' | relative_url }}" type="image/x-icon">
+  <link rel="icon" href="{{ site.style | prepend: '/assets/images/favicon-' | append: '.ico' | relative_url }}" type="image/x-icon">  
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/assets/rss/feed.xml' | relative_url }}" />
-  
-  <link rel="stylesheet" type="text/css" href="{{site.url}}{{site.baseurl}}/assets/css/aistats.css" />
 
-  {%- seo -%}
-  {% include google_tracking_code.html %}  
-  {% include mathjax_code.html %}
+  {%-include paper_twitter_meta.html-%}
+  {%-include paper_open_graph_meta.html-%}
+
+  {%-include google_tracking_code.html-%}
+  {%-include mathjax_code.html-%}
+
 </head>
-
