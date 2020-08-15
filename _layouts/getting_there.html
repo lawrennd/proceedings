@@ -1,0 +1,10 @@
+---
+layout: page
+---	  
+<article>
+
+<p>The {{ site.conference.name }} conference will take place at the <a href="{{ site.conference.venue_url }}">{{ site.conference.venue }}</a> from {{ site.conference.dates[0] | date: "%A %B, %-d %Y" }} to  {{ site.conference.dates.last | date: "%A %B, %-d %Y" }}.</p>
+
+{{ content }}
+
+</article>
