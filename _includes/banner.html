@@ -1,3 +1,3 @@
 <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-{% if site.banner or page.banner %}<div class="header-image-wrap"><div class="inner-wrap"><img src="{% if page.banner %}{{ page.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% else %}{{ site.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% endif %}" class="header-image" width="1280" height="290" alt="{{ site.title }}"></div>{% endif %}
+{% if site.banner or page.banner %}<div class="header-image-wrap"><div class="inner-wrap"><img src="{% if page.banner %}{{ page.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% else %}{{ site.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% endif %}" class="header-image" width="1280" height="290" alt="{{ site.title }}"></div></div>{% endif %}
   
