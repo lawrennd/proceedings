@@ -1,24 +1,19 @@
-{%if page.layout=='inproceedings' or page.layout=='report' or page.layout=='techreport' or page.layout=='article' or page.layout=='misc' or page.layout=='post' or page.layout=='talk' or page.layout=='lecture'%}
-{% capture description %}
+{%-if page.layout=='inproceedings' or page.layout=='report' or page.layout=='techreport' or page.layout=='article' or page.layout=='misc' or page.layout=='post' or page.layout=='talk' or page.layout=='lecture'-%}
+{%-capture description-%}
 {{ page.title }}
-{% if page.authors %}{% assign authors=page.authors %}{% elsif page.author %}{% assign authors=page.author %}{% endif %}
-{% include listauthors.html %}
+{%-if page.authors-%}{%-assign authors=page.authors-%}{%-elsif page.author-%}{%-assign authors=page.author-%}{%-endif-%}
+{%-include listauthors.html-%}
 
 {{ page.abstract | markdownify | strip_html }}
-{% endcapture %}
+{%-endcapture-%}
 <meta name="description" content="{{ description | strip_html | strip_newlines | truncate: 160 }}">
 
+{%-include hidden_copy_code.html-%}
+{%-include paper_google_scholar.html-%}
+{%-include paper_twitter_meta.html-%}
+{%-include paper_open_graph_meta.html-%}
 
-
-{% include hidden_copy_code.html %}
-{% include paper_google_scholar.html %}
-
-{% include paper_twitter_meta.html %}
-
-{% include paper_open_graph_meta.html %}
-
-{% else  %}
-{%- seo -%}
-<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-{% endif %}
+{%-else -%}
+{%-seo-%}
+{%-endif-%}
 
