@@ -9,7 +9,7 @@
     <span class="menu-icon">
       {% include svg/menu-icon-minima.svg %}
     </span>
-  </label>
+</label>
   <div class="trigger">
   <ul id="leftnavlist">
     <li><a id="home" class="page-link" href="./index.html">Home</a></li>
@@ -22,4 +22,11 @@
   </ul>
   </div>
 </nav>
+  {% if page.title %}
+  {% assign id = page.title | downcase | replace:' ','-' | replace:',','' | replace: '/','' %}
+  <script type="text/javascript">
+  document.getElementById('{{ id }}').id='leftcurrent';
+</script>
+{% endif %}
+
 {% endif %}
