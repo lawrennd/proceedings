@@ -1,6 +1,20 @@
-<table>
-  <tr>
-    <td><a align="left" class="site-logo" href="{{site.url}}" target=_top><img align="right" class="jmlr" src="{{site.url}}{{site.baseurl}}/assets/images/logo-pmlr.png" border="0"></a> </td>
-    <td><p class="site-title">{{ site.title }}</p></td>
-  </tr>
-</table>
+{% if site.banner or page.banner %}{% capture banner_image_url %}{% if page.banner %}{{ page.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% else %}{{ site.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% endif %}{% endcapture %}{% endif %}
+{% capture banner_title %}{% if site.banner_title or page.banner_title %}{%if page.banner_title %}{{ page.banner_title }}{% else %}{{site.banner_title }}{% endif %}{% else %}{{ site.title }}{%endif%}{% endcapture %}
+<style>{%- if banner_image_url -%}
+.hero-image {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url({{ banner_image_url }}) ;
+}
+  {%- else -%}
+.hero-text {
+  color: #303030;
+}
+{%- endif -%}
+  </style>
+
+<div class="hero-image">
+  <div class="hero-text">
+    <a href="/" target="_top"><img src="{{ site.baseurl }}/assets/images/logo-pmlr.png" alt="[{{ site.conference.name }} Logo]"></a>
+    {{ banner_title }}
+  </div>
+</div>
+

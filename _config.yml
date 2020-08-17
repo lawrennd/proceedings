@@ -12,6 +12,8 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/proceedings" # the subpath of your site, e.g. /blog/
 github_username:  lawrennd
 
+style: pmlr
+
 comments: false
 
 ghub:

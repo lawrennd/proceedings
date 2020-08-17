@@ -66,6 +66,34 @@ font-size:75%;
     width: 7em;
 }
 
+/* This deals with the image at the top, placing logo on left. */
+
+.hero-image {
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-image img {
+  padding-right: 10px;
+  margin: 10px 0 5px 10px;
+  width: 110px;
+  float: left;
+}
+
+.hero-text {
+  margin-left: 0.6em ;
+  padding-left: 10px ;
+  padding-top: 10px ;
+  padding-bottom: 30px ;
+  font-weight: bold ;
+  text-align: left ;
+  font-size: 2em;
+}
+
+
+
 .page-content {
     padding: $spacing-unit 1;
 }
