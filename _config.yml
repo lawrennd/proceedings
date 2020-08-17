@@ -27,6 +27,14 @@ encoding: utf-8
 
 banner: resort.png
 
+display:
+  copy_button:
+    bibtex: true
+    endnote: true
+    apa: true
+    ris: true
+  comments: false
+
 conference:
   draft: false # set to True if the programme is draft only.
   image: conference-venue.png

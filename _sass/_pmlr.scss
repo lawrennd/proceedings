@@ -92,6 +92,33 @@ font-size:75%;
   font-size: 2em;
 }
 
+/*** code button copy ***/
+
+.codebox {
+    display: none;
+}
+
+.bibbutton {
+    border-radius: 2px;
+    float:         right;
+}
+.bibbuttontext {
+    border-radius: 2px;
+    float:        left;
+}
+.bibbuttongroup {
+    cursor: pointer; /* Pointer/hand icon */
+}
+.bibbuttongroup:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.bibhr {
+    padding:0;
+    margin:2px;
+}
 
 
 .page-content {
