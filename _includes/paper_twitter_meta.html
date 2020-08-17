@@ -2,19 +2,24 @@
 <meta name="twitter:title" content="{{ page.title }}"/>
 {%-if site.twitter_username-%}
 <meta name="twitter:site" content="@{{ site.twitter_username }}" />
+
 {%-endif-%}
 <meta name="twitter:description" content="{{ page.abstract | markdownify | strip_html | strip_newlines | truncate: 160 }}"/>
 {%-if site.conference.logo-%}
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.conference.logo }}"/>
 <meta name="twitter:image:alt" content="Conference Logo"/>
-{%elsif site.logo-%}
+
+{%-elsif site.logo-%}
 <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ site.logo }}"/>
 <meta name="twitter:image:alt" content="Logo"/>
+
 {%-elsif site.style=='pmlr'-%}
 <meta name="twitter:image" content="{{site.url}}{{ site.baseurl }}/assets/images/logo-pmlr.png"/>
 <meta name="twitter:image:alt" content="PMLR Logo"/>
+
 {%-elsif site.style=='aistats'-%}
 <meta name="twitter:image" content="{{site.url}}{{ site.baseurl }}/assets/images/logo-aistats.jpg"/>
 <meta name="twitter:image:alt" content="AISTATS Logo"/>
+
 {%-endif-%}
 
