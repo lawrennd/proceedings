@@ -2,12 +2,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--- Search Engine Info --->
+  <!-- Search Engine Info -->
   {%- include seo-info.html -%}
-  <!--- Style Info --->
+  <!-- Style Info -->
   <link rel="stylesheet" type="text/css" href="{{site.url}}{{site.baseurl}}/assets/css/pmlr.css" />
-  {%- if banner_image_url -%}
   <style>
+  {%- if banner_image_url -%}
   .hero-image {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url({{ banner_image_url }}) ;
   }
@@ -15,17 +15,17 @@
   .hero-text {
     color: #303030;
   }
-  </style>
   {%- endif -%}
+  </style>
 
-  <!--- Icon Info --->
+  <!-- Icon Info -->
   <link rel="shortcut icon" href="{{site.url}}{{site.baseurl}}/assets/images/favicon-pmlr.ico" type="image/x-icon">
   <link rel="icon" href="{{site.url}}{{site.baseurl}}/assets/images/favicon-pmlr.ico" type="image/x-icon">
 
-  <!--- Feed Info --->
+  <!-- Feed Info -->
   {%- feed_meta -%}
 
-  <!--- Scripting info --->
+  <!-- Scripting info -->
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
@@ -33,7 +33,7 @@
   {%- include google_tracking_code.html -%}  
   {% include mathjax_code.html %}
 
-  <!--- User custom header --->
+  <!-- User custom header -->
   {%- include custom-head.html -%}
 
   
