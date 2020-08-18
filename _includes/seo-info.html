@@ -1,4 +1,5 @@
 {%-if page.layout=='inproceedings' or page.layout=='report' or page.layout=='techreport' or page.layout=='article' or page.layout=='misc' or page.layout=='post' or page.layout=='talk' or page.layout=='lecture'-%}
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 {%-capture description-%}
 {{ page.title }}
 {%-if page.authors-%}{%-assign authors=page.authors-%}{%-elsif page.author-%}{%-assign authors=page.author-%}{%-endif-%}
