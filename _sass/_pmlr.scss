@@ -186,3 +186,43 @@ img.jmlr {
 img.rss {
     width: 2em;
 }
+
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  font-size: small;
+  color: darken($grey-color, 15);
+  line-height: 1.5em;
+
+  a { 
+    color: darken($grey-color, 15); 
+
+    &:hover {
+      text-decoration: none;
+      color: $brand-color;
+    }
+  }
+}
+
+.footer-left {
+  float: left;
+
+  @include media-query($on-mobile) {
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.footer-right {
+  float: right;
+  text-align: right;
+
+  @include media-query($on-mobile) {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
