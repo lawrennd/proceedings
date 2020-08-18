@@ -1,4 +1,14 @@
 <header class="site-header">
+<style>{%- if banner_image_url -%}
+.hero-image {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url({{ banner_image_url }}) ;
+}
+  {%- else -%}
+.hero-text {
+  color: #303030;
+}
+{%- endif -%}
+  </style>
 
   <div class="wrapper">
     {% include pmlr/banner.html %}
