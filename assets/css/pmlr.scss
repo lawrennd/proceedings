@@ -3,11 +3,65 @@
 
 ---
 
+@import
+"minima/skins/{{ site.minima.skin | default: 'classic' }}";
+
+@charset "UTF-8";
+
+// Define defaults for each variable.
+
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
+$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px;
+
+$text-color:       #303030;
+$background-color: #fff;
+$brand-color:      #2a7ae2;
+
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+$on-mobile:        480px !default;
+
+$on-medium:        $on-palm !default;
+$on-large:         $on-laptop !default;
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('{{ "/assets/icons/fonts/icomoon.eot?2vj544" | relative_url | prepend: site.url }}');
+  src:  url('{{ "/assets/icons/fonts/icomoon.eot?2vj544#iefix" | relative_url | prepend: site.url }}') format('embedded-opentype'),
+    url('{{ "/assets/icons/fonts/icomoon.ttf?2vj544" | relative_url | prepend: site.url }}') format('truetype'),
+    url('{{ "/assets/icons/fonts/icomoon.woff?2vj544" | relative_url | prepend: site.url }}') format('woff'),
+    url('{{ "/assets/icons/fonts/icomoon.svg?2vj544#icomoon" | relative_url | prepend: site.url }}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: #{$ratio}rem;
+}
+
 @import
-  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize",
   "pmlr";
