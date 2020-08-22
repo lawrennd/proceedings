@@ -1,5 +1,13 @@
-{% if site.conference.chairs %}
-{% for chair in site.conference.chairs %}
+{%- if site.conference.chairs -%}
+{%- for chair in site.conference.chairs -%}
   {%- include listchairs.html header=include.header -%}
-{% endfor %}
-{% endif %}
+{%- endfor -%}
+{%- endif -%}
+{%-if site.data.program_committee-%}
+<{{ include.header }}>Program Committee</{{ include.header }}>
+<ul>
+  {% for person in site.data.program_committee %}
+  {% include listperson.html prefix='<li>' postfix='</li>' separator='' %}
+  {%endfor%}
+</ul>
+{%- endif -%}
