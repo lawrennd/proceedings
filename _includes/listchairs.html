@@ -2,6 +2,6 @@
 <{{ header }}>{{ chair.type }}</{{ header }}>
 <ul>
   {% for person in chair.people %}
-  {% include listperson.html prefix='<li>' postfix='</li>' separator='' %}
+  {% include listperson.html prefix='<li>' postfix='</li>' separator='' details=true %}
   {%endfor%}
 </ul>
