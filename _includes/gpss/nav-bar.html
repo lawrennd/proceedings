@@ -7,12 +7,14 @@
   <input type="checkbox" id="nav-trigger" class="nav-trigger" />
   <label for="nav-trigger">
     <span class="menu-icon">
-      {% include svg/menu-icon-minima.svg %}
+      {%-include svg/menu-icon-minima.svg-%}
     </span>
   </label>
   <div class="trigger">
-    {% assign pages = site.html_pages | sort: "weight" %}
-    {% for pg in pages %}{% include listmenupg.html separator="<i class=\"page-link-separator\"></i>" %}{% endfor %}
+    {%-assign pages = site.html_pages | sort: "weight"-%}
+    {%-for pg in pages-%}{%-include listmenupg.html separator="<i class=\"page-link-separator\"></i>"-%}{%-endfor-%}
+    {%-if site.conference.proceedings.show-%}
+    {%-if site.conference.proceedings.url-%}><a class="page-link" href="{{ site.conference.proceedings.url }}" target="_blank">Proceedings</a><i class=\"page-link-separator\"></i>{%-endif-%}{%-endif-%}
   </div>
 </nav>
-{% endif %}
+{%-endif-%}
