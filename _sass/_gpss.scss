@@ -1,5 +1,31 @@
 .header-image { width: 100%; }
 
+.hero-image {
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-image img {
+  padding-right: 10px;
+  margin: 10px 0 5px 10px;
+  float: left;
+  width: 140px;
+}
+
+.hero-text {
+  margin-left: 0.6em ;
+  padding-left: 10px ;
+  padding-top: 10px ;
+  padding-bottom: 30px ;
+  font-weight: bold ;
+  text-align: left ;
+  color: white;
+  font-size: 2em;
+}
+
+
 .content {
   padding-top: $spacing-unit;
   padding-bottom: $spacing-unit;
