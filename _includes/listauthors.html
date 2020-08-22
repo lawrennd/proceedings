@@ -1,5 +1,5 @@
 <span class="authors">  
-  {% for person in authors %}{% if person.consortium %}{% assign person.name=person.consortium.name %}{% endif %}
-  {% include listperson.html details=include.details %}
-  {% endfor %}
+  {%-for person in authors-%}{%-if person.consortium-%}{%-assign person.name=person.consortium.name-%}{%-endif-%}
+  {%-include listperson.html details=include.details-%}
+  {%-endfor-%}
 </span>

@@ -1,16 +1,21 @@
 <article class="post-content">
   <h1>{{ page.title }}</h1>
-  {% include edit_link.html %}
-  {% if page.authors %}{% assign authors=page.authors %}{% elsif page.author %}{% assign authors=page.author %}{% endif %}
-  {% include listauthors.html %}
-<div id="info" class="authors">
-    {{ page.container-title }}, {{ site.publisher }} {{ page.volume }}{% if page.number %}({{page.number}}){%endif%}:{{ page.page }}, {{ page.issued.date-parts.first }}.
+  {%-if page.authors-%}{%-assign authors=page.authors-%}{%-elsif page.author-%}{% assign authors=page.author-%}{%-endif-%}
+  {%-include listauthors.html-%}
+  <div id="info">
+    {%-if page.container-title-%};&nbsp;{{ page.container-title }}{%-endif-%}{%-if site.publisher or page.volume-%},&nbsp;{%-endif-%}{{ site.publisher }} {{ page.volume }}{%-if page.volume -%}{%-if page.number-%}({{page.number}}){%-endif-%}{%-endif-%}{%-if page.firstpage-%}:{{ page.firstpage }}{%-if page.lastpage-%}-{{ page.lastpage }}{%-endif-%}{%-endif-%}{%-if page.issued.date-parts or page.year or page.date-%},&nbsp;{%-endif-%}{%-if page.issued-%}{{ page.issued.date-parts.first }}{%-elsif page.year-%}{{ page.year }}{%-elsif page.date-%}{{ page.date | date: "%Y" }}{%-endif-%}.
   </div> <!-- info -->
   {% if page.abstract %}
   <h4>Abstract</h4>
   <div id="abstract" class="abstract">
     {{ page.abstract }}
   </div>{% endif %}{% if page.pdf or page.supplementary or page.extras %}
+  <h4>Cite this Paper</h4>
+
+{% capture id %}pmlr-v{{ site.volume }}-{{ page.id | remove_first: '/' }}{% endcapture %}
+
+{% include copy_sections.html %}
+  
   <h4>Related Material</h4>
   <div id="extras">
     <ul>

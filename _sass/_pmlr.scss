@@ -66,6 +66,65 @@ font-size:75%;
     width: 7em;
 }
 
+/* This deals with the image at the top, placing logo on left. */
+
+.hero-image {
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-image img {
+  padding-right: 10px;
+  margin: 10px 0 5px 10px;
+  width: 110px;
+  float: left;
+}
+
+.hero-text {
+  margin-left: 0.6em ;
+  padding-left: 10px ;
+  padding-top: 10px ;
+  padding-bottom: 30px ;
+  font-weight: bold ;
+  text-align: left ;
+  font-size: 2em;
+}
+
+/*** code button copy ***/
+
+.codebox {
+    width: 1px;
+    height: 1px;
+    border: none;
+    background: $background-color;
+}
+
+.bibbutton {
+    border-radius: 2px;
+    float:         right;
+}
+.bibbuttontext {
+    border-radius: 2px;
+    float:        left;
+}
+.bibbuttongroup {
+    cursor: pointer; /* Pointer/hand icon */
+}
+.bibbuttongroup:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.bibhr {
+    padding:0;
+    margin: 2px 0px;
+    border-top: 1px;
+}
+
+
 .page-content {
     padding: $spacing-unit 1;
 }
@@ -126,4 +185,44 @@ img.jmlr {
 }
 img.rss {
     width: 2em;
+}
+
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  font-size: small;
+  color: darken($grey-color, 15);
+  line-height: 1.5em;
+
+  a { 
+    color: darken($grey-color, 15); 
+
+    &:hover {
+      text-decoration: none;
+      color: $brand-color;
+    }
+  }
+}
+
+.footer-left {
+  float: left;
+
+  @include media-query($on-mobile) {
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.footer-right {
+  float: right;
+  text-align: right;
+
+  @include media-query($on-mobile) {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -12,6 +12,8 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/proceedings" # the subpath of your site, e.g. /blog/
 github_username:  lawrennd
 
+style: ads
+
 comments: false
 
 ghub:
@@ -24,6 +26,14 @@ markdown: kramdown
 encoding: utf-8
 
 banner: resort.png
+
+display:
+  copy_button:
+    bibtex: true
+    endnote: true
+    apa: true
+    ris: true
+  comments: false
 
 conference:
   draft: false # set to True if the programme is draft only.
