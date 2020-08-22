@@ -1,11 +1,12 @@
+{% if include.header %}{% assign header=include.header %}{% else %}{% assign header='h3' %}{% endif %}
 {%- if site.conference.chairs -%}
 {%- for chair in site.conference.chairs -%}
-  {%- include listchairs.html header=include.header -%}
+  {%- include listchairs.html header=header -%}
 {%- endfor -%}
 {%- endif -%}
 {%- if include.program_committee -%}
 {%-if site.data.program_committee-%}
-<{{ include.header }}>Program Committee</{{ include.header }}>
+<{{ header }}>Program Committee</{{ header }}>
 <ul>
   {% for person in site.data.program_committee %}
   {%- include listperson.html prefix='<li>' postfix='</li>' separator='' -%}
