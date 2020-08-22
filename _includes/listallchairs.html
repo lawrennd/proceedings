@@ -8,7 +8,7 @@
 <{{ include.header }}>Program Committee</{{ include.header }}>
 <ul>
   {% for person in site.data.program_committee %}
-  {% include listperson.html prefix='<li>' postfix='</li>' separator='' %}
+  {%- include listperson.html prefix='<li>' postfix='</li>' separator='' -%}
   {%endfor%}
 </ul>
 {%- endif -%}
