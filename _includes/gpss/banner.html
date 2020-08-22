@@ -1,15 +1,5 @@
 {% if site.banner or page.banner %}{% capture banner_image_url %}{% if page.banner %}{{ page.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% else %}{{ site.banner | prepend: "/assets/images/" | prepend: site.baseurl }}{% endif %}{% endcapture %}{% endif %}
 {% capture banner_title %}{% if site.banner_title or page.banner_title %}{%if page.banner_title %}{{ page.banner_title }}{% else %}{{site.banner_title }}{% endif %}{% else %}{{ site.conference.name }} {{ site.conference.year }}{%endif%}{% endcapture %}
-<style>{%- if banner_image_url -%}
-.hero-image {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url({{ banner_image_url }}) ;
-}
-  {%- else -%}
-.hero-text {
-  color: #303030;
-}
-{%- endif -%}
-  </style>
 
 <div class="hero-image">
   <div class="hero-text">
