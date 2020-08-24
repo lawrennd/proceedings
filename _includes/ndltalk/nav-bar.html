@@ -6,7 +6,7 @@
     </span>
   </label>
   <div class="trigger">
-    <a id="home" href="{{ site.url }}{{ site.base.url }}/index.html">Home</a>
+    <a id="home" class="page-link" href="{{ site.url }}{{ site.base.url }}/index.html">Home</a>
     {% assign pages = site.pages | sort:"weight"  %}     
     {% for pg in pages %}
     {% include listmenupg.html %}
