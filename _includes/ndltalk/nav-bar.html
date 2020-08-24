@@ -1,9 +1,12 @@
 <nav class="site-nav">
-  <a href="#" class="menu-icon">
-    {% include svg/menu-icon-minima.svg %}
-  </a>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">
+    <span class="menu-icon">
+      {% include svg/menu-icon-minima.svg %}
+    </span>
+  </label>
   <div class="trigger">
-    <a id="home" href="./index.html">Home</a>
+    <a id="home" href="{{ site.url }}{{ site.base.url }}/index.html">Home</a>
     {% assign pages = site.pages | sort:"weight"  %}     
     {% for pg in pages %}
     {% include listmenupg.html %}
