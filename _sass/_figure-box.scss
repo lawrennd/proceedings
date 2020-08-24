@@ -108,34 +108,34 @@
   background-color: white;
 }
 .figure > .figure-frame > img {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 .figure > .figure-frame > table {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 .figure > .figure-frame > iframe {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 .figure > .figure-frame > div > img {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 .figure > .figure-frame > div > iframe {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 .figure > .figure-frame > object {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 .figure > .figure-frame > div > object {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 .figure > .caption-frame {
-    max-width:$float-width;
+    max-width:$content-width;
 }
 
 /* Image animations from Open AI Gym when in their float */
 .figure > .figure-frame > iframe > .animation > img {
     width:100%;
-    max-width:$float-width;
+    max-width:$content-width;
 }
 
 .caption-frame {
