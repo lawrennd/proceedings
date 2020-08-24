@@ -4,9 +4,9 @@ layout: default
 
 <h1>Week {{page.week}}: {{ page.title }}</h1>
 
-<p>{% include talklinks.html %}</p>
+<p>{%- include talklinks.html -%}</p>
 
-<p>{% assign lastone = page.author | last %}
+<p>
 {% for person in page.author %}
 {% include listperson.html %}
 {% endfor %}</p>
