@@ -1,17 +1,30 @@
 {% include layout.html include="footer.html" %}
 {% if default_include %}
-<body>
-  <div id="content">
-    <center>This site last compiled {{ site.time | date_to_rfc822 }}</center>
-
-    <table width="100%">
-      <tr>{%if site.github_username %}
-	<td align="left"><font size="-1">
-	    <i><a href="https://github.com/{{ site.github_username }}{{ site.baseurl }}">Github Account</a></i></font></td>{%endif%}{%if site.author.name %}
-	<td align="right"><font size="-1">
-	    Copyright &copy <a href="{{site.url}}">{{ site.author.name }}</a> {{ site.time | date: "%Y" }}. All rights reserved.</font></td>{%endif%}
-      </tr>
-    </table>
+<footer class="site-footer">
+<div class="wrapper">
+This site last compiled {{ site.time | date_to_rfc822 }}
+</div>
+  <!-- Basic conference information -->
+  <div class="footer-left">
   </div>
-</body>
+
+  <!-- Social media and contact information -->
+  <div class="footer-right">
+
+    {% if site.contact_email %}
+    <a href="mailto:{{ site.contact_email }}"><i class="icon-envelope"></i>&nbsp;Contact Mail</a><br/>
+    {% endif %}
+
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}"><i class="icon-github"></i>&nbsp;{{ site.github_username }}</a><br/>
+    {% endif %}
+
+    {% if site.twitter_username %}
+    <a href="https://twitter.com/{{ site.twitter_username }}"><i class="icon-twitter"></i>&nbsp;{{ site.twitter_username }}</a>
+    {% endif %}
+
+  </div>
+
+</div>
+</footer>
 {% endif %}

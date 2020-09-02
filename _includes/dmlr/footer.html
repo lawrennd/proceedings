@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <p>This site last compiled {{ site.time | date_to_rfc822 }}</p>
+      <div class="footer-left">
+	{%-if site.github_username-%}
+	<i><a href="https://github.com/{{ site.github_username }}{{ site.baseurl }}">Github Account</a></i>{%endif%}
+      </div>
+      <div class="footer-right">
+	{%-if site.author.name-%}	
+	Copyright &copy; <a href="{{site.url}}">The authors and {{ site.author.name }}</a> {{ site.time | date: "%Y" }}.
+        {%-endif-%}
+        {%-if site.author.email-%}
+        <a href="mailto:{{ site.author.email }}"><i class="icon-envelope"></i>&nbsp;Contact Mail</a><br/>
+        {%-endif-%}
+        {%-if site.twitter_username-%}
+        <a href="https://twitter.com/{{ site.twitter_username }}"><i class="icon-twitter"></i>&nbsp;{{ site.twitter_username }}</a>
+        {%-endif-%}
+     </div>
+  </div>
+</footer>
