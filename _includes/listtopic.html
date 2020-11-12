@@ -1,7 +1,8 @@
 <div class="lecture">
-  <p><b>Topic:</b> {{ topic.label }}</p>
-  <p><b>Title:</b> <a href="{{site.baseurl}}{{topic.url}}">{{ topic.title }}</a></p>
-  <p><b>Lecturer:</b> {% assign authors = topic.author %}{% include listauthors.html %}</p>
-  {%if topic.venue %}<p><b>Venue:</b> {{topic.venue }}</p>{%endif%}
-  {%if topic.date %}<p><b>Date:</b> {{ topic.date | date: '%B %d, %Y' }}</p>{%endif%}
+  <h3>{%-if topic.label-%}<b>Topic:</b>&nbsp;{{ topic.label }}&nbsp;{%-endif-%}<a href="{{site.baseurl}}{{topic.url}}"><b>{%-if topic.week and topic.week>0-%}Week {{ topic.week }}{%-endif-%}{%-if topic.session and topic.session>0-%}{%-if topic.week and topic.week>0-%}&nbsp;{%-endif-%}Session {{ topic.session }}{%-endif-%}:</b> {{ topic.title }}</a></h3>
+  <p><b>Lecturer:</b>&nbsp;{%- assign authors = topic.author -%}{%- include listauthors.html -%}
+  {%-if topic.room -%}<br><b>Room:</b>&nbsp;{{topic.room }}{%-endif-%}
+  {%-if topic.venue -%}<br><b>Venue:</b>&nbsp;{{topic.venue }}{%-endif-%}
+    {%-if topic.date -%}<br><b>Date:</b>&nbsp;{{ topic.date | date: '%A, %B %d, %Y' }}{%-endif-%}
+    {%-if topic.time -%}<br><b>Time:</b>&nbsp;{{ topic.time }}{%-endif-%}</p>
 </div>
