@@ -9,21 +9,19 @@
   <h4>Abstract</h4>
   <div id="abstract" class="abstract">
     {{ page.abstract }}
-  </div>{% endif %}{% if page.pdf or page.supplementary or page.extras %}
+  </div>{% endif %}
   <h4>Cite this Paper</h4>
-
 {% capture id %}pmlr-v{{ site.volume }}-{{ page.id | remove_first: '/' }}{% endcapture %}
-
 {% include copy_sections.html %}
-  
+  {% if page.pdf or page.software or page.supplementary or page.extras %}
   <h4>Related Material</h4>
   <div id="extras">
     <ul>
       <li><a href="{{ page.pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ page.pdf }}', 10);">Download PDF</a></li>{% if page.supplementary %}
-      <li><a href="{{ page.supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ page.supplementary }}', 11);">Supplementary Material</a></li>{% endif %}
-      {% for extra in page.extras %}
-      <li><a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', '{{ extra.link }}', 12);">{{ extra.label }}</a></li>
-      {% endfor %}
+      <li><a href="{{ page.supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ page.supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if page.software %}
+      <li><a href="{{ page.software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ page.software }}', 0);">Software</a><li>{% endif %}{% if page.video %}
+      <li><a href="{{ page.video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ page.video }}', 0);">Video</a><li>{% endif %}{% for extra in page.extras %}
+      <li><a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', '{{ extra.link }}', 12);">{{ extra.label }}</a></li>{% endfor %}
     </ul>
   </div>{% endif %}
   {{ content | markdownify }}
