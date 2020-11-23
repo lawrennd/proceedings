@@ -1,7 +1,7 @@
 {% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}@InProceedings{{o}}{{ id }},
   title = 	 {{o}}{% if page.tex_title %}{{ page.tex_title }}{% else %}{{page.title}}{% endif %}{{c}},{% if page.bibtex_author %}
   author =       {{o}}{{ page.bibtex_author }}{{c}},{%else%}
-  author = 	 {{o}}{% for person in authors %}{{ person.given }} {{ person.family }}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}},{% endif %}{% if page.layout=='inproceedings' %}
+  author = 	 {{o}}{% for person in authors %}{%-if person.consortium-%}{%-assign person.name=person.consortium.name-%}{%-endif-%}{%if person.name %}{{o}}{{ person.name }}{{c}}{% else %}{{ person.given }} {{ person.family }}{% endif %}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}},{% endif %}{% if page.layout=='inproceedings' %}
   booktitle = 	 {{o}}{{ page.container-title }}{{c}},{% endif %}{% if page.firstpage and page.lastpage %}
   pages = 	 {{o}}{{ page.firstpage }}--{{ page.lastpage }}{{c}},{% endif %}{% if page.date %}
   year = 	 {{o}}{{ page.date | date: "%Y" }}{{c}},{% else %}
