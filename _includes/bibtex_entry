@@ -1,23 +1,23 @@
-{% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}@InProceedings{{o}}{{ id }},
-  title = 	 {{o}}{% if page.tex_title %}{{ page.tex_title }}{% else %}{{page.title}}{% endif %}{{c}},{% if page.bibtex_author %}
-  author =       {{o}}{{ page.bibtex_author }}{{c}},{%else%}
-  author = 	 {{o}}{% for person in authors %}{%-if person.consortium-%}{%-assign person.name=person.consortium.name-%}{%-endif-%}{%if person.name %}{{o}}{{ person.name }}{{c}}{% else %}{{ person.given }} {{ person.family }}{% endif %}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}},{% endif %}{% if page.layout=='inproceedings' %}
+{% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}{% if page.editor %}{% assign editors=page.editor %}{%elsif site.editor%}{% assign editors=site.editor %}{% endif %}{% if page.layout=='inproceedings' %}@InProceedings{%elsif page.layout=='report'%}@TechReport{%elsif page.layout=='article'%}@Article{%else%}@Misc{%endif%}{{o}}{{ id }},
+  title = 	 {{o}}{% if page.tex_title %}{{ page.tex_title }}{% else %}{{page.title}}{% endif %}{{c}}{% if page.bibtex_author %},
+  author =       {{o}}{{ page.bibtex_author }}{{c}}{%else%},
+  author = 	 {{o}}{% for person in authors %}{%-if person.consortium.name -%}{{o}}{{ person.consortium.name }}{{c}}{%elsif person.name %}{{o}}{{ person.name }}{{c}}{% else %}{{ person.given }} {{ person.family }}{% endif %}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}}{% endif %}{% if page.layout=='inproceedings' %},
   booktitle = 	 {{o}}{{ page.container-title }}{{c}},{% endif %}{% if page.firstpage and page.lastpage %}
-  pages = 	 {{o}}{{ page.firstpage }}--{{ page.lastpage }}{{c}},{% endif %}{% if page.date %}
-  year = 	 {{o}}{{ page.date | date: "%Y" }}{{c}},{% else %}
-  year = 	 {{o}}{{ site.date | date: "%Y" }}{{c}},{% endif %}
-  editor = 	 {{o}}{% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %} and {%endunless %}{% endfor %}{{c}},{% if page.volume %}
-  volume = 	 {{o}}{{ page.volume }}{{c}},{% elsif site.volume %}
-  volume = 	 {{o}}{{ site.volume }}{{c}},{% endif %}{% if page.number %}
-  number =       {{o}}{{ page.number }}{{c}},{% elsif site.number %}
-  volume = 	 {{o}}{{ site.number }}{{c}}{% endif %}{% if site.series %}
-  series = 	 {{o}}{{ site.series }}{{c}}{% endif %}{% if page.address %}
-  address = 	 {{o}}{{ page.address }}{{c}},{% elsif site.conference.location %}
-  address = 	 {{o}}{{ site.conference.location }}{{c}},{% endif %}{% if site.date_str %}
-  month = 	 {{o}}{{ site.date_str }}{{c}},{% endif %}{% if site.publisher %}
-  publisher =    {{o}}{{ site.publisher }}{{c}},{%elsif site.style=='pmlr' %}
-  publisher = 	 {PMLR},{% endif %}{% if page.pdf %}
-  pdf = 	 {{o}}{{ page.pdf }}{{c}},{% endif %}{% if page.url %}
-  url = 	 {{o}}{{site.url}}{{site.baseurl}}{{ page.url }}{{c}},{% endif %}
-  abstract = 	 {{o}}{{ page.abstract }}{{c}}
+  pages = 	 {{o}}{{ page.firstpage }}--{{ page.lastpage }}{{c}}{% endif %}{% if page.date %},
+  year = 	 {{o}}{{ page.date | date: "%Y" }}{{c}}{% else %},
+  year = 	 {{o}}{{ site.date | date: "%Y" }}{{c}}{% endif %}{% if editors %},
+  editor = 	 {{o}}{% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {{ person.family }}{% unless person == lastone %} and {%endunless %}{% endfor %}{{c}}{% endif %}{% if page.volume %},
+  volume = 	 {{o}}{{ page.volume }}{{c}}{% elsif site.volume %},
+  volume = 	 {{o}}{{ site.volume }}{{c}}{% endif %}{% if page.number %},
+  number =       {{o}}{{ page.number }}{{c}}{% elsif site.number %},
+  volume = 	 {{o}}{{ site.number }}{{c}}{% endif %}{% if site.series %},
+  series = 	 {{o}}{{ site.series }}{{c}}{% endif %}{% if page.address %},
+  address = 	 {{o}}{{ page.address }}{{c}}{% elsif site.conference.location %},
+  address = 	 {{o}}{{ site.conference.location }}{{c}}{% endif %}{% if site.date_str %},
+  month = 	 {{o}}{{ site.date_str }}{{c}}{% endif %}{% if site.publisher %},
+  publisher =    {{o}}{{ site.publisher }}{{c}}{%elsif site.style=='pmlr' %},
+  publisher = 	 {PMLR},{% endif %}{% if page.pdf %},
+  pdf = 	 {{o}}{{ page.pdf }}{{c}},{% endif %}{% if page.url %},
+  url = 	 {{o}}{{site.url}}{{site.baseurl}}{{ page.url }}{{c}}{% endif %}{% if page.abstract %},
+  abstract = 	 {{o}}{{ page.abstract }}{{c}}{% endif %}
 {{c}}

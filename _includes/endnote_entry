@@ -1,9 +1,9 @@
-%0 Conference Paper
+%0 {% if page.layout=='inproceedings' %}Conference Paper{%elsif page.layout=='report'%}Report{%elsif page.layout=='article'%}Journal Article{%else%}Generic{%endif%}
 %T {{ page.title }}
-{% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}%A {% assign lastone = authors.last %}{% for person in authors %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
+{% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}%A {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{%else%}{{ person.given }} {{ person.family }}{%endif%}{% unless person == lastone %}
 %A {%endunless %}{% endfor %}
 %B {{ page.container-title }}
-{% if site.series %}%C {% site.series %}{% endif %}
+{% if site.series %}%C {{ site.series }}{% endif %}
 %D {{ site.published | date: "%Y" }}
 %E {% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
 %E {%endunless %}{% endfor %}	
@@ -12,7 +12,7 @@
 {% if site.style=='pmlr' %}%J Proceedings of Machine Learning Research{% endif %}
 %P {{ page.firstpage }}--{{ page.lastpage }}{% if page.doi %}
 %R {{ page.doi }}{% endif %}
-%U {{ page.url }}
+%U {{ site.url }}{{ site.baseurl }}{{ page.url }}
 %V {{ site.volume }}{% if page.number %}
 %N {{ page.number }}{% endif %}
 {% if site.style=='pmlr' %}%W PMLR{% endif %}

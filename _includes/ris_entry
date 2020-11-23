@@ -1,14 +1,15 @@
-TY  - CPAPER
+{% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}{% if page.editor %}{% assign editor=page.editor %}{%elsif site.editor%}{% assign editors=site.editor %}{% endif %}TY  - {% if page.layout=='inproceedings' %}CPAPER{%elsif page.layout=='report'%}RPRT{%elsif page.layout=='article'%}JOUR{%else%}GEN{%endif%}
 TI  - {{ page.title }}
-AU  - {% assign lastone = page.author.last %}{% for person in page.author %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
+AU  - {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{% else %}{{ person.given }} {{ person.family }}{% endif %}{% unless person == lastone %}
 AU  - {%endunless %}{% endfor %}
-BT  - {{ page.container-title }}
-PY  - {{ site.published | date: "%Y/%m/%d" }}
-DA  - {{ site.published | date: "%Y/%m/%d" }}
-ED  - {% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
+BT  - {{ page.container-title }}{% if page.publish %}
+PY  - {{ page.publish | date: "%Y/%m/%d" }}{% endif %}
+DA  - {{ page.date | date: "%Y/%m/%d" }}
+ED  - {% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
 ED  - {%endunless %}{% endfor %}	
-ID  - {{ id }}
-PB  - PMLR	
+ID  - {{ id }}{% if site.publisher %}
+PB  - {{ site.publisher }}{%elsif site.style=='pmlr' %}
+PB  - PMLR{% endif %}
 SP  - {{ page.firstpage }}
 DP  - PMLR
 EP  - {{ page.lastpage }}{% if page.doi %}
