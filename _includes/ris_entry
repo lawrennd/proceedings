@@ -10,8 +10,8 @@ ED  - {%endunless %}{% endfor %}
 ID  - {{ id }}{% if site.publisher %}
 PB  - {{ site.publisher }}{%elsif site.style=='pmlr' %}
 PB  - PMLR{% endif %}
-SP  - {{ page.firstpage }}
-DP  - PMLR
+SP  - {{ page.firstpage }}{%if site.style=='pmlr' %}
+DP  - PMLR{% endif %}
 EP  - {{ page.lastpage }}{% if page.doi %}
 DO  - {{ page.doi }}{% endif %}
 L1  - {{ page.pdf }}{% if page.fulltext %}
