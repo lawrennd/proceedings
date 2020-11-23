@@ -2,7 +2,6 @@
 {% else %}
 {% assign entry=page %}
 {% endif %}
-{% assign authors=entry.authors %}
 {% if entry.layout == "report" %}
 {% capture report_ref %}
 DELVE Report No. {{ entry.report_number }}.
@@ -19,17 +18,16 @@ DELVE Addendum {{ entry.report }}-{{ entry.ref }}.
 {% capture id %}{% endcapture %}
 {% endif %}
 {% if entry.authors %}
+{% assign authors=entry.authors %}
 {% capture report_authors %}
 {% include listauthors.html %}
 {% endcapture %}
 {% else %}
-{% capture report_authors %}
-DELVE Initiative
-{% endcapture %}
+{% assign report_authors = "The DELVE Initiative" %}
 {% endif %}
-<p>Cite as:
 
-{{ report_authors }} ({{ entry.date | date: '%Y' }}), <i>{{ entry.title }}</i>. {{ report_ref }} Published {{ entry.date | date: '%d %B %Y' }}. Available from <a href="{{ site.url }}{{ site.baseurl}}{{ entry.url }}">{{ site.url }}{{ site.baseurl}}{{ entry.url }}</a>.</p>
+<h4>Citation</h4>
+
+<p>{{ report_authors }} ({{ entry.date | date: '%Y' }}), <i>{{ entry.title }}</i>. {{ report_ref }} Published {{ entry.date | date: '%d %B %Y' }}. Available from <a href="{{ site.url }}{{ site.baseurl}}{{ entry.url }}">{{ site.url }}{{ site.baseurl}}{{ entry.url }}</a>.</p>
 
 {% include copy_sections.html %}
-
