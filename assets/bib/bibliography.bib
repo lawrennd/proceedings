@@ -14,8 +14,8 @@ layout: null
   volume =    {{ site.volume }}
 {{c}}
 {% assign sorted = site.posts | sort: 'order' %}
-{% for page in sorted %}
-{% capture id %}{{ page.id | remove_first: '/' }}{% endcapture %}
+{% for entry in sorted %}
+{% capture id %}{{ entry.id | remove_first: '/' }}{% endcapture %}
 {% include bibtex_entry %}
 {% endfor %}
 

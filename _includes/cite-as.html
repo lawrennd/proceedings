@@ -1,7 +1,6 @@
-{% if entry %}
-{% else %}
+{% unless entry %}
 {% assign entry=page %}
-{% endif %}
+{% endunless %}
 {% if entry.layout == "report" %}
 {% capture report_ref %}
 DELVE Report No. {{ entry.report_number }}.
