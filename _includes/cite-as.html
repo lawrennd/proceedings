@@ -15,7 +15,7 @@ DELVE Addendum {{ entry.report }}-{{ entry.ref }}.
 {% elsif entry.layout == "data-software" %}
 {% capture report_ref %}
 {% endcapture %}
-{% capture id %}{% endcapture %}
+{% capture id %}delve-data-{{ entry.ref }}{% endcapture %}
 {% endif %}
 {% if entry.authors %}
 {% assign authors=entry.authors %}
