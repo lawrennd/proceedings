@@ -3,19 +3,19 @@
   author =       {{o}}{{ page.bibtex_author }}{{c}},{%else%}
   author = 	 {{o}}{% for person in authors %}{{ person.given }} {{ person.family }}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}},{% endif %}{% if page.layout=='inproceedings' %}
   booktitle = 	 {{o}}{{ page.container-title }}{{c}},{% endif %}{% if page.firstpage and page.lastpage %}
-  pages = 	 {{o}}{{ page.firstpage }}--{{ page.lastpage }}{{c}},{% endif %}{% if site.published %}
-  year = 	 {{o}}{{ site.published | date: "%Y" }}{{c}},{% else %}
+  pages = 	 {{o}}{{ page.firstpage }}--{{ page.lastpage }}{{c}},{% endif %}{% if page.date %}
+  year = 	 {{o}}{{ page.date | date: "%Y" }}{{c}},{% else %}
   year = 	 {{o}}{{ site.date | date: "%Y" }}{{c}},{% endif %}
   editor = 	 {{o}}{% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %} and {%endunless %}{% endfor %}{{c}},{% if page.volume %}
   volume = 	 {{o}}{{ page.volume }}{{c}},{% elsif site.volume %}
   volume = 	 {{o}}{{ site.volume }}{{c}},{% endif %}{% if page.number %}
   number =       {{o}}{{ page.number }}{{c}},{% elsif site.number %}
-  volume = 	 {{o}}{{ site.number }}{{c}}{% endif %}{% if site.style == 'pmlr' %}
-  series = 	 {Proceedings of Machine Learning Research},{% endif %}{% if page.address %}
+  volume = 	 {{o}}{{ site.number }}{{c}}{% endif %}{% if site.series %}
+  series = 	 {{o}}{{ site.series }}{{c}}{% endif %}{% if page.address %}
   address = 	 {{o}}{{ page.address }}{{c}},{% elsif site.conference.location %}
   address = 	 {{o}}{{ site.conference.location }}{{c}},{% endif %}{% if site.date_str %}
   month = 	 {{o}}{{ site.date_str }}{{c}},{% endif %}{% if site.publisher %}
-  publisher =    {{o}}{{ site.publisher }}{{c}},{%elsif site.style='pmlr' %}
+  publisher =    {{o}}{{ site.publisher }}{{c}},{%elsif site.style=='pmlr' %}
   publisher = 	 {PMLR},{% endif %}{% if page.pdf %}
   pdf = 	 {{o}}{{ page.pdf }}{{c}},{% endif %}{% if page.url %}
   url = 	 {{o}}{{site.url}}{{site.baseurl}}{{ page.url }}{{c}},{% endif %}

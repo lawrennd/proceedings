@@ -1,19 +1,19 @@
 %0 Conference Paper
 %T {{ page.title }}
-%A {% assign lastone = page.author.last %}{% for person in page.author %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
+{% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}%A {% assign lastone = authors.last %}{% for person in authors %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
 %A {%endunless %}{% endfor %}
 %B {{ page.container-title }}
-%C Proceedings of Machine Learning Research	
+{% if site.series %}%C {% site.series %}{% endif %}
 %D {{ site.published | date: "%Y" }}
 %E {% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
 %E {%endunless %}{% endfor %}	
 %F {{ id }}
-%I PMLR	
-%J Proceedings of Machine Learning Research	
+{% if site.style=='pmlr' %}%I PMLR{% endif %}
+{% if site.style=='pmlr' %}%J Proceedings of Machine Learning Research{% endif %}
 %P {{ page.firstpage }}--{{ page.lastpage }}{% if page.doi %}
 %R {{ page.doi }}{% endif %}
-%U {{ site.url }}
+%U {{ page.url }}
 %V {{ site.volume }}{% if page.number %}
 %N {{ page.number }}{% endif %}
-%W PMLR
+{% if site.style=='pmlr' %}%W PMLR{% endif %}
 %X {{ page.abstract }}
