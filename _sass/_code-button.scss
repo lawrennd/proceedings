@@ -1,11 +1,20 @@
 /*** code button copy ***/
-
 .codebox {
+    /* Below are styles for the codebox (not the code itself) */
+    overflow:hidden;
+    padding:1px;
     width: 1px;
     height: 1px;
     border: none;
     background: $background-color;
 }
+.codebox code {
+    /* Styles in here affect the text of the codebox */
+    font-size:0.7em;
+    /* You could also put all sorts of styling here, like different font, color, underline, etc. for the code. */
+}
+
+
 
 .bibbutton {
     border-radius: 2px;
