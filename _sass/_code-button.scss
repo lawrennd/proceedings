@@ -1,0 +1,31 @@
+/*** code button copy ***/
+
+.codebox {
+    width: 1px;
+    height: 1px;
+    border: none;
+    background: $background-color;
+}
+
+.bibbutton {
+    border-radius: 2px;
+    float:         right;
+}
+.bibbuttontext {
+    border-radius: 2px;
+    float:        left;
+}
+.bibbuttongroup {
+    cursor: pointer; /* Pointer/hand icon */
+}
+.bibbuttongroup:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.bibhr {
+    padding:0;
+    margin: 2px 0px;
+    border-top: 1px;
+}
