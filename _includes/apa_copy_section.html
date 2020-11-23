@@ -1,4 +1,5 @@
 {%-if site.display.copy_button.apa-%}
+{% unless entry %}{% assign entry=page %}{% endunless %}
 {%capture filetext%}{% include apa_entry %}{%endcapture%}
 {%-assign filetype = 'txt'-%}
 {%-assign button_name = 'APA'-%}

@@ -1,8 +1,8 @@
-%0 {% if page.layout=='inproceedings' %}Conference Paper{%elsif page.layout=='report'%}Report{%elsif page.layout=='article'%}Journal Article{%else%}Generic{%endif%}
-%T {{ page.title }}
-{% if page.authors %}{% assign authors=page.authors %}{%else%}{% assign authors=page.author %}{% endif %}%A {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{%else%}{{ person.given }} {{ person.family }}{%endif%}{% unless person == lastone %}
+%0 {% if entry.layout=='inproceedings' %}Conference Paper{%elsif entry.layout=='report'%}Report{%elsif entry.layout=='article'%}Journal Article{%else%}Generic{%endif%}
+%T {{ entry.title }}
+{% if entry.authors %}{% assign authors=entry.authors %}{%else%}{% assign authors=entry.author %}{% endif %}%A {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{%else%}{{ person.given }} {{ person.family }}{%endif%}{% unless person == lastone %}
 %A {%endunless %}{% endfor %}
-%B {{ page.container-title }}
+%B {{ entry.container-title }}
 {% if site.series %}%C {{ site.series }}{% endif %}
 %D {{ site.published | date: "%Y" }}
 %E {% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
@@ -10,10 +10,10 @@
 %F {{ id }}
 {% if site.style=='pmlr' %}%I PMLR{% endif %}
 {% if site.style=='pmlr' %}%J Proceedings of Machine Learning Research{% endif %}
-%P {{ page.firstpage }}--{{ page.lastpage }}{% if page.doi %}
-%R {{ page.doi }}{% endif %}
-%U {{ site.url }}{{ site.baseurl }}{{ page.url }}
-%V {{ site.volume }}{% if page.number %}
-%N {{ page.number }}{% endif %}
+%P {{ entry.firstpage }}--{{ entry.lastpage }}{% if entry.doi %}
+%R {{ entry.doi }}{% endif %}
+%U {{ site.url }}{{ site.baseurl }}{{ entry.url }}
+%V {{ site.volume }}{% if entry.number %}
+%N {{ entry.number }}{% endif %}
 {% if site.style=='pmlr' %}%W PMLR{% endif %}
-%X {{ page.abstract }}
+%X {{ entry.abstract }}

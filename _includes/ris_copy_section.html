@@ -1,4 +1,5 @@
 {%-if site.display.copy_button.ris-%}
+{% unless entry %}{% assign entry=page %}{% endunless %}
 {%capture filetext%}{% include ris_entry %}{%endcapture%}
 {%-assign filetype = 'ris'-%}
 {%-assign button_name = 'RIS'-%}
