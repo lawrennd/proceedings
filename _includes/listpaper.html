@@ -8,7 +8,7 @@
       {%-include listperson.html seperator=', '-%}
       {%-endfor-%}
     </span>;
-    <span class="info">{{ site.publisher }} {{ site.volume}}{% if post.number %}({{post.number}}){%endif%}:{% if post.firstpage %}{{ post.firstpage }}{% endif %}{% if post.lastpage %}-{{ post.lastpage }}{% endif %}</span>
+    <span class="info">{% if post.journal %}<i>{{ post.journal }}</i>, {%elsif post.booktitle %}<i>{{ post.booktitle }}</i>, {% endif %}{%if post.publisher %}{{ post.publisher }}{% else %}{{ site.publisher }}{% endif %}{% if site.volume %} {{ post.volume }}{% else %} {{ site.volume}}{% endif %}{% if post.number %}({{post.number}}){%endif%}:{% if post.firstpage %}{{ post.firstpage }}{% endif %}{% if post.lastpage %}-{{ post.lastpage }}{% endif %}</span>
   </p>
   <p class="links">
     [<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">abs</a>]{%-if post.pdf-%}
