@@ -4,7 +4,7 @@ layout: null
 
 {% assign o = '{' %}
 {% assign c = '}' %}
-
+{%if site.style=='pmlr' %}
 @Proceedings{{o}}{{ site.shortname }}{{ site.year }},
   title =     {{o}}{{ site.booktitle }}{{c}},
   booktitle = {{o}}{{ site.booktitle }}{{c}}{% if site.editor %},
@@ -14,7 +14,7 @@ layout: null
   series =    {{o}}{{ site.series }}{{c}}{% elsif site.style=='pmlr' %},
   series =    {{o}}Proceedings of Machine Learning Research{{c}}{% endif %},
   volume =    {{ site.volume }}
-{{c}}
+{{c}}{%endif%}
 {% assign sorted = site.posts | sort: 'order' %}
 {% for entry in sorted %}
 {% capture id %}{{ entry.id | remove_first: '/' }}{% endcapture %}
