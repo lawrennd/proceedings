@@ -6,11 +6,13 @@ layout: null
 {% assign c = '}' %}
 
 @Proceedings{{o}}{{ site.shortname }}{{ site.year }},
-  title =     {{o}}{{ site.title }}{{c}},
-  booktitle = {{o}}{{ site.title }}{{c}},
-  editor =    {{o}}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}},{% if site.style=='pmlr' %}
-  publisher = {{o}}PMLR{{c}},
-  series =    {{o}}Proceedings of Machine Learning Research{{c}},{% endif %}
+  title =     {{o}}{{ site.booktitle }}{{c}},
+  booktitle = {{o}}{{ site.booktitle }}{{c}}{% if site.editor %},
+  editor =    {{o}}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless forloop.last %} and {%endunless %}{% endfor %}{{c}}{%endif%}{% if site.publisher %},
+  publisher = {{o}}{{ site.publisher }}{{c}}{%elsif site.style=='pmlr' %},
+  publisher = {{o}}PMLR{{c}}{% endif %}{% if site.series %},
+  series =    {{o}}{{ site.series }}{{c}}{% elsif site.style=='pmlr' %},
+  series =    {{o}}Proceedings of Machine Learning Research{{c}}{% endif %},
   volume =    {{ site.volume }}
 {{c}}
 {% assign sorted = site.posts | sort: 'order' %}
