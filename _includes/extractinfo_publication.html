@@ -126,3 +126,8 @@
 {%-else-%}
   {% assign layout=false %}
 {%-endif-%}
+{%-if include.entry.id-%}
+  {% assign id=include.entry.id %}
+{%-else-%}
+  {% assign id=false %}
+{%-endif-%}
