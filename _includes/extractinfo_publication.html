@@ -126,7 +126,9 @@
 {%-else-%}
   {% assign layout=false %}
 {%-endif-%}
-{%-if include.entry.id-%}
+{%-if include.entry.key-%}
+  {% assign id=include.entry.key %}
+{% elsif include.entry.id-%}
   {% assign id=include.entry.id | remove_first: '/' %}
 {%-else-%}
   {% assign id=false %}
