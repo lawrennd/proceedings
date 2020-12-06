@@ -1,26 +1,25 @@
-<article class="post-content">
-  <h1>{{ page.title }}</h1>
-  {%-if page.authors-%}{%-assign authors=page.authors-%}{%-elsif page.author-%}{% assign authors=page.author-%}{%-endif-%}
+{%-include extractinfo_publication.html entry=page-%}<article class="post-content">
+  <h1>{{ title }}</h1>
   {%-include listauthors.html-%}
   <div id="info">
-    {%-if page.container-title-%};&nbsp;{{ page.container-title }}{%-endif-%}{%-if site.publisher or page.volume-%},&nbsp;{%-endif-%}{{ site.publisher }} {{ page.volume }}{%-if page.volume -%}{%-if page.number-%}({{page.number}}){%-endif-%}{%-endif-%}{%-if page.firstpage-%}:{{ page.firstpage }}{%-if page.lastpage-%}-{{ page.lastpage }}{%-endif-%}{%-endif-%}{%-if page.issued.date-parts or page.year or page.date-%},&nbsp;{%-endif-%}{%-if page.issued-%}{{ page.issued.date-parts.first }}{%-elsif page.year-%}{{ page.year }}{%-elsif page.date-%}{{ page.date | date: "%Y" }}{%-endif-%}.
+    {%-if layout=='article'-%}{% if journal %}<i>{{ journal }}</i>{%endif%}{%endif%}{%-if layout=='inproceedings'-%}{%-if container-title-%}<i>{{ container-title }}</i>{%-endif-%}{%-endif-%}{%-if publisher or volume-%},&nbsp;{%-endif-%}{%if publisher %}{{ publisher }} {%endif%}{%-if volume -%}{{ volume }}{%-if number-%}({{number}}){%-endif-%}{%-endif-%}{%-if firstpage-%}:{{ firstpage }}{%-if lastpage-%}-{{ lastpage }}{%-endif-%}{%-endif-%}{%-if issued.date-parts or year or date-%},&nbsp;{%-endif-%}{%-if issued-%}{{ issued.date-parts.first }}{%-elsif year-%}{{ year }}{%-elsif date-%}{{ date | date: "%Y" }}{%-endif-%}.
   </div> <!-- info -->
-  {% if page.abstract %}
+  {% if abstract %}
   <h4>Abstract</h4>
   <div id="abstract" class="abstract">
-    {{ page.abstract }}
+    {{ abstract }}
   </div>{% endif %}
   <h4>Cite this Paper</h4>
-{% capture id %}pmlr-v{{ site.volume }}-{{ page.id | remove_first: '/' }}{% endcapture %}
+{% capture id %}pmlr-v{{ volume }}-{{ id | remove_first: '/' }}{% endcapture %}
 {% include copy_sections.html %}
-  {% if page.pdf or page.software or page.supplementary or page.extras %}
+  {% if pdf or software or supplementary or page.extras %}
   <h4>Related Material</h4>
   <div id="extras">
     <ul>
-      <li><a href="{{ page.pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ page.pdf }}', 10);">Download PDF</a></li>{% if page.supplementary %}
-      <li><a href="{{ page.supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ page.supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if page.software %}
-      <li><a href="{{ page.software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ page.software }}', 0);">Software</a></li>{% endif %}{% if page.video %}
-      <li><a href="{{ page.video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ page.video }}', 0);">Video</a></li>{% endif %}{% for extra in page.extras %}
+      <li><a href="{{ pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ pdf }}', 10);">Download PDF</a></li>{% if supplementary %}
+      <li><a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if software %}
+      <li><a href="{{ software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ software }}', 0);">Software</a></li>{% endif %}{% if video %}
+      <li><a href="{{ video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ video }}', 0);">Video</a></li>{% endif %}{% for extra in page.extras %}
       <li><a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', '{{ extra.link }}', 12);">{{ extra.label }}</a></li>{% endfor %}
     </ul>
   </div>{% endif %}

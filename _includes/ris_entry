@@ -1,22 +1,24 @@
-{% if entry.authors %}{% assign authors=entry.authors %}{%else%}{% assign authors=entry.author %}{% endif %}{% if entry.editor %}{% assign editor=entry.editor %}{%elsif site.editor%}{% assign editors=site.editor %}{% endif %}TY  - {% if entry.layout=='inproceedings' %}CPAPER{%elsif entry.layout=='report'%}RPRT{%elsif entry.layout=='article'%}JOUR{%else%}GEN{%endif%}
-TI  - {{ entry.title }}
+{%-include extractinfo_publication.html entry=entry-%}TY  - {% if layout=='inproceedings' %}CPAPER{%elsif layout=='report'%}RPRT{%elsif layout=='article'%}JOUR{%else%}GEN{%endif%}
+TI  - {{ title }}
 AU  - {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{% else %}{{ person.given }} {{ person.family }}{% endif %}{% unless person == lastone %}
-AU  - {%endunless %}{% endfor %}
-BT  - {{ entry.container-title }}{% if entry.publish %}
-PY  - {{ entry.publish | date: "%Y/%m/%d" }}{% endif %}
-DA  - {{ entry.date | date: "%Y/%m/%d" }}
+AU  - {%endunless %}{% endfor %}{% if container-title %}
+BT  - {{ container-title }}{%endif%}{% if publish %}
+PY  - {{ publish | date: "%Y/%m/%d" }}{% endif %}
+DA  - {{ date | date: "%Y/%m/%d" }}{%if editors%}
 ED  - {% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
-ED  - {%endunless %}{% endfor %}	
-ID  - {{ id }}{% if site.publisher %}
-PB  - {{ site.publisher }}{%elsif site.style=='pmlr' %}
-PB  - PMLR{% endif %}
-SP  - {{ entry.firstpage }}{%if site.style=='pmlr' %}
-DP  - PMLR{% endif %}
-EP  - {{ entry.lastpage }}{% if entry.doi %}
-DO  - {{ entry.doi }}{% endif %}
-L1  - {{ entry.pdf }}{% if entry.fulltext %}
-L2  - {{ entry.fulltext }}{% endif %}
-UR  - {{ site.url }}{{ site.baseurl }}{{ entry.url }}
-AB  - {{ entry.abstract }}
+ED  - {%endunless %}{% endfor %}{%endif%}{% if id %}	
+ID  - {{ id }}{%endif%}{% if publisher %}
+PB  - {{ publisher }}{%elsif site.style=='pmlr' %}
+PB  - PMLR{% endif %}{%if series%}
+DP  - {{ series }}{%endif%}{%if volume%}
+VL  - {{ volume }}{%endif%}{%if number%}
+IS  - {{ number }}{%endif%}{%if firstpage %}
+SP  - {{ firstpage }}{%endif%}{%if lastpage %}
+EP  - {{ lastpage }}{%endif%}{%if doi %}
+DO  - {{ doi }}{% endif %}{%if pdf%}
+L1  - {{ pdf }}{%endif%}{%if fulltext%}
+L2  - {{ fulltext }}{% endif %}{%if url%}
+UR  - {{ url }}{%endif%}{%if abstract %}
+AB  - {{ abstract }}{%endif%}
 ER  -
 

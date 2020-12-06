@@ -1,17 +1,16 @@
+{%-include extractinfo_publication.html entry=post-%}
 <div class="paper">
-  <p class="title">{{ post.title }}</p>
+  <p class="title">{{ title }}</p>
   <p class="details">
     <span class="authors">
-      {%-if post.author-%}{%-assign people=post.author-%}{%-endif-%}
-      {%-if post.authors-%}{%-assign people=post.authors-%}{%-endif-%}
-      {%-for person in people-%}
+      {%-for person in authors-%}
       {%-include listperson.html seperator=', '-%}
       {%-endfor-%}
     </span>;
-    <span class="info">{% if post.journal %}<i>{{ post.journal }}</i>, {%elsif post.booktitle %}<i>{{ post.booktitle }}</i>, {% endif %}{%if post.publisher %}{{ post.publisher }}{% else %}{{ site.publisher }}{% endif %}{% if site.volume %} {{ post.volume }}{% else %} {{ site.volume}}{% endif %}{% if post.number %}({{post.number}}){%endif%}:{% if post.firstpage %}{{ post.firstpage }}{% endif %}{% if post.lastpage %}-{{ post.lastpage }}{% endif %}</span>
+    <span class="info">{% if journal %}<i>{{ journal }}</i>, {%elsif container-title %}<i>{{ container-title }}</i>, {% endif %}{%if publisher %}{{ publisher }}{% else %}{{ site.publisher }}{% endif %}{% if volume %} {{ volume }}{% endif %}{% if number %}({{number}}){%endif%}:{% if firstpage %}{{ firstpage }}{% endif %}{% if lastpage %}-{{ lastpage }}{% endif %}</span>
   </p>
   <p class="links">
-    [<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">abs</a>]{%-if post.pdf-%}
-    [<a href="{{ post.pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ post.pdf}}, 10);">Download PDF</a>]{%-endif-%}{%-if post.software-%}[<a href="{{ post.software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ post.software }}', 0);">Software</a>]{%-endif-%}{% if-post.video-%}[<a href="{{ post.video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ post.video }}', 0);">Video</a>]{%-endif-%}{%-if post.supplementary-%}[<a href="{{ post.supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ post.supplementary }}, 11);">Supplementary Material</a>]{%-endif-%}{%-for extra in post.extras-%}[<a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', '{{ extra.label }}', 12);">{{ extra.label }}</a>]{%-endfor-%}
+    [<a href="{{ url }}">abs</a>]{%-if pdf-%}
+    [<a href="{{ pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ pdf}}, 10);">Download PDF</a>]{%-endif-%}{%-if software-%}[<a href="{{ software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ software }}', 0);">Software</a>]{%-endif-%}{% if-video-%}[<a href="{{ video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ video }}', 0);">Video</a>]{%-endif-%}{%-if supplementary-%}[<a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ supplementary }}, 11);">Supplementary Material</a>]{%-endif-%}{%-for extra in post.extras-%}[<a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', '{{ extra.label }}', 12);">{{ extra.label }}</a>]{%-endfor-%}
   </p>
 </div>

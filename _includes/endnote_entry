@@ -1,19 +1,19 @@
-%0 {% if entry.layout=='inproceedings' %}Conference Paper{%elsif entry.layout=='report'%}Report{%elsif entry.layout=='article'%}Journal Article{%else%}Generic{%endif%}
-%T {{ entry.title }}
-{% if entry.authors %}{% assign authors=entry.authors %}{%else%}{% assign authors=entry.author %}{% endif %}%A {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{%else%}{{ person.given }} {{ person.family }}{%endif%}{% unless person == lastone %}
-%A {%endunless %}{% endfor %}
-%B {{ entry.container-title }}
-{% if site.series %}%C {{ site.series }}{% endif %}
-%D {{ site.published | date: "%Y" }}
-%E {% assign lastone = site.editor.last %}{% for person in site.editor %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
-%E {%endunless %}{% endfor %}	
-%F {{ id }}
-{% if site.style=='pmlr' %}%I PMLR{% endif %}
-{% if site.style=='pmlr' %}%J Proceedings of Machine Learning Research{% endif %}
-%P {{ entry.firstpage }}--{{ entry.lastpage }}{% if entry.doi %}
-%R {{ entry.doi }}{% endif %}
-%U {{ site.url }}{{ site.baseurl }}{{ entry.url }}
-%V {{ site.volume }}{% if entry.number %}
-%N {{ entry.number }}{% endif %}
-{% if site.style=='pmlr' %}%W PMLR{% endif %}
-%X {{ entry.abstract }}
+%0 {% if layout=='inproceedings' %}Conference Paper{%elsif layout=='report'%}Report{%elsif layout=='article'%}Journal Article{%else%}Generic{%endif%}
+%T {{ title }}
+%A {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{%else%}{{ person.given }} {{ person.family }}{%endif%}{% unless person == lastone %}
+%A {%endunless %}{% endfor %}{%if layout=='inproceedings'%}{% if container-title %}
+%B {{ container-title }}{%endif%}{%endif%}{%if layout=='article'%}{% if journal %}
+%J {{ journal }}{%endif%}{%endif%}{%if series%}
+%C {{ series }}{% endif %}{%if publish%}
+%D {{ publish | date: "%Y" }}{%elsif date%}
+%D {{ date | date: "%Y" }}{%endif%}{% if editors %}
+%E {% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
+%E {%endunless %}{% endfor %}{%endif%}{%if id%}	
+%F {{ id }}{%endif%}{%if publisher %}
+%I {{ publisher }}{%endif%}{%if firstpage and lastpage%}
+%P {{ firstpage }}--{{ lastpage }}{%endif%}{% if doi %}
+%R {{ doi }}{%endif%}{%if url%}
+%U {{ url }}{%endif%}{%if volume%}
+%V {{ volume }}{%endif%}{%if number%}
+%N {{ number }}{%endif%}{%if abstract%}
+%X {{ abstract }}{%endif%}

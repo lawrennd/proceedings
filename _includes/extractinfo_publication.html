@@ -1,0 +1,128 @@
+{%-assign title=include.entry.title-%}
+{%-if include.entry.authors-%}
+  {% assign authors=include.entry.authors %}
+{%-elsif include.entry.author-%}
+  {% assign authors=include.entry.author %}
+{%-else-%}
+  {% assign authors=false %}
+{%-endif-%}
+{%-if include.entry.abstract-%}
+  {% assign abstract=include.entry.abstract %}
+{%-else-%}
+  {% assign abstract=false %}
+{%-endif-%}
+{%-if include.entry.editor-%}
+  {% assign editors=include.entry.editor %}
+{%-elsif site.editor-%}
+  {% assign editors=site.editor %}
+{%-else-%}
+  {% assign editors=false %}
+{%-endif-%}
+{%-if include.entry.journal-%}
+  {% assign journal=include.entry.journal %}
+{%-else-%}
+  {% assign journal=false %}
+{%-endif-%}
+{%-if include.entry.container-title-%}
+  {%-assign container-title=include.entry.container-title-%}
+{%-elsif site.container-title-%}
+  {%-assign container-title=site.container-title-%}
+{%-elsif include.entry.booktitle-%}
+  {%-assign container-title=include.entry.booktitle-%}
+{%-else-%}
+  {% assign container-title=false %}
+{%-endif-%}
+{%-if include.entry.publisher-%}
+  {% assign publisher=include.entry.publisher %}
+{%-elsif site.publisher-%}
+  {% assign publisher=site.publisher %}
+{%-else-%}
+  {% assign publisher=false %}
+{%-endif-%}
+{%-if include.entry.series-%}
+  {% assign series=include.entry.series %}
+{%-elsif site.series-%}
+  {% assign series=site.series %}
+{%-else-%}
+  {% assign series=false %}
+{%-endif-%}
+{%-if include.entry.volume-%}
+  {% assign volume=include.entry.volume %}
+{%-elsif site.volume-%}
+  {% assign volume=site.volume %}
+{%-else-%}
+  {% assign volume=false %}
+{%-endif-%}
+{%-if include.entry.number-%}
+  {% assign number=include.entry.number %}
+{%-elsif site.number-%}
+  {% assign number=site.number %}
+{%-else-%}
+  {% assign number=false %}
+{%-endif-%}
+{%-if include.entry.address-%}
+  {% assign address=include.entry.address %}
+{%-elsif site.address-%}
+  {% assign address=site.address %}
+{%-else-%}
+  {% assign address=false %}
+{%-endif-%}
+{%-if include.entry.firstpage-%}
+  {% assign firstpage=include.entry.firstpage %}
+{%-else-%}
+  {% assign firstpage=false %}
+{%-endif-%}
+{%-if include.entry.lastpage-%}
+  {% assign lastpage=include.entry.lastpage %}
+{%-else-%}
+  {% assign lastpage=false %}
+{%-endif-%}
+{%-if include.entry.pdf-%}
+  {% assign pdf=include.entry.pdf %}
+{%-else-%}
+  {% assign pdf=false %}
+{%-endif-%}
+{%-if include.entry.url-%}
+  {%-capture url-%}
+    {{ site.url }}{{ site.baseurl }}{{ include.entry.url }}
+  {%-endcapture-%}
+{%-else-%}
+  {% assign url=false %}
+{%-endif-%}
+{%-if include.entry.software-%}
+  {% assign software=include.entry.software %}
+{%-else-%}
+  {% assign software=false %}
+{%-endif-%}
+{%-if include.entry.supplementary-%}
+  {% assign supplementary=include.entry.supplementary %}
+{%-else-%}
+  {% assign supplementary=false %}
+{%-endif-%}
+{%-if include.entry.video-%}
+  {% assign video=include.entry.video %}
+{%-else-%}
+  {% assign video=false %}
+{%-endif-%}
+{%-if include.entry.doi-%}
+  {% assign doi=include.entry.doi %}
+{%-else-%}
+  {% assign doi=false %}
+{%-endif-%}
+{%-if include.entry.note-%}
+  {% assign note=include.entry.note %}
+{%-else-%}
+  {% assign note=false %}
+{%-endif-%}
+{%-if include.entry.date-%}
+  {% assign date=include.entry.date %}
+{%-elsif site.date-%}
+  {% assign date=site.date %}
+{%-else-%}
+  {% assign date=false %}
+{%-endif-%}
+{%-if include.entry.layout-%}
+  {% assign layout=include.entry.layout %}
+{%-else-%}
+  {% assign layout=false %}
+{%-endif-%}
