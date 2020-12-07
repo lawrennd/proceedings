@@ -5,4 +5,5 @@ $grey-color:       #828282;
 
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
+  "code-button",
   "minima/initialize";
