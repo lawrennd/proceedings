@@ -77,7 +77,7 @@
 {%-else-%}
   {% assign lastpage=false %}
 {%-endif-%}
-{%- if include.entry.arxiv -%}
+{%-if include.entry.arxiv-%}
   {% assign arxiv=include.entry.arxiv -%}
 {%-else-%}
   {% assign arxiv=false %}
@@ -89,13 +89,13 @@
 {%-else-%}
   {% assign pdf=false %}
 {%-endif-%}
-{%-if include.entry.url-%}
-  {%-capture url-%}
-    {{ site.url }}{{ site.baseurl }}{{ include.entry.url }}
-  {%-endcapture-%}
+{%-if include.entry.html-%}
+  {% assign html=include.entry.html %}
+{%-elsif include.entry.arxiv-%}
+  {%-capture html-%}https://arxiv.org/abs/{{ include.entry.arxiv }}{%-endcapture-%}
 {%-else-%}
-  {% assign url=false %}
-{%-endif-%}
+  {% assign html=false %}
+{%-endif-}
 {%-if include.entry.software-%}
   {% assign software=include.entry.software %}
 {%-else-%}
