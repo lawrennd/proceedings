@@ -89,13 +89,13 @@
 {%-else-%}
   {% assign pdf=false %}
 {%-endif-%}
-{%-if include.entry.html-%}
-  {% assign html=include.entry.html %}
-{%-elsif include.entry.arxiv-%}
-  {%-capture html-%}https://arxiv.org/abs/{{ include.entry.arxiv }}{%-endcapture-%}
+{%-if include.entry.url-%}
+  {%-capture url-%}
+    {{ site.url }}{{ site.baseurl }}{{ include.entry.url }}
+  {%-endcapture-%}
 {%-else-%}
-  {% assign html=false %}
-{%-endif-}
+  {% assign url=false %}
+{%-endif-%}
 {%-if include.entry.software-%}
   {% assign software=include.entry.software %}
 {%-else-%}
