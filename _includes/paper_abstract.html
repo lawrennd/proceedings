@@ -15,7 +15,9 @@
   <h4>Related Material</h4>
   <div id="extras">
     <ul>
-      {% if pdf %}<li><a href="{{ pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ pdf }}', 10);">Download PDF</a></li>{% endif %}{% if arxiv %}<li><a href="{{ arxiv }}" target="_blank" onclick="ga('send', 'event', 'Arxiv Version', 'Download', '{{ arxiv }}', 10);">Arxiv Version</a></li>{% endif %}{% if supplementary %}
+      {% if pdf %}<li><a href="{{ pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ pdf }}', 10);">Download PDF</a></li>{% endif %}{% if arxiv %}
+      <li><a href="{{ arxiv }}" target="_blank" onclick="ga('send', 'event', 'Arxiv Version', 'Download', '{{ arxiv }}', 10);">Arxiv Version</a></li>{% endif %}{% if html %}
+      <li><a href="{{ html }}" target="_blank" onclick="ga('send', 'event', 'Publisher HTML', 'Download', '{{ html }}', 10);">html</a></li>{% endif %}{% if supplementary %}
       <li><a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if software %}
       <li><a href="{{ software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ software }}', 0);">Software</a></li>{% endif %}{% if video %}
       <li><a href="{{ video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ video }}', 0);">Video</a></li>{% endif %}{% for extra in page.extras %}

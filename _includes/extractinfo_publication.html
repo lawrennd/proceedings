@@ -90,10 +90,11 @@
   {% assign pdf=false %}
 {%-endif-%}
 {%-if include.entry.html-%}
-  {% assign url=include.entry.html %}
-{%-elsif include.entry.html-%}
-  {%-capture url-%}https://arxiv.org/abs/{{ include.entry.arxiv }}{%-endcapture-%}
-{%-elsif include.entry.url-%}
+  {% assign html=include.entry.html %}
+{%-elsif include.entry.arxiv-%}
+  {%-capture html-%}https://arxiv.org/abs/{{ include.entry.arxiv }}{%-endcapture-%}
+{%-endif-}
+{%-if include.entry.url-%}
   {%-capture url-%}
     {{ site.url }}{{ site.baseurl }}{{ include.entry.url }}
   {%-endcapture-%}
