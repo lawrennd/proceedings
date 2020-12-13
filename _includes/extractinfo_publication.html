@@ -77,12 +77,23 @@
 {%-else-%}
   {% assign lastpage=false %}
 {%-endif-%}
+{%- if include.entry.arxiv -%}
+  {% assign arxiv=include.entry.arxiv -%}
+{%-else-%}
+  {% assign arxiv=false %}
+{%-endif-%}
 {%-if include.entry.pdf-%}
   {% assign pdf=include.entry.pdf %}
+{%-elsif include.entry.arxiv-%}
+  {%-capture pdf-%}https://arxiv.org/pdf/{{ include.entry.arxiv }}.pdf{%-endcapture-%}
 {%-else-%}
   {% assign pdf=false %}
 {%-endif-%}
-{%-if include.entry.url-%}
+{%-if include.entry.html-%}
+  {% assign url=include.entry.html %}
+{%-elsif include.entry.html-%}
+  {%-capture url-%}https://arxiv.org/abs/{{ include.entry.arxiv }}{%-endcapture-%}
+{%-elsif include.entry.url-%}
   {%-capture url-%}
     {{ site.url }}{{ site.baseurl }}{{ include.entry.url }}
   {%-endcapture-%}
