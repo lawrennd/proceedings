@@ -82,13 +82,6 @@
 {%-else-%}
   {% assign arxiv=false %}
 {%-endif-%}
-{%-if include.entry.pdf-%}
-  {% assign pdf=include.entry.pdf %}
-{%-elsif include.entry.arxiv-%}
-  {%-capture pdf-%}https://arxiv.org/pdf/{{ include.entry.arxiv }}.pdf{%-endcapture-%}
-{%-else-%}
-  {% assign pdf=false %}
-{%-endif-%}
 {%-if include.entry.software-%}
   {% assign software=include.entry.software %}
 {%-else-%}
