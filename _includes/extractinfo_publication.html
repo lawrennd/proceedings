@@ -96,12 +96,6 @@
 {%-else-%}
   {% assign html=false %}
 {%-endif-}
-{%-if include.entry.url-%}
-  {%-capture url-%}
-    {{ site.url }}{{ site.baseurl }}{{ include.entry.url }}
-  {%-endcapture-%}
-  {% assign url=false %}
-{%-endif-%}
 {%-if include.entry.software-%}
   {% assign software=include.entry.software %}
 {%-else-%}
