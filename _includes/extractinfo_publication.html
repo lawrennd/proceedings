@@ -119,15 +119,15 @@
   {%-if issued.date-parts-%}
     {%-if issued.date-parts.size==1-%}
       {%-capture date-%}{{ issued.date-parts[0] }}-01-01{%-endcapture-%}
-    {%-elif issued.date-parts.size==2-%}
+    {%-elsif issued.date-parts.size==2-%}
       {%-capture date-%}{{ issued.date-parts[0] }}-{{ issued.date-parts[1] }}-01{%-endcapture-%}
-    {%-elif issued.date-parts.size==3-%}
+    {%-elsif issued.date-parts.size==3-%}
       {%-capture date-%}{{ issued.date-parts[0] }}-{{ issued.date-parts[1] }}-{{ issued.date-parts[2] }}{%-endcapture-%}
     {%-endif-%}
   {%-else-%}
     {% assign date=issued %}
   {%-endif-%}
-{%-elif include.entry.date-%}
+{%-elsif include.entry.date-%}
   {% assign date=include.entry.date %}
 {%-elsif site.date-%}
   {% assign date=site.date %}
