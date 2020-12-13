@@ -100,7 +100,6 @@
   {%-capture url-%}
     {{ site.url }}{{ site.baseurl }}{{ include.entry.url }}
   {%-endcapture-%}
-{%-else-%}
   {% assign url=false %}
 {%-endif-%}
 {%-if include.entry.software-%}
