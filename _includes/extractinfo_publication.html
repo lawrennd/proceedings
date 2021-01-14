@@ -1,4 +1,14 @@
 {%-assign title=include.entry.title-%}
+{%-if include.entry.pdf -%}
+{% assign pdf=include.entry.pdf -%}
+{%-else-%}
+{% assign pdf=false %}
+{%-endif-%}
+{%-if include.entry.url -%}
+{% assign url=include.entry.url -%}
+{%-else-%}
+{% assign url=false %}
+{%-endif-%}
 {%-if include.entry.authors-%}
   {% assign authors=include.entry.authors %}
 {%-elsif include.entry.author-%}
