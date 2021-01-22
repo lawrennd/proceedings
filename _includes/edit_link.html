@@ -1,5 +1,5 @@
 {% if site.ghub.edit %}
-{% capture url %}https://github.com/{{ site.github_username }}/{% if site.ghub.repository %}{{ site.ghub.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{% if site.ghub.repository contains 'github.io' %}master{% else %}{%if site.ghub.repository == 'proceedings' %}master{% else %}gh-pages{% endif %}{% endif %}/{{ page.path }}{% endcapture %}
+{% capture url %}{% if page.edit_url %}{{ page.edit_url }}{% else %}https://github.com/{{ site.github_username }}/{% if site.ghub.repository %}{{ site.ghub.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{% if site.ghub.repository contains 'github.io' %}master{% else %}{%if site.ghub.repository == 'proceedings' %}master{% else %}gh-pages{% endif %}{% endif %}/{{ page.path }}{% endif %}{% endcapture %}
 
 <p style="text-align:right">[<a href="{{ url }}" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', '{{ url }}', 13);">edit</a>]</p>
 {% endif %}
