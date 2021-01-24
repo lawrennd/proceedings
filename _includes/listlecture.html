@@ -16,7 +16,9 @@
     {%-if lecture.time -%}<br><b>Time:</b>&nbsp;{{ lecture.time }}{%-endif-%}</p>
   {% if background_lectures %}
   <h4>Background</h4>
-  {{ background_contents }}
+  <ul>
+    {{ background_contents }}
+  </ul>
   {% endif %}
 </div>
 
