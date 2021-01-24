@@ -1,4 +1,2 @@
-  <h4><a href="{{site.baseurl}}{{background.url}}"><b>{%-if background.week and background.week>0-%}Week {{ background.week }}{%-endif-%}{%-if background.session and background.session>0-%}{%-if background.week and background.week>0-%}&nbsp;{%-endif-%}Session {{ background.session }}{%-endif-%}:</b> {{ background.title }}</a></h3>
-  <p><b>Lecturer:</b>&nbsp;{%- assign authors = background.author -%}{%- include listauthors.html -%}</p>
-  
-
+<h4><a href="{{site.baseurl}}{{background.url}}">{{ background.title }}</a></h4>
+<p><b>Author</b>&nbsp;{%- assign authors = background.author -%}{%- include listauthors.html -%}</p>
