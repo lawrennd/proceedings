@@ -2,6 +2,16 @@
 layout: default
 ---
 
+{%-assign background_lectures=false-%}
+{% capture background_contents %}
+{%-for background in site.background-%}
+{%-if background.week == page.week and background.session==page.session-%}
+{%-assign background_lectures=true-%}
+{% include listbackground.html %}
+{%-endif-%}
+{%-endfor-%}
+{% endcapture %}
+
 <h1>Week {{page.week}}: {{ page.title }}</h1>
 
 <p>{%- include talklinks.html -%}</p>
@@ -16,6 +26,11 @@ layout: default
 {% include showslides.html %}
 {% include showvideo.html %}
     
-
+{% if background_lectures %}
+<h4>Background Material</h4>
+<ul>
+  {{ background_contents }}
+</ul>
+{% endif %}
 
 {{ content }}

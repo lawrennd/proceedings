@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+{%-assign parent_lectures=false-%}
+{% capture parent_contents %}
+{%-for parent in site.lectures-%}
+{%-if parent.week == page.week and parent.session==page.session-%}
+{%-assign parent_lectures=true-%}
+  <li><a href="{{site.baseurl}}{{lecture.url}}"><b>{%-if lecture.week and lecture.week>0-%}Week {{ lecture.week }}{%-endif-%}{%-if lecture.session and lecture.session>0-%}{%-if lecture.week and lecture.week>0-%}&nbsp;{%-endif-%}Session {{ lecture.session }}{%-endif-%}:</b> {{ lecture.title }}</a></li>
+{%-endif-%}
+{%-endfor-%}
+{% endcapture %}
+
+<h1> {{ page.title }}</h1>
+
+<p>{%- include talklinks.html -%}</p>
+
+<p>
+{% for person in page.author %}
+{% include listperson.html %}
+{% endfor %}</p>
+
+<p><b>Abstract</b>: {{ page.abstract }} </p>
+
+{% include showslides.html %}
+{% include showvideo.html %}
+    
+{% if parent_lectures %}
+<h3>Parent Lecture</h3>
+<p>This is background for:</p>
+<ul>
+  {{ parent_contents }}
+</ul>
+{% endif %}
+
+{{ content }}
