@@ -32,6 +32,16 @@
     font-size: 0.6em;
 }
 
+.reveal pre {
+    text-align: left;
+    font-size: 0.6em;
+}
+
+.reveal code {
+    text-align: left;
+    font-size: 0.6em;
+}
+
 .reveal math_display {
     font-size: 2em !important;
     text-align: center;
