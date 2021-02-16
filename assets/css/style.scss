@@ -3,6 +3,12 @@
 ---
 $grey-color:       #828282;
 
+.nnegate {
+    -webkit-filter:invert(1);
+    filter:invert;
+}
+
+
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize",
