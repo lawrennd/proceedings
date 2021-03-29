@@ -1,11 +1,11 @@
 {%-include extractinfo_publication.html entry=entry-%}TY  - {% if layout=='inproceedings' %}CPAPER{%elsif layout=='report'%}RPRT{%elsif layout=='article'%}JOUR{%else%}GEN{%endif%}
 TI  - {{ title }}
-AU  - {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{% else %}{{ person.given }} {{ person.family }}{% endif %}{% unless person == lastone %}
+AU  - {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{% else %}{{ person.given }} {%if person.prefix %}{{person.prefix}} {%endif%}{{ person.family }}{%if person.suffix %}, {%person.suffix%}{% endif %}{% endif %}{% unless person == lastone %}
 AU  - {%endunless %}{% endfor %}{% if container-title %}
 BT  - {{ container-title }}{%endif%}{% if publish %}
 PY  - {{ publish | date: "%Y/%m/%d" }}{% endif %}
 DA  - {{ date | date: "%Y/%m/%d" }}{%if editors%}
-ED  - {% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {{ person.family }}{% unless person == lastone %}
+ED  - {% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {%if person.prefix %}{{person.prefix}} {%endif%}{{ person.family }}{%if person.suffix %}, {%person.suffix%}{% endif %}{% unless person == lastone %}
 ED  - {%endunless %}{% endfor %}{%endif%}{% if id %}	
 ID  - {{ id }}{%endif%}{% if publisher %}
 PB  - {{ publisher }}{%elsif site.style=='pmlr' %}
