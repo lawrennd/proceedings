@@ -42,7 +42,7 @@
 <meta name="citation_author" content="{{ author.consortium.name }}">
 
 {%-else-%}
-<meta name="citation_author" content="{{ author.given }} {{ author.family }}">
+<meta name="citation_author" content="{{ author.given }} {%if author.prefix%}{{ author.prefix }} {%endif%}{{ author.family }}{%if author.suffix%}, {{ author.suffix }}{%endif%}">
 
 {%-endif-%}
 {%-if author.institute-%}
