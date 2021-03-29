@@ -1,13 +1,13 @@
 %0 {% if layout=='inproceedings' %}Conference Paper{%elsif layout=='report'%}Report{%elsif layout=='article'%}Journal Article{%else%}Generic{%endif%}
 %T {{ title }}
-%A {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{%else%}{{ person.given }} {%if person.prefix %}{{person.prefix}} {%endif%}{{ person.family }}{%if person.suffix %}, {%person.suffix%}{% endif %}{%endif%}{% unless person == lastone %}
+%A {% assign lastone = authors.last %}{% for person in authors %}{% if person.consortium %}{{ person.consortium.name }}{%else%}{{ person.given }} {%if person.prefix %}{{person.prefix}} {%endif%}{{ person.family }}{%if person.suffix %}, {{ person.suffix }}{% endif %}{%endif%}{% unless person == lastone %}
 %A {%endunless %}{% endfor %}{%if layout=='inproceedings'%}{% if container-title %}
 %B {{ container-title }}{%endif%}{%endif%}{%if layout=='article'%}{% if journal %}
 %J {{ journal }}{%endif%}{%endif%}{%if series%}
 %C {{ series }}{% endif %}{%if publish%}
 %D {{ publish | date: "%Y" }}{%elsif date%}
 %D {{ date | date: "%Y" }}{%endif%}{% if editors %}
-%E {% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {%if person.prefix %}{{person.prefix}} {%endif%}{{ person.family }}{%if person.suffix %}, {%person.suffix%}{% endif %}{% unless person == lastone %}
+%E {% assign lastone = editors.last %}{% for person in editors %}{{ person.given }} {%if person.prefix %}{{person.prefix}} {%endif%}{{ person.family }}{%if person.suffix %}, {{ person.suffix }}{% endif %}{% unless person == lastone %}
 %E {%endunless %}{% endfor %}{%endif%}{%if id%}	
 %F {{ id }}{%endif%}{%if publisher %}
 %I {{ publisher }}{%endif%}{%if firstpage and lastpage%}
