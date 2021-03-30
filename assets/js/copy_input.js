@@ -1,8 +1,10 @@
 function CopyToClipboard(containerid) {
 if (document.selection) { 
-    var range = document.body.createTextRange();
-    range.moveToElementText(document.getElementById(containerid));
-    range.select().createTextRange();
+    var $temp = $("<textarea>");
+    $("body").append($temp);
+    
+    var str = document.getElementById(containerid).innerHTML
+    $temp.val(str).select();
     document.execCommand("Copy");
     document.selection.empty();
     
