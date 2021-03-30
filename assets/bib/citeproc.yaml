@@ -15,12 +15,16 @@ layout: null
   container-title: '{{ post.container-title | replace: "'", "''" }}'
   publisher: '{{ post.publisher | replace: "'", "''" }}'
   author: {% for person in post.author %}
-  - family: {{ person.family }}
-    given: {{ person.given }}{% if person.orcid %}
+  - given: {{ person.given }}{% if person.prefix %}
+    prefix: {{ person.prefix }}{% endif %}
+    family: {{ person.family }}{% if person.suffix %}
+    suffix: {{ person.suffix }}{% endif %}{% if person.orcid %}
     orcid: {{ person.orcid }}{% endif %}{% endfor %}
   editor: {% for person in site.editor %}
-  - family: {{ person.family }}
-    given: {{ person.given }}{% if person.orcid %}
+  - given: {{ person.given }}{% if person.prefix %}
+    prefix: {{ person.prefix }}{% endif %}
+    family: {{ person.family }}{% if person.suffix %}
+    suffix: {{ person.suffix }}{% endif %}{% if person.orcid %}
     orcid: {{ person.orcid }}{% endif %}{% endfor %}{% if post.address %}
   address: {{ post.address }}{% endif %}
   page: {{ post.page }}
