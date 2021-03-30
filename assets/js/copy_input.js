@@ -5,5 +5,5 @@ function CopyToClipboard(containerid) {
     var str = document.getElementById(containerid).innerHTML
     $temp.val(str).select();
     document.execCommand("Copy");
-    document.selection.empty();
+    $temp.remove();
 }
