@@ -5,9 +5,9 @@
 {% assign pdf=false %}
 {%-endif-%}
 {%-if include.entry.url -%}
-{% capture url %}
+{%-capture url-%}
 {{site.url}}{{site.baseurl}}{{include.entry.url}}
-{% endcapture %}
+{%-endcapture-%}
 {%-else-%}
 {% assign url=false %}
 {%-endif-%}
