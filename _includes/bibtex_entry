@@ -18,5 +18,6 @@
   doi = 	 {{o}}{{ doi }}{{c}}{% endif %}{% if pdf %},
   pdf = 	 {{o}}{{ pdf }}{{c}}{% endif %}{% if url %},
   url = 	 {{o}}{{ url }}{{c}}{% endif %}{% if abstract %},
-  abstract = 	 {{o}}{{ abstract }}{{c}}{% endif %}
+  abstract = 	 {{o}}{{ abstract }}{{c}}{% endif %}{% if note %},
+  note =         {{o}}{{ note }}{{c}}{% endif %}
 {{c}}

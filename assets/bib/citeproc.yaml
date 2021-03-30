@@ -3,7 +3,8 @@ layout: null
 ---
 {% assign sorted = site.posts | sort: 'order' %}{% for post in sorted %}{% capture id %}{{ post.id | remove_first: '/' }}{% endcapture %}
 - title: '{{ post.title | replace: "'", "''" }}'{% if post.abstract %}
-  abstract: '{{ post.abstract | replace: "'", "''"}}'{% endif %}
+  abstract: '{{ post.abstract | replace: "'", "''"}}'{% endif %}{% if post.note %}
+  note: '{{ post.note | replace: "'", "''" }}'{% endif %}
   volume: {{ post.volume }}
   URL: {{site.url}}{{site.baseurl}}{{ post.url }}{% if post.doi %}
   DOI: {{ post.doi }}{% endif %}{% if post.pdf %}

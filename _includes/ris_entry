@@ -19,6 +19,7 @@ DO  - {{ doi }}{% endif %}{%if pdf%}
 L1  - {{ pdf }}{%endif%}{%if fulltext%}
 L2  - {{ fulltext }}{% endif %}{%if url%}
 UR  - {{ url }}{%endif%}{%if abstract %}
-AB  - {{ abstract }}{%endif%}
+AB  - {{ abstract }}{%endif%}{% if note %}
+N1  - {{ note }}{% endif %}
 ER  -
 

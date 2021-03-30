@@ -16,4 +16,5 @@
 %U {{ url }}{%endif%}{%if volume%}
 %V {{ volume }}{%endif%}{%if number%}
 %N {{ number }}{%endif%}{%if abstract%}
-%X {{ abstract }}{%endif%}
+%X {{ abstract }}{%endif%}{% if note %}
+%Z {{ note }}{% endif %}
