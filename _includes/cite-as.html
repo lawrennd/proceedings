@@ -27,6 +27,6 @@ DELVE Addendum {{ entry.report }}-{{ entry.ref }}.
 
 <h4>Citation</h4>
 
-<p>{{ report_authors }} ({{ entry.date | date: '%Y' }}), <i>{{ entry.title }}</i>. {{ report_ref }} Published {{ entry.date | date: '%d %B %Y' }}. Available from <a href="{{ site.url }}{{ site.baseurl}}{{ entry.url }}">{{ site.url }}{{ site.baseurl}}{{ entry.url }}</a>.</p>
+<p>{{ report_authors }} ({{ entry.date | date: '%Y' }}), <i>{{ entry.title }}</i>. {{ report_ref }} Published {{ entry.date | date: '%d %B %Y' }}. Available from <a href="{{ site.url }}{{ site.baseurl}}{{ entry.url }}">{{ site.url }}{{ site.baseurl}}{{ entry.url }}</a>{% if entry.pdf %} [<a href="{{ entry.pdf }}">pdf</a>].</p>
 
 {% include copy_sections.html %}
