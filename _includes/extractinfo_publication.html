@@ -4,6 +4,11 @@
 {%-else-%}
 {% assign pdf=false %}
 {%-endif-%}
+{%-if include.entry.html -%}
+{% assign html=include.entry.html -%}
+{%-else-%}
+{% assign html=false %}
+{%-endif-%}
 {%-if include.entry.url -%}
 {%-capture url-%}
 {{site.url}}{{site.baseurl}}{{include.entry.url}}
