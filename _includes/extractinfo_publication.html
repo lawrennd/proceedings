@@ -99,6 +99,11 @@
 {%-else-%}
   {% assign arxiv=false %}
 {%-endif-%}
+{%-if include.entry.doi-%}
+  {% assign doi=include.entry.doi -%}
+{%-else-%}
+  {% assign doi=false %}
+{%-endif-%}
 {%-if include.entry.software-%}
   {% assign software=include.entry.software %}
 {%-else-%}
