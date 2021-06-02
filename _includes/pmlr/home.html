@@ -37,6 +37,4 @@
 
 <p class="rss-subscribe">subscribe <a href="{{ "/assets/rss/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-<!-- Search Widget -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="{{site.url}}{{site.baseurl}}/assets/js/search.js"></script>
+{% include searchwidget_js.html %}
