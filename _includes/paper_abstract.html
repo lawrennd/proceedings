@@ -16,7 +16,8 @@
   <div id="extras">
     <ul>
       {% if pdf %}<li><a href="{{ pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ pdf }}', 10);">Download PDF</a></li>{% endif %}{% if html %}
-      <li><a href="{{ html }}" target="_blank" onclick="ga('send', 'event', 'Publisher HTML', 'Download', '{{ html }}', 10);">Paper Website</a></li>{% endif %}{% if doi %}
+      <li><a href="{{ html }}" target="_blank" onclick="ga('send', 'event', 'Publisher HTML', 'Download', '{{ html }}', 10);">Paper Website</a></li>{% endif %}{%-if openreview-%}
+    [<a href="https://openreview.net/forum?id={{ openreview }}" target="_blank" onclick="ga('send', 'event', 'Openreview reviews', 'Download', 'https://openreview.net/forum?id={{ openreview }}', 10);">OpenReview</a>]{%-endif-%}{% if doi %}
       <li><a href="https://doi.org/{{ doi }}" target="_blank" onclick="ga('send', 'event', 'doi version', 'Download', 'https://doi.org/{{ doi }}', 10);">doi</a></li>{% endif %}{% if supplementary %}
       <li><a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if software %}
       <li><a href="{{ software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ software }}', 0);">Software</a></li>{% endif %}{% if video %}
