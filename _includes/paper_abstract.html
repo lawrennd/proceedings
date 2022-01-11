@@ -11,12 +11,14 @@
   </div>{% endif %}
   <h4>Cite this Paper</h4>
 {% include copy_sections.html %}
-  {% if pdf or arxiv or software or supplementary or video or page.extras %}
+  {% if pdf or arxiv or website or html or openreview or software or supplementary or video or page.extras %}
   <h4>Related Material</h4>
   <div id="extras">
     <ul>
       {% if pdf %}<li><a href="{{ pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ pdf }}', 10);">Download PDF</a></li>{% endif %}{% if html %}
-      <li><a href="{{ html }}" target="_blank" onclick="ga('send', 'event', 'Publisher HTML', 'Download', '{{ html }}', 10);">Paper Website</a></li>{% endif %}{% if doi %}
+      <li><a href="{{ html }}" target="_blank" onclick="ga('send', 'event', 'Publisher HTML', 'Website', '{{ html }}', 10);">Publisher Website</a></li>{% endif %}{% if website %}
+      <li><a href="{{ website }}" target="_blank" onclick="ga('send', 'event', 'Paper Website', 'Website', '{{ website }}', 10);">Paper Website</a></li>{% endif %}{% if openreview %}
+      <li><a href="https://openreview.net/forum?id={{ openreview }}" target="_blank" onclick="ga('send', 'event', 'OpenReview site', 'Openreview', 'https://openreview.net/forum?id={{ openreview }}', 10);">OpenReview</a></li>{% endif %}{% if doi %}
       <li><a href="https://doi.org/{{ doi }}" target="_blank" onclick="ga('send', 'event', 'doi version', 'Download', 'https://doi.org/{{ doi }}', 10);">doi</a></li>{% endif %}{% if supplementary %}
       <li><a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if software %}
       <li><a href="{{ software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ software }}', 0);">Software</a></li>{% endif %}{% if video %}

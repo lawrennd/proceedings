@@ -109,6 +109,16 @@
 {%-else-%}
   {% assign software=false %}
 {%-endif-%}
+{%-if include.entry.website-%}
+  {% assign website=include.entry.website %}
+{%-else-%}
+  {% assign website=false %}
+{%-endif-%}
+{%-if include.entry.openreview-%}
+  {% assign openreview=include.entry.openreview %}
+{%-else-%}
+  {% assign openreview=false %}
+{%-endif-%}
 {%-if include.entry.supplementary-%}
   {% assign supplementary=include.entry.supplementary %}
 {%-else-%}
