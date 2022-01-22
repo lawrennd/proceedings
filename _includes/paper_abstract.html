@@ -20,7 +20,8 @@
       <li><a href="{{ website }}" target="_blank" onclick="ga('send', 'event', 'Paper Website', 'Website', '{{ website }}', 10);">Paper Website</a></li>{% endif %}{% if openreview %}
       <li><a href="https://openreview.net/forum?id={{ openreview }}" target="_blank" onclick="ga('send', 'event', 'OpenReview site', 'Openreview', 'https://openreview.net/forum?id={{ openreview }}', 10);">OpenReview</a></li>{% endif %}{% if doi %}
       <li><a href="https://doi.org/{{ doi }}" target="_blank" onclick="ga('send', 'event', 'doi version', 'Download', 'https://doi.org/{{ doi }}', 10);">doi</a></li>{% endif %}{% if supplementary %}
-      <li><a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if software %}
+      <li><a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if source %}
+      <li><a href="{{ source }}" target="_blank" onclick="ga('send', 'event', 'Source Link', 'Source', '{{ source }}', 0);">Paper Source Files</a></li>{% endif %}{% if software %}
       <li><a href="{{ software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ software }}', 0);">Software</a></li>{% endif %}{% if video %}
       <li><a href="{{ video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ video }}', 0);">Video</a></li>{% endif %}{% if arxiv %}
       <li><a href="https://arxiv.org/abs/{{ arxiv }}" target="_blank" onclick="ga('send', 'event', 'arXiv version', 'Download', 'https://arxiv.org/abs/{{ arxiv }}', 10);">Arxiv Version</a></li>{% endif %}{% for extra in page.extras %}

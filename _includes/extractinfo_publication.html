@@ -109,6 +109,11 @@
 {%-else-%}
   {% assign software=false %}
 {%-endif-%}
+{%-if include.entry.source-%}
+  {% assign source=include.entry.source %}
+{%-else-%}
+  {% assign source=false %}
+{%-endif-%}
 {%-if include.entry.website-%}
   {% assign website=include.entry.website %}
 {%-else-%}
