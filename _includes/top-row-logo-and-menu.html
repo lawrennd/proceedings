@@ -1,0 +1,43 @@
+<!-- Top Row | Logo & Menu -->
+<div class="row">
+  <div class="hero__item hero__item--bottom-left">
+    {% include nav-primary.html %}
+  </div>
+  <div class="column">
+    <span class="hero__dot hero__dot--top-left"></span>
+    <span class="hero__dot hero__dot--top-right"></span>
+    <span class="hero__dot hero__dot--bottom-left"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+    <a href="{{site.url}}" class="hero__item hero__item--top-left">
+      <img class="brand" src="{{ site.data.site.site_logo }}" alt="Logo">
+    </a>
+    {%-if include.title-%}
+    <div class="hero__item hero__item--bottom-left">
+      <h1 class="hero__title">{{ include.title }}</h1>
+    </div>
+    {%-endif-%}
+  </div>
+  <div class="column">
+    <span class="hero__dot hero__dot--top-right"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+  </div>
+  <div class="column no-mobile">
+    <span class="hero__dot hero__dot--top-right"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+  </div>
+  <div class="column no-mobile">
+    <span class="hero__dot hero__dot--top-right"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+  </div>
+  <div class="column no-mobile">
+    <span class="hero__dot hero__dot--top-right"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+  </div>
+  <div class="column">
+    <span class="hero__dot hero__dot--top-right"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+    <div class="hero__item hero__item--top-right">
+      {% include menu-trigger.html %}
+    </div>
+  </div>
+</div>
