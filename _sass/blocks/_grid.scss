@@ -1,0 +1,120 @@
+.block__grid {
+    margin: 5rem 0;
+
+    @include bp(desktop) {
+        margin: 10rem 0;
+    }
+
+    .grid__grid {
+        margin: 0 0 -2rem 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include bp(tablet) {
+            margin: 0 -1rem;
+        }
+
+        @include bp(desktop) {
+            margin: 0 -2rem;
+        }
+
+        .grid__item {
+            width: 100%;
+            margin: 0 0 2rem 0;
+            position: relative;
+            text-decoration: none;
+
+            @include bp(tablet) {
+                width: calc(50% - 2rem);
+                margin: 0 1rem;
+            }
+
+            @include bp(desktop) {
+                width: calc(50% - 4rem);
+            }
+
+            &-content {
+                width: 100%;
+                height: 100%;
+                padding: 10rem 2.5rem 2.5rem 2.5rem;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-start;
+                z-index: 1;
+
+                @include bp(desktop) {
+                    padding: 16rem 6rem 4.5rem 6rem;
+                }
+
+                h3,
+                p {
+                    color: $lightest;
+                }
+
+                h3 {
+                    margin-bottom: 1rem;
+                    font-size: 2.6rem;
+                    line-height: 3.6rem;
+
+                    @include bp(tablet) {
+                        font-size: 3.2rem;
+                        line-height: 4.2rem;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 1.6rem;
+
+                    @include bp(tablet) {
+                        font-size: 1.8rem;
+                        line-height: 3rem;
+                    }
+
+                    @include bp(desktop) {
+                        max-width: 505px;
+                        font-size: 2rem;
+                        line-height: 3.2rem;
+                    }
+                }
+
+                .button {
+                    margin-top: 3rem;
+                }
+            }
+
+            &-image {
+                width: 100%;
+                height: 100%;
+                padding: 4.5rem 6rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0%;
+                    left: 0;
+                    display: block;
+                    background-color: $primary-blue;
+                    opacity: .6;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

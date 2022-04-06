@@ -1,0 +1,54 @@
+.block__logo-grid {
+    margin: 5rem 0;
+
+    @include bp(desktop) {
+        margin: 10rem 0;
+    }
+    
+    .container {
+        overflow: hidden;
+
+
+        .logo-grid__grid {
+            padding: 2rem;
+            margin: 0 -1rem -2rem -1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: $lightest;
+
+            @include bp(tablet) {
+                margin: 0 -2rem -2rem -2rem;
+                padding: 4rem 5rem;
+            }
+
+            @include bp(desktop) {
+                padding: 7.5rem 15rem;
+            }
+
+            .logo-grid__logo {
+                width: calc(50% - 2rem);
+                margin: 0 1rem 2rem 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include bp(tablet) {
+                    width: calc(33.33% - 2rem);
+                    margin: 0 1rem 1rem 1rem;
+                }
+
+                @include bp(desktop) {
+                    width: calc(20% - 4rem);
+                    margin: 0 2rem 2rem 2rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+        }
+    }
+}

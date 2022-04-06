@@ -1,0 +1,136 @@
+.block__resources {
+    margin: 3rem 0 5rem 0;
+
+    @include bp(tablet) {
+        margin: 6rem 0 10rem 0;
+    }
+
+    @include bp(desktop) {
+        margin: 6rem 0 19rem 0;
+    }
+
+    .resources__filter {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $dark-cream;
+
+        @include bp(tablet) {
+            padding-bottom: 4rem;
+        }
+
+        p, button {
+            display: inline-block;
+        }
+
+        p {
+            margin: 0 1rem 0 0; 
+            font-family: $global-font-family-alt;
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.8rem;
+
+            @include bp(tablet) {
+                margin: 0 4rem 0 0; 
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+            }
+        }
+
+        button {
+            padding: .5rem 1rem;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            background-color: transparent;
+            font-family: $header-font-family;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.8rem;
+            cursor: pointer;
+
+            @include bp(tablet) {
+                padding: 1rem 2rem;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+            }
+
+            &.active {
+                background-color: $lightest;
+                font-weight: 700;
+                color: $primary-blue;
+            }
+        }
+    }
+
+    .resources__grid {
+        margin: 2rem 0 -2rem 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include bp(tablet) {
+            margin: 5rem -2rem -4rem -2rem;
+        }
+
+        @include bp(desktop) {
+            margin: 9rem -2rem -4rem -2rem;
+        }
+
+        .resources__resource {
+            width: 100%;
+            min-height: 200px;
+            margin: 0 0 2rem 0;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid $dark-cream;
+            text-decoration: none;
+            display: none;
+
+            @include bp(tablet) {
+                width: calc(50% - 4rem);
+                min-height: 240px;
+                margin: 0 2rem 4rem 2rem;
+                padding: 3rem;
+            }
+
+            @include bp(desktop) {
+                width: calc(33.33% - 4rem);
+            }
+
+            &.active {
+                display: flex;
+            }
+
+            img {
+                width: auto;
+                height: 50px;
+                margin-bottom: 2rem;
+                display: block;
+            }
+
+            h3 {
+                font-size: 2rem;
+                line-height: 2.7rem;
+
+                @include bp(tablet) {
+                    font-size: 2.4rem;
+                    line-height: 3.1rem;
+                }
+            }
+
+            p {
+                margin: 0;
+                font-family: $global-font-family-alt;
+                font-size: 1.6rem;
+                font-weight: 700;
+                line-height: 2.1rem;
+                color: $orange;
+
+                @include bp(tablet) {
+                    font-size: 1.8rem;
+                    line-height: 2.3rem;
+                }
+            }
+        }
+    }
+}

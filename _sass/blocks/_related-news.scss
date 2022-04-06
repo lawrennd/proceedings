@@ -1,0 +1,15 @@
+.block__related-news {
+    margin: 2.5rem 0;
+
+    @include bp(tablet) {
+        margin: 5rem 0;
+    }
+    
+    @include bp(desktop) {
+        margin: 10rem 0;
+    }
+
+    .section-heading {
+        margin-bottom: 4rem;
+    }
+}
