@@ -1,0 +1,16 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%- include seo-info.html -%}
+  <title>ML@CL{%-if page.title -%} {{page.title}}{%-endif-%}</title>
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" type="text/javascript"></script>
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+  {%-include hidden_copy_code.html-%}
+  {%- include google_tracking_code.html -%}  
+  {% include mathjax_code.html %}
+</head>
