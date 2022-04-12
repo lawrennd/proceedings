@@ -172,7 +172,7 @@
                     {% assign project_slug = item %}
                     {% for item in site.publications %}
                     {% if item.slug == project_slug %}
-		    {% include extractinfo_publication.html %}
+		    {% include extractinfo_publication.html entry=item %}
                     <div class="publications__item">
                         <div class="publications__item-left column-t-9">
                             <h2 class="publications__item-title">{{ title }}</h2>
