@@ -7,7 +7,7 @@
       {%-include listperson.html seperator=', '-%}
       {%-endfor-%}
     </p>
-    <p class="publications__item-references">{% if journal %}<i>{{ journal }}</i>, {%elsif container-title %}<i>{{ container-title }}</i>, {% endif %}{%if publisher %}{{ publisher }}{% else %}{{ site.publisher }}{% endif %}{% if volume %} {{ volume }}{% endif %}{% if number %}({{number}}){%endif%}:{% if firstpage %}{{ firstpage }}{% endif %}{% if lastpage %}-{{ lastpage }}{% endif %}</p>
+    <p class="publications__item-references">{% if journal %}<i>{{ journal }}</i>, {%elsif container-title %}<i>{{ container-title }}</i>, {% endif %}{%if publisher %}{{ publisher }}{% endif %}{% if volume %} {{ volume }}{% endif %}{% if number %}({{number}}){%endif%}:{% if firstpage %}{{ firstpage }}{% endif %}{% if lastpage %}-{{ lastpage }}{% endif %}{% if year %}, {{ year }}{% endif %}</p>
   </div>
 
   <div class="publications__item-right column-t-2">{% if date %}
