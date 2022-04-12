@@ -172,18 +172,7 @@
                     {% assign project_slug = item %}
                     {% for item in site.publications %}
                     {% if item.slug == project_slug %}
-		    {% include extractinfo_publication.html entry=item %}
-                    <div class="publications__item">
-                        <div class="publications__item-left column-t-9">
-                            <h2 class="publications__item-title">{{ title }}</h2>
-                            <p class="publications__item-author">{% include listauthors.html %}</p>
-                            <p class="publications__item-references">{{ item.references }}</p>
-                        </div>
-                        <div class="publications__item-right column-t-2">
-                            <!-- <p class="publications__item-date">{{ item.date | date: "%-d %B %Y" }}</p> -->
-                            <a href="{{ item.url }}" class="publications__item-link">Read More ></a>
-                        </div>
-                    </div>
+		    {% include listpaper.html entry=item %}
                     {% endif %}
                     {% endfor %}
                     {% endfor %}
