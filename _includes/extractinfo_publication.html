@@ -150,19 +150,19 @@
     {%-if issued.date-parts.size==1-%}
       {%-capture date-%}{{ issued.date-parts[0] }}-01-01{%-endcapture-%}
     {%-elsif issued.date-parts.size==2-%}
-      {%-capture date-%}{{ issued.date-parts[0] }}-{{ issued.date-parts[1] }}-01{%-endcapture-%}
+      {%-capture itemdate-%}{{ issued.date-parts[0] }}-{{ issued.date-parts[1] }}-01{%-endcapture-%}
     {%-elsif issued.date-parts.size==3-%}
-      {%-capture date-%}{{ issued.date-parts[0] }}-{{ issued.date-parts[1] }}-{{ issued.date-parts[2] }}{%-endcapture-%}
+      {%-capture itemdate-%}{{ issued.date-parts[0] }}-{{ issued.date-parts[1] }}-{{ issued.date-parts[2] }}{%-endcapture-%}
     {%-endif-%}
   {%-else-%}
-    {% assign date=issued %}
+    {% assign itemdate=issued %}
   {%-endif-%}
 {%-elsif include.entry.date-%}
-  {% assign date=include.entry.date %}
+  {% assign itemdate=include.entry.date %}
 {%-elsif site.date-%}
-  {% assign date=site.date %}
+  {% assign itemdate=site.date %}
 {%-else-%}
-  {% assign date=false %}
+  {% assign itemdate=false %}
 {%-endif-%}
 {%-if include.entry.layout-%}
   {% assign layout=include.entry.layout %}
