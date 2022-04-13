@@ -26,7 +26,7 @@
     <div id="extras">
     <ul>
       {% if pdf %}
-      {% include links/pdf-link.html link=pdf onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ pdf }}', 10);" %}
+      {% include links/pdf-link.html link=pdf %}
       {% endif %}{% if html %}
       <li><a href="{{ html }}" target="_blank" onclick="ga('send', 'event', 'Publisher HTML', 'Website', '{{ html }}', 10);">Publisher Website</a></li>{% endif %}{% if website %}
       <li><a href="{{ website }}" target="_blank" onclick="ga('send', 'event', 'Paper Website', 'Website', '{{ website }}', 10);">Paper Website</a></li>{% endif %}{% if openreview %}
