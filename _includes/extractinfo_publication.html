@@ -51,8 +51,6 @@
 {%-endif-%}
 {%-if include.entry.publisher-%}
   {% assign publisher=include.entry.publisher %}
-{%-elsif site.publisher-%}
-  {% assign publisher=site.publisher %}
 {%-else-%}
   {% assign publisher=false %}
 {%-endif-%}
