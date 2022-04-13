@@ -111,6 +111,9 @@
                             <span></span>
                         </div>
                         <div class="team-profile__contact-socials">
+                          {% if page.github != nil %}
+			  {% include socials/github-link.html id=page.linkedin %}
+                          {% endif %}
                           {% if page.linkedin != nil %}
 			  {% include socials/linkedin-link.html id=page.linkedin %}
                           {% endif %}
