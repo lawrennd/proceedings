@@ -381,14 +381,14 @@
             }
 
             &.hero__title--post {
-                width: 300%;
+                width: 500%;
                 max-width: unset;
                 position: relative;
                 top: unset;
                 left: unset;
                 transform: none;
                 text-align: left;
-                font-size: 1.7rem;
+                font-size: 1.3rem;
                 line-height: 2.2rem;
 
                 @include bp(tablet) {
@@ -404,7 +404,7 @@
             }
 
             &.hero__title--large {
-                width: 300%;
+                width: 200%;
 
                 @include bp(tablet) {
                     width: 400%;
