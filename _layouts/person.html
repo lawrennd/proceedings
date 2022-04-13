@@ -1,161 +1,113 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+---
+layout: page
+---
 
-{% include site-head.html %}
-
-<body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
-    {% include site-header.html %}
-    <main class="main">
-        <section class="block block__hero block__hero--standard">
-            <div class="container">
-                <!-- Top Row | Logo & Menu -->
-                <div class="row">
-                    <div class="hero__item hero__item--bottom-left">
-                        {% include nav-primary.html %}
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--top-left"></span>
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-left"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                        <a href="{{site.url}}" class="hero__item hero__item--top-left">
-                            <img class="brand" src="{{ site.data.site.site_logo }}" alt="Logo">
-                        </a>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                        <div class="hero__item hero__item--top-right">
-                            {% include menu-trigger.html %}
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Row | Title & Nav -->
-                <div class="row">
-                    <div class="column">
-                        <span class="hero__dot hero__dot--bottom-left"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                        <div class="hero__item hero__item--top-left">
-                            <a href="{{site.url}}/people/" class="back-to-collection">
-                                <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#FFFFFF">
-                                            <g id="Down" transform="translate(1583.000000, 759.000000)">
-                                                <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
-                                            </g>
+<section class="block block__hero block__hero--standard">
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    <!-- Second Row | Title & Nav -->
+    <div class="row">
+      <div class="column">
+        <span class="hero__dot hero__dot--bottom-left"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+        <div class="hero__item hero__item--top-left">
+          <a href="{{site.url}}/people/" class="back-to-collection">
+            <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#FFFFFF">
+                  <g id="Down" transform="translate(1583.000000, 759.000000)">
+                    <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
+                  </g>
                                         </g>
-                                    </g>
-                                </svg>
-                                <p>Back to people</p>
-                            </a>
-                        </div>
-                        <div class="hero__item hero__item--bottom-left">
-                            <h1 class="hero__title hero__title--people">{{ page.title }}</h1>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                        <div class="hero__item hero__item--top-left limit-height">
-                            <img class="hero__image--people" src="{{site.url}}{{site.baseurl}}/assets/uploads/{{page.image}}" alt="Image of {{page.title}}">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+              </g>
+            </svg>
+            <p>Back to people</p>
+          </a>
+        </div>
+        <div class="hero__item hero__item--bottom-left">
+          <h1 class="hero__title hero__title--people">{{ page.title }}</h1>
+        </div>
+      </div>
+      <div class="column">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+        <div class="hero__item hero__item--top-left limit-height">
+          <img class="hero__image--people" src="{{site.url}}{{site.baseurl}}/assets/uploads/{{page.image}}" alt="Image of {{page.title}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section class="block block__team-profile">
-            <div class="container">
-                <div class="row row--justified">
-                    <div class="team-profile__biography column-m-12 column-t-7 column-d-8">
-                        <div class="section-heading">
-                            <h2>Biography</h2>
-                            <span></span>
-                        </div>
-                        {{ page.biography | markdownify }}
-                    </div>
-                    <div class="team-profile__contact column-m-12 column-t-5 column-d-3">
-                        <div class="section-heading">
-                            <h2>Contact</h2>
-                            <span></span>
-                        </div>
-                        <div class="team-profile__contact-socials">
-                          {% if page.github != nil %}
-			  {% include socials/github-link.html id=page.github %}
-                          {% endif %}
-                          {% if page.linkedin != nil %}
-			  {% include socials/linkedin-link.html id=page.linkedin %}
-                          {% endif %}
-                          {% if page.twitter != nil %}
-			  {% include socials/twitter-link.html id=page.twitter %}
-                          {% endif %}
-                          {% if page.facebook != nil %}
-			  {% include socials/facebook-link.html id=page.facebook %}
-                          {% endif %}
-                        </div>
-                        {% if page.email != nil %}
-                        <a href="mailto:{{page.email}}">{{page.email}}</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {% if page.publications != nil %}
-        <section class="block block__publications">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>Related Publications</h2>
-                    <span></span>
-                </div>
-                <div class="publications__list">
-                    {% for item in page.publications %}
-                    {% assign project_slug = item %}
-                    {% for item in site.publications %}
-                    {% if item.slug == project_slug %}
-		    {% include listpaper.html entry=item %}
-                    {% endif %}
-                    {% endfor %}
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
+<section class="block block__team-profile">
+  <div class="container">
+    <div class="row row--justified">
+      <div class="team-profile__biography column-m-12 column-t-7 column-d-8">
+        <div class="section-heading">
+          <h2>Biography</h2>
+          <span></span>
+        </div>
+        {{ page.biography | markdownify }}
+      </div>
+      <div class="team-profile__contact column-m-12 column-t-5 column-d-3">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <span></span>
+        </div>
+        <div class="team-profile__contact-socials">
+          {% if page.github != nil %}
+	  {% include socials/github-link.html id=page.github %}
+          {% endif %}
+          {% if page.linkedin != nil %}
+	  {% include socials/linkedin-link.html id=page.linkedin %}
+          {% endif %}
+          {% if page.twitter != nil %}
+	  {% include socials/twitter-link.html id=page.twitter %}
+          {% endif %}
+          {% if page.facebook != nil %}
+	  {% include socials/facebook-link.html id=page.facebook %}
+          {% endif %}
+        </div>
+        {% if page.email != nil %}
+        <a href="mailto:{{page.email}}">{{page.email}}</a>
         {% endif %}
-    </main>
-    {% include site-footer.html %}
-    <script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script>
-</body>
+      </div>
+    </div>
+  </div>
+</section>
 
-</html>
+{% if page.publications != nil %}
+<section class="block block__publications">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Related Publications</h2>
+      <span></span>
+    </div>
+    <div class="publications__list">
+      {% for item in page.publications %}
+      {% assign project_slug = item %}
+      {% for item in site.publications %}
+      {% if item.slug == project_slug %}
+      {% include listpaper.html entry=item %}
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
