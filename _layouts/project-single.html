@@ -1,256 +1,234 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+---
+page: default
+---
+<section class="block block__hero block__hero--standard">
+  <div class="hero__bg">
+    <img src="{{ page.featured_image }}">
+  </div>
+  <div class="container">
+    <!-- Top Row | Logo & Menu -->
+    <div class="row">
+      <div class="hero__item hero__item--bottom-left">
+        {% include nav-primary.html %}
+      </div>
+      <div class="column">
+        <span class="hero__dot hero__dot--top-left"></span>
+        <span class="hero__dot hero__dot--top-right"></span>
+        <span class="hero__dot hero__dot--bottom-left"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+        <a href="{{site.url}}" class="hero__item hero__item--top-left">
+          <img class="brand" src="{{ site.data.site.site_logo }}" alt="Logo">
+        </a>
+      </div>
+      <div class="column">
+        <span class="hero__dot hero__dot--top-right"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--top-right"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--top-right"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--top-right"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column">
+        <span class="hero__dot hero__dot--top-right"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+        <div class="hero__item hero__item--top-right">
+          {% include menu-trigger.html %}
+        </div>
+      </div>
+    </div>
+    <!-- Second Row | Title & Nav -->
+    <div class="row">
+      <div class="column">
+        <span class="hero__dot hero__dot--bottom-left"></span>
+        <span class="hero__dot hero__dot--bottom-right"></span>
+        <div class="hero__item hero__item--top-left">
+          <a href="{{site.url}}/projects/" class="back-to-collection">
+            <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#FFFFFF">
+                  <g id="Down" transform="translate(1583.000000, 759.000000)">
+                    <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
+                    <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <p>See all projects</p>
+          </a>
+        </div>
+        <div class="hero__item hero__item--bottom-left">
+          <h1 class="hero__title hero__title--large hero__title--post">{{ page.title }}</h1>
+        </div>
+      </div>
+      <div class="column">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column no-mobile">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+      <div class="column">
+        <span class="hero__dot hero__dot--bottom-right"></span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  {% include site-head.html %}
-  
-  <body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
-    {% include site-header.html %}
-    <main class="main">
-        <section class="block block__hero block__hero--standard">
-            <div class="hero__bg">
-                <img src="{{ page.featured_image }}">
-            </div>
-            <div class="container">
-                <!-- Top Row | Logo & Menu -->
-                <div class="row">
-                    <div class="hero__item hero__item--bottom-left">
-                        {% include nav-primary.html %}
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--top-left"></span>
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-left"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                        <a href="{{site.url}}" class="hero__item hero__item--top-left">
-                            <img class="brand" src="{{ site.data.site.site_logo }}" alt="Logo">
-                        </a>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--top-right"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                        <div class="hero__item hero__item--top-right">
-                            {% include menu-trigger.html %}
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Row | Title & Nav -->
-                <div class="row">
-                    <div class="column">
-                        <span class="hero__dot hero__dot--bottom-left"></span>
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                        <div class="hero__item hero__item--top-left">
-                            <a href="{{site.url}}/projects/" class="back-to-collection">
-                                <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#FFFFFF">
-                                            <g id="Down" transform="translate(1583.000000, 759.000000)">
-                                                <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
-                                                <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                                <p>See all projects</p>
-                            </a>
-                        </div>
-                        <div class="hero__item hero__item--bottom-left">
-                            <h1 class="hero__title hero__title--large hero__title--post">{{ page.title }}</h1>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column no-mobile">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                    <div class="column">
-                        <span class="hero__dot hero__dot--bottom-right"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="block block__project-overview">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Overview</h2>
+      <span></span>
+    </div>
+    {{ content }}
+  </div>
+</section>
 
-        <section class="block block__project-overview">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>Overview</h2>
-                    <span></span>
-                </div>
-                {{ content }}
-            </div>
-        </section>
+{% if page.project_funders != nil %}
+{% assign projects_size = page.project_funders | size %}
+{% if projects_size != 0 %}
+<section class="block block__logo-grid">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Project Funders</h2>
+      <span></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="logo-grid__grid">
+      {% for item in page.project_funders %}
+      <a class="logo-grid__logo" href="{{ item.link }}">
+        <img src="{{ item.featured_image }}" alt="University of Cambridge">
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endif %}
 
-        {% if page.project_funders != nil %}
-            {% assign projects_size = page.project_funders | size %}
-            {% if projects_size != 0 %}
-                <section class="block block__logo-grid">
-                    <div class="container">
-                        <div class="section-heading">
-                            <h2>Project Funders</h2>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="logo-grid__grid">
-                            {% for item in page.project_funders %}
-                            <a class="logo-grid__logo" href="{{ item.link }}">
-                                <img src="{{ item.featured_image }}" alt="University of Cambridge">
-                            </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </section>
-            {% endif %}
-        {% endif %}
+{% if page.people != nil %}
+{% assign people_size = page.people | size %}
+{% if people_size != 0 %}
+<section class="block block__team">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Related People</h2>
+      <span></span>
+    </div>
+    <div class="team__grid">
+      {% for item in page.people %}
+      {% assign people_slug = item %}
+      {% for item in site.people %}
+      {% if item.slug == people_slug %}
+      <a href="{{ item.url }}" class="team__member">
+        <div class="team__member-image">
+          <img src="{{site.url}}{{site.baseurl}}/assets/uploads/{{item.image}}" alt="Image of {{item.given}} {{item.family}}">
+        </div>
+        <div class="team__member-details">
+          <div>
+            <h2>{{ item.given }} {{ item.family }}</h2>
+            <p>{{ item.description }}</p>
+          </div>
+          <span>View Profile</span>
+        </div>
+      </a>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endif %}
 
-        {% if page.people != nil %}
-            {% assign people_size = page.people | size %}
-            {% if people_size != 0 %}
-                <section class="block block__team">
-                    <div class="container">
-                        <div class="section-heading">
-                            <h2>Related People</h2>
-                            <span></span>
-                        </div>
-                        <div class="team__grid">
-                            {% for item in page.people %}
-                            {% assign people_slug = item %}
-                            {% for item in site.people %}
-                            {% if item.slug == people_slug %}
-                            <a href="{{ item.url }}" class="team__member">
-                                <div class="team__member-image">
-                                    <img src="{{site.url}}{{site.baseurl}}/assets/uploads/{{item.image}}" alt="Image of {{item.given}} {{item.family}}">
-                                </div>
-                                <div class="team__member-details">
-                                    <div>
-                                        <h2>{{ item.given }} {{ item.family }}</h2>
-                                        <p>{{ item.description }}</p>
-                                    </div>
-                                    <span>View Profile</span>
-                                </div>
-                            </a>
-                            {% endif %}
-                            {% endfor %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </section>
-            {% endif %}
-        {% endif %}
+{% if page.publications != nil %}
+{% assign people_size = page.publications | size %}
+{% if publications_size != 0 %}
+<section class="block block__publications">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Related Publications</h2>
+      <span></span>
+    </div>
+    <div class="publications__list">
+      {% for item in page.publications %}
+      {% assign project_slug = item %}
+      {% for item in site.publications %}
+      {% if item.slug == project_slug %}
+      {% include listpaper.html entry=item %}
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endif %}
 
-        {% if page.publications != nil %}
-            {% assign people_size = page.publications | size %}
-            {% if publications_size != 0 %}
-                <section class="block block__publications">
-                    <div class="container">
-                        <div class="section-heading">
-                            <h2>Related Publications</h2>
-                            <span></span>
-                        </div>
-                        <div class="publications__list">
-                            {% for item in page.publications %}
-                            {% assign project_slug = item %}
-                            {% for item in site.publications %}
-                            {% if item.slug == project_slug %}
-                            <div class="publications__item">
-                                <div class="publications__item-left column-t-9">
-                                    <h2 class="publications__item-title">{{ item.title }}</h2>
-                                    <p class="publications__item-author">{{ item.author }}</p>
-                                    <p class="publications__item-references">{{ item.references }}</p>
-                                </div>
-                                <div class="publications__item-right column-t-2">
-                                    <!-- <p class="publications__item-date">{{ item.date | date: "%-d %B %Y" }}</p> -->
-                                    <a href="{{ item.url }}" class="publications__item-link">Read More ></a>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </section>
-            {% endif %}
-        {% endif %}
-
-        <section class="block block__pagination">
-            <div class="container row row--justified">
-                {% if page.previous.url %}
-                <a href="{{page.previous.url}}" class="pagination__link pagination__link-previous column-m-12 column-t-5">
-                    <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#DB3900">
-                                <g id="Down" transform="translate(1583.000000, 759.000000)">
-                                    <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                    <div>
-                        <h4>Previous Project:</h4>
-                        <p>{{page.previous.title}}</p>
-                    </div>
-                </a>
-                {% else %}
-                <div></div>
-                {% endif %}
-                {% if page.next.url %}
-                <a href="{{page.next.url}}" class="pagination__link pagination__link-next column-m-12 column-t-5">
-                    <div>
-                        <h4>Next Project:</h4>
-                        <p>{{page.next.title}}</p>
-                    </div>
-                    <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#DB3900">
-                                <g id="Down" transform="translate(1583.000000, 759.000000)">
-                                    <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
-                                    <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </a>
-                {% else %}
-                <div></div>
-                {% endif %}
-            </div>
-        </section>
-    </main>
-    {% include site-footer.html %}
-    <script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script>
-</body>
-
-</html>
+<section class="block block__pagination">
+  <div class="container row row--justified">
+    {% if page.previous.url %}
+    <a href="{{page.previous.url}}" class="pagination__link pagination__link-previous column-m-12 column-t-5">
+      <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#DB3900">
+            <g id="Down" transform="translate(1583.000000, 759.000000)">
+              <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
+              <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
+              <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
+              <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
+              <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div>
+        <h4>Previous Project:</h4>
+        <p>{{page.previous.title}}</p>
+      </div>
+    </a>
+    {% else %}
+    <div></div>
+    {% endif %}
+    {% if page.next.url %}
+    <a href="{{page.next.url}}" class="pagination__link pagination__link-next column-m-12 column-t-5">
+      <div>
+        <h4>Next Project:</h4>
+        <p>{{page.next.title}}</p>
+      </div>
+      <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#DB3900">
+            <g id="Down" transform="translate(1583.000000, 759.000000)">
+              <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
+              <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
+              <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
+              <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
+              <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </a>
+    {% else %}
+    <div></div>
+    {% endif %}
+  </div>
+</section>
