@@ -13,12 +13,12 @@
     </div>
   </div>
   {% endif %}
-  <div class="row row--justified">
+  <div class="row">
     <div class="section-heading">
       <h2>Cite this Paper</h2>
     </div>
-    {% include copy_sections.html %}
   </div>
+  {% include copy_sections.html %}
   {% if pdf or arxiv or website or html or openreview or software or supplementary or video or page.extras %}
   <h4>Related Material</h4>
   <div id="extras">
