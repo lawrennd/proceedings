@@ -1,6 +1,6 @@
 {%-include extractinfo_publication.html entry=page-%}
 {%-include listauthors.html-%}
-  <div class="row row--justified">
+  <div class="row">
     {%-if layout=='article'-%}{% if journal %}<i>{{ journal }}</i>{%endif%}{%endif%}{%-if layout=='inproceedings'-%}{%-if container-title-%}<i>{{ container-title }}</i>{%-endif-%}{%-endif-%}{%-if publisher or volume-%},&nbsp;{%-endif-%}{%if publisher %}{{ publisher }} {%endif%}{%-if volume -%}{{ volume }}{%-if number-%}({{number}}){%-endif-%}{%-endif-%}{%-if firstpage-%}:{{ firstpage }}{%-if lastpage-%}-{{ lastpage }}{%-endif-%}{%-endif-%}{%-if issued.date-parts or year or date-%},&nbsp;{%-endif-%}{%-if issued-%}{{ issued.date-parts.first }}{%-elsif year-%}{{ year }}{%-elsif date-%}{{ date | date: "%Y" }}{%-endif-%}.
   </div> <!-- info -->
   {% if abstract %}
@@ -9,14 +9,16 @@
       <div class="section-heading">
 	<h2>Abstract</h2>
       </div>
-      <div id="abstract" class="abstract">
-	{{ abstract }}
-      </div>
+      {{ abstract }}
     </div>
   </div>
   {% endif %}
-  <h4>Cite this Paper</h4>
-{% include copy_sections.html %}
+  <div class="row row--justified">
+    <div class="section-heading">
+      <h2>Cite this Paper</h2>
+    </div>
+    {% include copy_sections.html %}
+  </div>
   {% if pdf or arxiv or website or html or openreview or software or supplementary or video or page.extras %}
   <h4>Related Material</h4>
   <div id="extras">
