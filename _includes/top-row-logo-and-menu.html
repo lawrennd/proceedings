@@ -4,7 +4,15 @@
     {% include nav-primary.html %}
   </div>
   <div class="column">
-    <div class="hero__dot hero__dot--top-left">
+    <span class="hero__dot hero__dot--top-left"></span>
+    <span class="hero__dot hero__dot--top-left"></span>      
+    <span class="hero__dot hero__dot--top-right"></span>
+    <span class="hero__dot hero__dot--bottom-left"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+    <div class="hero__item hero__item--bottom-left">
+      {%-if include.title-%}
+      <h1 class="hero__title">{{ include.title }}</h1>
+      {%-endif-%}
       {% if include.back_to_url %}
       <a href="{{site.url }}{{site.baseurl}}{{ include.back_to_url }}" class="back-to-collection">
         <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -23,15 +31,6 @@
         <p>{{ include.back_to_text }}</p>
       </a>{% endif %}{% endif %}
     </div>
-    <span class="hero__dot hero__dot--top-left"></span>      
-    <span class="hero__dot hero__dot--top-right"></span>
-    <span class="hero__dot hero__dot--bottom-left"></span>
-    <span class="hero__dot hero__dot--bottom-right"></span>
-    {%-if include.title-%}
-    <div class="hero__item hero__item--bottom-left">
-      <h1 class="hero__title">{{ include.title }}</h1>
-    </div>
-    {%-endif-%}
   </div>
   <div class="column">
     <span class="hero__dot hero__dot--top-right"></span>
