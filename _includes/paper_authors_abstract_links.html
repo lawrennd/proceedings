@@ -30,6 +30,10 @@
 	{% if arxiv %}
 	{% include links/arxiv-link.html id=arxiv %}
 	{% endif %}
+	{% if site.ghub.edit %}
+	{% include links/edit-link.html %}
+	{% endif %}
+	
       </div>
       {% endif %}
     </div>
