@@ -70,6 +70,9 @@ layout: page
           <span></span>
         </div>
         <div class="team-profile__contact-socials">
+	  {% if page.website != nil %}
+	  {% include links/home-link.html link=page.website %}
+	  {% endif %}
           {% if page.github != nil %}
 	  {% include socials/github-link.html id=page.github %}
           {% endif %}
