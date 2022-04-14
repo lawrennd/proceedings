@@ -39,6 +39,9 @@
 	{% if site.ghub.edit %}
 	{% include links/edit-link.html %}
 	{% endif %}
+	{% if software %}
+	{% include links/software-link.html link=software %}
+	{% endif %}
 	
       </div>
       {% endif %}
