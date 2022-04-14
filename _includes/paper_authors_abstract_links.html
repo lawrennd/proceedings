@@ -5,7 +5,11 @@
       <h1>{{ page.title }}</h1>
       <span></span>
     </div>
+  </div>
+  <div class="row row--justified">
     {%-include listauthors.html-%}
+  </div>
+  <div class="row">
     {%-if layout=='article'-%}{% if journal %}<i>{{ journal }}</i>{%endif%}{%endif%}{%-if layout=='inproceedings'-%}{%-if container-title-%}<i>{{ container-title }}</i>{%-endif-%}{%-endif-%}{%-if publisher or volume-%},&nbsp;{%-endif-%}{%if publisher %}{{ publisher }} {%endif%}{%-if volume -%}{{ volume }}{%-if number-%}({{number}}){%-endif-%}{%-endif-%}{%-if firstpage-%}:{{ firstpage }}{%-if lastpage-%}-{{ lastpage }}{%-endif-%}{%-endif-%}{%-if issued.date-parts or year or date-%},&nbsp;{%-endif-%}{%-if issued-%}{{ issued.date-parts.first }}{%-elsif year-%}{{ year }}{%-elsif date-%}{{ date | date: "%Y" }}{%-endif-%}.
   </div>     
   <div class="row row--justified">
