@@ -30,6 +30,12 @@
 	{% if html %}
 	{% include links/html-link.html link=html %}
 	{% endif %}
+	{% if doi %}
+	{% include links/doi-link.html id=doi %}
+	{% endif %}
+	{% if openreview %}
+	{% include links/openreview-link.html id=openreview %}
+	{% endif %}
 	{% if pdf %}
 	{% include links/pdf-link.html link=pdf %}
 	{% endif %}
