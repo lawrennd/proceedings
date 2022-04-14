@@ -27,6 +27,9 @@
         <span></span>
       </div>
       <div class="paper-details__links-icons">
+	{% if html %}
+	{% include links/html-link.html link=html %}
+	{% endif %}
 	{% if pdf %}
 	{% include links/pdf-link.html link=pdf %}
 	{% endif %}
