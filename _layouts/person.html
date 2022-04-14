@@ -82,6 +82,9 @@ layout: page
           {% if page.facebook != nil %}
 	  {% include socials/facebook-link.html id=page.facebook %}
           {% endif %}
+	  {% if site.ghub.edit %}
+	  {% include links/edit-link.html %}
+	  {% endif %}
         </div>
         {% if page.email != nil %}
         <a href="mailto:{{page.email}}">{{page.email}}</a>
