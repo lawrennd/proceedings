@@ -3,7 +3,7 @@ layout: page
 ---
 <section class="block block__hero block__hero--standard">
   <div class="hero__bg">
-    <img src="{{site.url}}/{{site.baseurl}}/{{site.data.images.directory}}/{{ page.featured_image }}">
+    <img src="{{site.data.images.directory | relative_url }}/{{ page.featured_image }}">
   </div>
   <div class="container">
     {% include top-row-logo-and-menu.html %}
@@ -45,7 +45,7 @@ layout: page
       {% if item.slug == project_slug %}
       <a href="{{ item.url }}" class="projects__item">
         <div class="projects__item-image">
-          <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{{item.featured_image}}" alt="Image of {{item.title}}">
+          <img src="{{site.data.images.directory | relative_url }}/{{item.featured_image}}" alt="Image of {{item.title}}">
         </div>
         <div class="projects__item-details">
           <div>
@@ -77,7 +77,7 @@ layout: page
       {% include extractname.html entry=person %}
       <a href="{{ person.url }}" class="team__member">
         <div class="team__member-image">
-	  <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
+	  <img src="{{site.data.images.directory | relative_url }}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
         </div>
         <div class="team__member-details">
           <div>

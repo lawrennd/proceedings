@@ -47,7 +47,7 @@ layout: page
       <div class="column">
         <span class="hero__dot hero__dot--bottom-right"></span>
         <div class="hero__item hero__item--top-left limit-height">
-          <img class="hero__image--people" src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{%if page.image and page.image != "" %}{{page.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{page.title}}">
+          <img class="hero__image--people" src="{{site.data.images.directory | relative_url }}/{%if page.image and page.image != "" %}{{page.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{page.title}}">
         </div>
       </div>
     </div>

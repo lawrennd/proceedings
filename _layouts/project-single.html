@@ -3,7 +3,7 @@ layout: page
 ---
 <section class="block block__hero block__hero--standard">
   <div class="hero__bg">
-    <img src="{{site.url}}/{{site.baseurl}}/{{site.data.images.directory}}/{{ page.featured_image }}">
+    <img src="{{site.data.images.directory | relative_url }}/{{ page.featured_image }}">
   </div>
   <div class="container">
     <!-- Top Row | Logo & Menu -->
@@ -114,7 +114,7 @@ layout: page
     <div class="logo-grid__grid">
       {% for item in page.project_funders %}
       <a class="logo-grid__logo" href="{{ item.link }}">
-        <img src="{{site.url}}/{{site.baseurl}}/{{site.data.images.directory}}/{{ item.featured_image }}" alt="University of Cambridge">
+        <img src="{{site.data.images.directory | relative_url }}/{{ item.featured_image }}" alt="University of Cambridge">
       </a>
       {% endfor %}
     </div>
@@ -139,7 +139,7 @@ layout: page
       {% include extractname.html entry=person %}
       <a href="{{ person.url }}" class="team__member">
         <div class="team__member-image">
-          <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
+          <img src="{{site.data.images.directory | relative_url }}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
         </div>
         <div class="team__member-details">
           <div>
