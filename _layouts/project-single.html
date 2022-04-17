@@ -3,7 +3,7 @@ layout: page
 ---
 <section class="block block__hero block__hero--standard">
   <div class="hero__bg">
-    <img src="{{ page.featured_image }}">
+    <img src="{{site.url}}/{{site.baseurl}}/site.data.images.directory}}/{{ page.featured_image }}">
   </div>
   <div class="container">
     <!-- Top Row | Logo & Menu -->
@@ -114,7 +114,7 @@ layout: page
     <div class="logo-grid__grid">
       {% for item in page.project_funders %}
       <a class="logo-grid__logo" href="{{ item.link }}">
-        <img src="{{ item.featured_image }}" alt="University of Cambridge">
+        <img src="{{site.url}}/{{site.baseurl}}/{{site.data.images.directory}}/{{ item.featured_image }}" alt="University of Cambridge">
       </a>
       {% endfor %}
     </div>
@@ -133,18 +133,18 @@ layout: page
       <span></span>
     </div>
     <div class="team__grid">
-      {% for item in page.people %}
-      {% assign people_slug = item %}
-      {% for item in site.people %}
-      {% if item.slug == people_slug %}
-      <a href="{{ item.url }}" class="team__member">
+      {% for person_slug in page.people %}
+      {% for person in site.people %}
+      {% if person.slug == person_slug %}
+      {% include extractname.html entry=person %}
+      <a href="{{ person.url }}" class="team__member">
         <div class="team__member-image">
-          <img src="{{site.url}}{{site.baseurl}}/assets/uploads/{{item.image}}" alt="Image of {{item.given}} {{item.family}}">
+          <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{{person.image}}" alt="Image of {{name}}">
         </div>
         <div class="team__member-details">
           <div>
-            <h2>{{ item.given }} {{ item.family }}</h2>
-            <p>{{ item.description }}</p>
+            <h2>{{ name }}</h2>
+            <p>{{ person.description }}</p>
           </div>
           <span>View Profile</span>
         </div>
@@ -168,11 +168,10 @@ layout: page
       <span></span>
     </div>
     <div class="publications__list">
-      {% for item in page.publications %}
-      {% assign project_slug = item %}
-      {% for item in site.publications %}
-      {% if item.slug == project_slug %}
-      {% include listpaper.html entry=item %}
+      {% for publication_slug in page.publications %}
+      {% for publication in site.publications %}
+      {% if publication.slug == publication_slug %}
+      {% include listpaper.html entry=publication %}
       {% endif %}
       {% endfor %}
       {% endfor %}
