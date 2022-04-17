@@ -5,11 +5,17 @@
   </div>
   <div class="column">
     <span class="hero__dot hero__dot--top-left"></span>
-    <span class="hero__dot hero__dot--top-left"></span>      
     <span class="hero__dot hero__dot--top-right"></span>
     <span class="hero__dot hero__dot--bottom-left"></span>
     <span class="hero__dot hero__dot--bottom-right"></span>
+    {% if include.nologo %}
     <div class="hero__item hero__item--bottom-left">
+    </div>
+    {% else %}
+    <a href="{{site.url}}" class="hero__item hero__item--top-left">
+      <img class="brand" src="{{site.data.site.logo}}" alt="Logo">
+    </a>
+    {% endif %}
       {%-if include.title-%}
       <h1 class="hero__title">{{ include.title }}</h1>
       {%-endif-%}
