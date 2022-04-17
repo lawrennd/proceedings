@@ -71,18 +71,18 @@ layout: page
       <span></span>
     </div>
     <div class="team__grid">
-      {% for item in page.people %}
-      {% assign people_slug = item %}
-      {% for item in site.people %}
-      {% if item.slug == people_slug %}
-      <a href="{{ item.url }}" class="team__member">
+      {% for person_slug in page.people %}
+      {% for person in site.people %}
+      {% if person.slug == person_slug %}
+      {% include extractname.html entry=person %}
+      <a href="{{ person.url }}" class="team__member">
         <div class="team__member-image">
-          <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{{item.image}}" alt="Image of {{item.title}}">
+	  <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
         </div>
         <div class="team__member-details">
           <div>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.description }}</p>
+            <h2>{{ name }}</h2>
+            <p>{{ person.position }}{% if person.institution %}, {{ person.institution }}{%endif%}</p>
           </div>
           <span>View Profile</span>
         </div>

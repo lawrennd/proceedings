@@ -139,12 +139,12 @@ layout: page
       {% include extractname.html entry=person %}
       <a href="{{ person.url }}" class="team__member">
         <div class="team__member-image">
-          <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{{person.image}}" alt="Image of {{name}}">
+          <img src="{{site.url}}{{site.baseurl}}/{{site.data.images.directory}}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
         </div>
         <div class="team__member-details">
           <div>
             <h2>{{ name }}</h2>
-            <p>{{ person.description }}</p>
+	    <p>{{ person.position }}{% if person.institution %}, {{ person.institution }}{%endif%}</p>
           </div>
           <span>View Profile</span>
         </div>
