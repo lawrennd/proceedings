@@ -52,7 +52,7 @@ layout: page
             <h2>{{ item.title }}</h2>
             <p>{{ item.excerpt }}</p>
           </div>
-          <span>View Profile</span>
+          <span>Read More</span>
         </div>
       </a>
       {% endif %}
@@ -95,26 +95,20 @@ layout: page
 </section>
 {% endif %}
 
-            {% assign researchName = page.title | downcase | replace: ' ', '-' %}
-            {% assign relatedNews = site.news | where:"category", researchName %}
-            {% if relatedNews != empty %}
-                <section class="block block__related-news">
-                    <div class="container">
-                        <div class="section-heading">
-                            <h2>Related News</h2>
-                            <span></span>
-                        </div>
-                        <div class="related-news__listings">
-                            {% for item in relatedNews limit:3 %}
-                                {% include news-events__post.html %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </section>
-            {% endif %}
-        </main>
-        {% include site-footer.html %}
-        <script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script>
-    </body>
-</html>
+{% assign researchName = page.title | downcase | replace: ' ', '-' %}
+{% assign relatedNews = site.news | where:"category", researchName %}
+{% if relatedNews != empty %}
+<section class="block block__related-news">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Related News</h2>
+      <span></span>
+    </div>
+    <div class="related-news__listings">
+      {% for item in relatedNews limit:3 %}
+      {% include news-events__post.html %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
