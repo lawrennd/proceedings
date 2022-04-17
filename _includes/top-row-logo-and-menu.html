@@ -10,11 +10,6 @@
     <span class="hero__dot hero__dot--bottom-right"></span>
     <div class="hero__item hero__item--bottom-left">
     </div>
-    {% unless include.nologo %}
-    <a href="{{site.url}}" class="hero__item hero__item--top-left">
-      <img class="brand" src="{{site.data.site.logo}}" alt="Logo">
-    </a>
-    {% endunless %}
       {%-if include.title-%}
       <h1 class="hero__title">{{ include.title }}</h1>
       {%-endif-%}
