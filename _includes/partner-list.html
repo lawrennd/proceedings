@@ -1,0 +1,11 @@
+<section class="block block__logo-grid">
+    <div class="container">
+        <div class="logo-grid__grid">
+            {% for partner in site.data.homepage.partners %}
+                <a class="logo-grid__logo" href="{{ partner.link }}">
+                    <img src="{{site.url}}/{{site.baseurl}}/{{site.data.images.directory}}/{{ partner.logo }}" alt="{{ partner.name }}">
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
