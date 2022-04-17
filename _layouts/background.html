@@ -7,7 +7,7 @@ layout: default
 {%-for parent in site.lectures-%}
 {%-if parent.week == page.week and parent.session==page.session-%}
 {%-assign parent_lectures=true-%}
-  <li><a href="{{site.baseurl}}{{parent.url}}"><b>{%-if parent.week and parent.week>0-%}Week {{ parent.week }}{%-endif-%}{%-if parent.session and parent.session>0-%}{%-if parent.week and parent.week>0-%}&nbsp;{%-endif-%}Session {{ parent.session }}{%-endif-%}:</b> {{ parent.title }}</a></li>
+  <li><a href="{{parent.url}}"><b>{%-if parent.week and parent.week>0-%}Week {{ parent.week }}{%-endif-%}{%-if parent.session and parent.session>0-%}{%-if parent.week and parent.week>0-%}&nbsp;{%-endif-%}Session {{ parent.session }}{%-endif-%}:</b> {{ parent.title }}</a></li>
 {%-endif-%}
 {%-endfor-%}
 {% endcapture %}
