@@ -39,8 +39,7 @@ layout: page
       <span></span>
     </div>
     <div class="projects__grid">
-      {% for item in page.projects %}
-      {% assign project_slug = item %}
+      {% for project_slug in page.projects %}
       {% for item in site.projects %}
       {% if item.slug == project_slug %}
       <a href="{{ item.url }}" class="projects__item">

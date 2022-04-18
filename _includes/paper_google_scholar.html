@@ -3,7 +3,7 @@
 {%-elsif page.authors-%}
 {%-assign authors=page.authors-%}
 {%-endif-%}
-{%-if page.layout=='report'%}{%-assign pageurl=site.url | append: site.baseurl | append: '/' | append: page.url-%}
+{%-if page.layout=='report'%}{%-assign pageurl=page.url | absolute_url-%}
 {%-endif-%}
 {%-if page.fulltext-%}
 {%-assign pageurl=page.fulltext-%}
@@ -21,7 +21,7 @@
 
 {%-endif-%}
 <meta name="citation_language" content="en"/>
-<meta name="citation_abstract_html_url" content="{{ "" | relative_url }}{{ page.url }}"/>
+<meta name="citation_abstract_html_url" content="{{ page.url | relative_url }}"/>
 {%-if pageurl-%}
 <meta name="citation_fulltext_html_url" content="{{ pageurl }}"/>
 
