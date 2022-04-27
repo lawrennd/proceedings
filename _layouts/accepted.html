@@ -4,12 +4,4 @@ layout: default
 
 <h1>{{ site.conference.short_name }} {{ site.conference.year }} Accepted Papers</h1>
 
-{%- if site.data.accepted_papers -%}
-<ul>
-	{%- for paper in site.data.accepted_papers -%}
-	<li> <b>{{paper.title}}</b> <br>{{paper.authors | remove: "*"}}</li>
-	<br>
-	{%- endfor -%}
-</ul>
-{%- endif -%}
-
+{% include accepted.html %}
