@@ -18,10 +18,10 @@ layout: page
       <span></span>
     </div>
     <div class="research-overview__short">
-      {{ page.overview_short | markdownify }}
+      {{ page.overview | markdownify }}
     </div>
     <div class="research-overview__long">
-      {{ page.overview_long | markdownify }}
+      {{ page.content | markdownify }}
     </div>
     <div class="research-overview__short-expand">
       <!-- SVGS into buttons -->
@@ -31,46 +31,16 @@ layout: page
   </div>
 </section>
 
-{% if page.projects != nil %}
-<section class="block block__projects">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Projects</h2>
-      <span></span>
-    </div>
-    <div class="projects__grid">
-      {% for project_slug in page.projects %}
-      {% for item in site.projects %}
-      {% if item.slug == project_slug %}
-      <a href="{{ item.url }}" class="projects__item">
-        <div class="projects__item-image">
-          <img src="{{site.data.images.directory | relative_url }}/{{item.featured_image}}" alt="Image of {{item.title}}">
-        </div>
-        <div class="projects__item-details">
-          <div>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.excerpt }}</p>
-          </div>
-          <span>Read More</span>
-        </div>
-      </a>
-      {% endif %}
-      {% endfor %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
 
-{% if page.people != nil %}
+{% if page.assignee != nil %}
 <section class="block block__team">
   <div class="container">
     <div class="section-heading">
-      <h2>Related People</h2>
+      <h2>Assignee</h2>
       <span></span>
     </div>
     <div class="team__grid">
-      {% for person_slug in page.people %}
+      {% for person_slug in page.assignee %}
       {% for person in site.people %}
       {% if person.slug == person_slug %}
       {% include extractname.html entry=person %}
@@ -88,24 +58,6 @@ layout: page
       </a>
       {% endif %}
       {% endfor %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
-{% assign researchName = page.title | downcase | replace: ' ', '-' %}
-{% assign relatedNews = site.news | where:"category", researchName %}
-{% if relatedNews != empty %}
-<section class="block block__related-news">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Related News</h2>
-      <span></span>
-    </div>
-    <div class="related-news__listings">
-      {% for item in relatedNews limit:3 %}
-      {% include news-events__post.html %}
       {% endfor %}
     </div>
   </div>
