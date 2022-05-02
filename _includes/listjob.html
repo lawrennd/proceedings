@@ -1,8 +1,10 @@
 <div class="publications__item">
   <div class="publications__item-left column-t-9">
     <h2 class="publications__item-title">{{ job.title }}</h2>
+    <p>{{ job.overview }}</p>
     <div class="publications__item-right column-t-2">
-{% if job.url %}
-    <a href="{{ job.url }}" class="publications__item-link">Read More ></a>{% endif %}
+      {% if job.url %}
+      <a href="{{ job.url }}" class="publications__item-link">Read More ></a>{% endif %}
+    </div>
   </div>
 </div>
