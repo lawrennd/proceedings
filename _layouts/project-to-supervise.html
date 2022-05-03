@@ -54,7 +54,7 @@ layout: page
       <span></span>
     </div>
     <div class="team__grid">
-      {% for person_slug in page.assignee %}
+      {% for person_slug in page.supervisors %}
       {% for person in site.people %}
       {% if person.slug == person_slug %}
       {% include extractname.html entry=person %}
