@@ -7,7 +7,11 @@ layout: page
   </div>
   <div class="container">
     {% include top-row-logo-and-menu.html %}
-    {% include second-row-nav-post.html title=page.title back_to_url="/internal/projects/" back_to_text="Back to available project list" %}
+    {% if page.status == 'Available' %}
+      {% include second-row-nav-post.html title=page.title back_to_url="/internal/projects/" back_to_text="Back to available project list" %}
+    {% elsif page.status == 'Completed' %}
+      {% include second-row-nav-post.html title=page.title back_to_url="/internal/completed-projects/" back_to_text="Back to completed project list" %}
+    {% endif %}
   </div>
 </section>
 
@@ -20,21 +24,23 @@ layout: page
     <div class="research-overview__short">
       {{ page.overview | markdownify }}
     </div>
+  {% if page.status == 'Available' %}
     <div class="research-overview__long">
       <div class="section-heading">
-	<h3>FAQs</h3>
-	<span></span>
+        <h3>FAQs</h3>
+        <span></span>
       </div>
       <ul>
-	<li>What will I learn in this Project?
-	  <div>{{ page.student_learn | markdownify }}</div>
-	</li>
-	<li> What is the objective of the project?
-	  <div>{{ page.project_objective | markdownify }}</div>
-	</li>
-	<li>How does this fit into the bigger picture?
-	  <div>{{ page.project_bigger_picture | markdownify }}</div>
-	</li>
+        <li>What will I learn in this Project?
+          <div>{{ page.student_learn | markdownify }}</div>
+        </li>
+        <li> What is the objective of the project?
+          <div>{{ page.project_objective | markdownify }}</div>
+        </li>
+        <li>How does this fit into the bigger picture?
+          <div>{{ page.project_bigger_picture | markdownify }}</div>
+        </li>
+      </ul>
       {{ page.content | markdownify }}
     </div>
     <div class="research-overview__short-expand">
@@ -42,7 +48,13 @@ layout: page
       <button class="expand-summary">Expand Summary</button>
       <button class="minimise-summary">Minimise Summary</button>
     </div>
+  {% endif %}
   </div>
+  {% if page.file-link %}
+    <div>
+      <a href="{{ page.file-link }}">Download project thesis</a>
+    </div>
+  {% endif %}
 </section>
 
 
