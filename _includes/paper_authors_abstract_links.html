@@ -1,0 +1,91 @@
+{%-include extractinfo_publication.html entry=page-%}
+<div class="container">
+  <div class="row row--justified">
+    <h1>{{ page.title }}</h1>
+    <div class="section-heading">
+      <span></span>
+    </div>
+  </div>
+  <div class="row row--justified">
+    {%-include listauthors.html-%}
+  </div>
+  <div class="row">
+    {%-if layout=='article'-%}{% if journal %}<i>{{ journal }}</i>{%endif%}{%endif%}{%-if layout=='inproceedings'-%}{%-if container-title-%}<i>{{ container-title }}</i>{%-endif-%}{%-endif-%}{%-if publisher or volume-%},&nbsp;{%-endif-%}{%if publisher %}{{ publisher }} {%endif%}{%-if volume -%}{{ volume }}{%-if number-%}({{number}}){%-endif-%}{%-endif-%}{%-if firstpage-%}:{{ firstpage }}{%-if lastpage-%}-{{ lastpage }}{%-endif-%}{%-endif-%}{%-if issued.date-parts or year or date-%},&nbsp;{%-endif-%}{%-if issued-%}{{ issued.date-parts.first }}{%-elsif year-%}{{ year }}{%-elsif date-%}{{ date | date: "%Y" }}{%-endif-%}.
+  </div>     
+  <div class="row row--justified">
+    <div class="paper-details__abstract column-m-12 column-t-7 column-d-8">
+      <div class="section-heading">
+        <h2>Abstract</h2>
+        <span></span>
+      </div>
+      {{ page.abstract | markdownify }}
+    </div>
+    <div class="paper-details__links column-m-12 column-t-5 column-d-3">
+      {% if pdf or arxiv or website or html or openreview or software or supplementary or video or page.extras %}
+      <div class="section-heading">
+        <h2>Links</h2>
+        <span></span>
+      </div>
+      <div class="paper-details__links-icons">
+	{% if website %}
+	{% include links/home-link.html link=website %}
+	{% endif %}
+	{% if html %}
+	{% include links/html-link.html link=html %}
+	{% endif %}
+	{% if doi %}
+	{% include links/doi-link.html id=doi %}
+	{% endif %}
+	{% if openreview %}
+	{% include links/openreview-link.html id=openreview %}
+	{% endif %}
+	{% if pdf %}
+	{% include links/pdf-link.html link=pdf %}
+	{% endif %}
+	{% if arxiv %}
+	{% include links/arxiv-link.html id=arxiv %}
+	{% endif %}
+	{% if site.ghub.edit %}
+	{% include links/edit-link.html %}
+	{% endif %}
+	{% if software %}
+	{% include links/software-link.html link=software %}
+	{% endif %}
+	
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row row--justified">
+    <div class="paper-details__links column-m-12 column-t-12">
+      <div class="section-heading">
+	<h2>Cite this Paper</h2>
+	<span></span>
+      </div>
+      <div class="container">
+	{% include copy_sections.html %}
+      </div>
+    </div>
+  </div>
+</div>
+<!--  {% if pdf or arxiv or website or html or openreview or software or supplementary or video or page.extras %}
+  <h4>Related Material</h4>
+    <div id="extras">
+    <ul>
+      {% if pdf %}
+      {% include links/pdf-link.html link=pdf %}
+      {% endif %}{% if html %}
+      <li><a href="{{ html }}" target="_blank" onclick="ga('send', 'event', 'Publisher HTML', 'Website', '{{ html }}', 10);">Publisher Website</a></li>{% endif %}{% if website %}
+      <li><a href="{{ website }}" target="_blank" onclick="ga('send', 'event', 'Paper Website', 'Website', '{{ website }}', 10);">Paper Website</a></li>{% endif %}{% if openreview %}
+      <li><a href="https://openreview.net/forum?id={{ openreview }}" target="_blank" onclick="ga('send', 'event', 'OpenReview site', 'Openreview', 'https://openreview.net/forum?id={{ openreview }}', 10);">OpenReview</a></li>{% endif %}{% if doi %}
+      <li><a href="https://doi.org/{{ doi }}" target="_blank" onclick="ga('send', 'event', 'doi version', 'Download', 'https://doi.org/{{ doi }}', 10);">doi</a></li>{% endif %}{% if supplementary %}
+      <li><a href="{{ supplementary }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', '{{ supplementary }}', 11);">Supplementary Material</a></li>{% endif %}{% if source %}
+      <li><a href="{{ source }}" target="_blank" onclick="ga('send', 'event', 'Source Link', 'Source', '{{ source }}', 0);">Paper Source Files</a></li>{% endif %}{% if software %}
+      <li><a href="{{ software }}" target="_blank" onclick="ga('send', 'event', 'Software Link', 'Software', '{{ software }}', 0);">Software</a></li>{% endif %}{% if video %}
+      <li><a href="{{ video }}" target="_blank" onclick="ga('send', 'event', 'Video Link', 'Video', '{{ video }}', 0);">Video</a></li>{% endif %}{% if arxiv %}
+      <li><a href="https://arxiv.org/abs/{{ arxiv }}" target="_blank" onclick="ga('send', 'event', 'arXiv version', 'Download', 'https://arxiv.org/abs/{{ arxiv }}', 10);">Arxiv Version</a></li>{% endif %}{% for extra in page.extras %}
+      <li><a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', 'Extra Downloads', 'Download', '{{ extra.link }}', 12);">{{ extra.label }}</a></li>{% endfor %}
+    </ul>
+  </div>{% endif %}
+{{ content | markdownify }}
+-->

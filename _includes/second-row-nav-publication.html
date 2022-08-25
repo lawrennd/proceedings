@@ -1,0 +1,26 @@
+<!-- Second Row | Title & Nav -->
+<div class="row">
+  <div class="column">
+    <span class="hero__dot hero__dot--bottom-left"></span>
+    <span class="hero__dot hero__dot--bottom-right"></span>
+    <div class="hero__item hero__item--top-left">
+      {% if include.back_to_url %}
+      <a href="{{site.url }}{{ "" | relative_url }}{{ include.back_to_url }}" class="back-to-collection">
+        <svg width="20px" height="12px" viewBox="0 0 20 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Home-Concept-v1.0-b" transform="translate(-1583.000000, -759.000000)" fill="#FFFFFF">
+              <g id="Down" transform="translate(1583.000000, 759.000000)">
+                <rect id="Rectangle" x="8" y="8" width="4" height="4"></rect>
+                <rect id="Rectangle" x="4" y="4" width="4" height="4"></rect>
+                <rect id="Rectangle" x="0" y="0" width="4" height="4"></rect>
+                <rect id="Rectangle" x="12" y="4" width="4" height="4"></rect>
+                <rect id="Rectangle" x="16" y="0" width="4" height="4"></rect>
+              </g>
+            </g>
+          </g>
+        </svg>{% if include.back_to_text %}
+        <p>{{ include.back_to_text }}</p>
+      </a>{% endif %}{% endif %}
+    </div>
+  </div>
+</div>

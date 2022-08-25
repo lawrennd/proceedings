@@ -1,0 +1,122 @@
+---
+layout: page
+---
+<section class="block block__hero block__hero--standard">
+  <div class="hero__bg">
+    <img src="{{site.data.images.directory | relative_url }}/{{ page.featured_image }}">
+  </div>
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% if page.status == 'Available' %}
+      {% include second-row-nav-post.html title=page.title back_to_url="/internal/projects/" back_to_text="Back to available project list" %}
+    {% elsif page.status == 'Completed' %}
+      {% include second-row-nav-post.html title=page.title back_to_url="/internal/completed-projects/" back_to_text="Back to completed project list" %}
+    {% endif %}
+  </div>
+</section>
+
+<section class="block block__research-overview">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Overview</h2>
+      <span></span>
+    </div>
+    <div class="research-overview__short">
+      {{ page.overview | markdownify }}
+    </div>
+  {% if page.status == 'Available' %}
+    <div class="research-overview__long">
+      <div class="section-heading">
+        <h3>FAQs</h3>
+        <span></span>
+      </div>
+      <ul>
+        <li>What will I learn in this Project?
+          <div>{{ page.student_learn | markdownify }}</div>
+        </li>
+        <li> What is the objective of the project?
+          <div>{{ page.project_objective | markdownify }}</div>
+        </li>
+        <li>How does this fit into the bigger picture?
+          <div>{{ page.project_bigger_picture | markdownify }}</div>
+        </li>
+      </ul>
+      {{ page.content | markdownify }}
+    </div>
+    <div class="research-overview__short-expand">
+      <!-- SVGS into buttons -->
+      <button class="expand-summary">Expand Summary</button>
+      <button class="minimise-summary">Minimise Summary</button>
+    </div>
+  {% endif %}
+  </div>
+  {% if page.file-link %}
+    <div>
+      <a href="{{ page.file-link }}">Download project thesis</a>
+    </div>
+  {% endif %}
+</section>
+
+
+{% if page.supervisors != nil %}
+<section class="block block__team">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Supervisors</h2>
+      <span></span>
+    </div>
+    <div class="team__grid">
+      {% for person_slug in page.supervisors %}
+      {% for person in site.people %}
+      {% if person.slug == person_slug %}
+      {% include extractname.html entry=person %}
+      <a href="{{ person.url }}" class="team__member">
+        <div class="team__member-image">
+	  <img src="{{site.data.images.directory | relative_url }}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
+        </div>
+        <div class="team__member-details">
+          <div>
+            <h2>{{ name }}</h2>
+            <p>{{ person.position }}{% if person.institution %}, {{ person.institution }}{%endif%}</p>
+          </div>
+          <span>View Profile</span>
+        </div>
+      </a>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.projects != nil %}
+<section class="block block__projects">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Related Group Projects</h2>
+      <span></span>
+    </div>
+    <div class="projects__grid">
+      {% for project_slug in page.projects %}
+      {% for item in site.projects %}
+      {% if item.slug == project_slug %}
+      <a href="{{ item.url }}" class="projects__item">
+        <div class="projects__item-image">
+          <img src="{{site.data.images.directory | relative_url }}/{{item.featured_image}}" alt="Image of {{item.title}}">
+        </div>
+        <div class="projects__item-details">
+          <div>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.excerpt }}</p>
+          </div>
+          <span>Read More</span>
+        </div>
+      </a>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

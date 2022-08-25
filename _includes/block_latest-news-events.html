@@ -5,8 +5,8 @@
                 <button class="active" data-toggle="news">News</button>
                 <button class="" data-toggle="events">Events</button>
             </div>
-            <a class="latest-news-events__intro-link latest-news-events__intro-link-news button-simple active" href="{{site.baseurl}}/news/">View All News</a>
-            <a class="latest-news-events__intro-link latest-news-events__intro-link-events button-simple" href="{{site.baseurl}}/events/">View All Events</a>
+            <a class="latest-news-events__intro-link latest-news-events__intro-link-news button-simple active" href="{{ "" | relative_url }}/news/">View All News</a>
+            <a class="latest-news-events__intro-link latest-news-events__intro-link-events button-simple" href="{{ "" | relative_url }}/events/">View All Events</a>
         </div>
         <div class="latest-news-events__listings latest-news-events__listings-news active">
             {% assign news_collection = site.news | sort: 'date' | reverse %}

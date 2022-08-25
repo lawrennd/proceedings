@@ -1,0 +1,14 @@
+{%-if page.path == "index.html" or page.path == "index.md" -%}
+<!-- From https://www.netlifycms.org/docs/add-to-your-site/ -->
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+{%-endif-%}

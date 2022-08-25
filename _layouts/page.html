@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  {% include site-head.html %}
-
-    <body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
-        {% include site-header.html %}
-        <main class="main">
-            {{ content }}
-        </main>
-        {% include site-footer.html %}
-        <script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script>
-    </body>
+<html lang="{{ site.lang | default: site.lang | default: "en" }}">
+  {% include head.html %}
+  
+  <body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
+    {% include header.html %}
+    <main class="main">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    <script type="text/javascript" src={{ "/assets/js/jquery-3.6.0.min.js" | relative_url }}></script>
+    <script type="text/javascript" src={{ "/assets/js/main.js" | relative_url }}></script>
+  </body>
 </html>
 

@@ -11,7 +11,7 @@
 {%-endif-%}
 {%-if include.entry.url -%}
 {%-capture url-%}
-{{site.url}}{{site.baseurl}}{{include.entry.url}}
+{{ "" | relative_url }}{{include.entry.url}}
 {%-endcapture-%}
 {%-else-%}
 {% assign url=false %}
@@ -51,8 +51,6 @@
 {%-endif-%}
 {%-if include.entry.publisher-%}
   {% assign publisher=include.entry.publisher %}
-{%-elsif site.publisher-%}
-  {% assign publisher=site.publisher %}
 {%-else-%}
   {% assign publisher=false %}
 {%-endif-%}
@@ -159,8 +157,6 @@
   {%-endif-%}
 {%-elsif include.entry.date-%}
   {% assign date=include.entry.date %}
-{%-elsif site.date-%}
-  {% assign date=site.date %}
 {%-else-%}
   {% assign date=false %}
 {%-endif-%}

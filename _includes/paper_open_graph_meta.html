@@ -14,15 +14,15 @@
 <meta property="article:author" content="">
 
 {%-endif-%} 
-<meta property="og:url" content="{{site.url}}{{site.baseurl}}{{ page.url }}"/>
+<meta property="og:url" content="{{ page.url | absolute_url }}"/>
 {%-if site.logo-%}
-<meta property="og:image" content="{{site.url}}{{site.baseurl}}/assets/images/{{site.logo}}"/>
+<meta property="og:image" content='{{ "/assets/images/" | absolute_url }}{{site.logo}}'/>
 
 {%-elsif site.style=='pmlr'-%}
-<meta property="og:image" content="{{site.url}}{{ site.baseurl }}/assets/images/logo-pmlr.png"/>
+<meta property="og:image" content='{{ "/assets/images/logo-pmlr.png" | absolute_url }}'/>
 
 {%-elsif site.style=='aistats'-%}
-<meta property="og:image" content="{{site.url}}{{ site.baseurl }}/assets/images/logo-aistats.jpg"/>
+<meta property="og:image" content='{{ "/assets/images/logo-aistats.jpg" | absolute_url }}'/>
 
 {%-endif-%}
 {%-if site.style=='pmlr'-%}

@@ -1,6 +1,6 @@
 <a class="news-events__post row row--justified" href="{{ post.url }}">
     <div class="news-events__post-image column-m-12-nest column-t-4-nest">
-        <img src="{{site.url}}{{site.baseurl}}/assets/uploads/{{ post.image }}" alt="">
+        <img src="{{site.data.images.directory | relative_url }}/{{ post.image }}" alt="">
         <p class="post-date">{{ post.event_date | date: "%-d %B %Y" }}</p>
     </div>
     <div class="news-events__post-content column-m-12-nest column-t-8-nest">
