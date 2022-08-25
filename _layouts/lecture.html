@@ -2,6 +2,16 @@
 layout: page
 ---
 
+<section class="block block__hero block__hero--standard">
+  <div class="hero__bg">
+    <img src="{{site.data.images.directory | relative_url }}/{{ page.featured_image }}">
+  </div>
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav-post.html title=page.title back_to_url=site.baseurl back_to_text="Back to overview" %}
+  </div>
+</section>
+
 {%-assign background_lectures=false-%}
 {% capture background_contents %}
 {%-for background in site.background-%}
