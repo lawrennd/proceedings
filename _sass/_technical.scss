@@ -8,7 +8,6 @@
 .codebox {
     /* Below are styles for the codebox (not the code itself) */
     border:1px solid black;
-    background-color:$lightest;
     width:3em;
     height:1.5ex;
     overflow:hidden;
@@ -28,7 +27,6 @@
 .figure {
     border: 1px solid black;
     margin: 25px;
-    background-color: $lightest;
 }
 .figure object {
     display: block;
