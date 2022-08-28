@@ -17,21 +17,22 @@
 	  {%endif%}
         </div>
         <div class="latest-news-events__listings latest-news-events__listings-events">
-            {% assign todayDate = 'now' | date: '%Y%m%d' %}
+          {% assign todayDate = 'now' | date: '%Y%m%d' %}
+	  {% if site.events %}
             {% assign events = site.events | sort: "date" %}
             {% assign counter = 1 %}
 
             {% for post in events %}
-                {% assign eventDate = post.event_date | date: '%Y%m%d' %}
-                {% if todayDate <= eventDate  %}
-                    {% include events__post.html %}
-
-                    {% assign counter = counter | plus: 1 %}
-                    {% if counter == 4 %}
-                        {% break %}
-                    {% endif %}
+              {% assign eventDate = post.event_date | date: '%Y%m%d' %}
+              {% if todayDate <= eventDate  %}
+	        {% include events__post.html %}
+                {% assign counter = counter | plus: 1 %}
+	        {% if counter == 4 %}
+                   {% break %}
                 {% endif %}
-            {% endfor %}
+              {% endif %}
+	    {% endfor %}
+	  {%endif%}
         </div>
     </div>
 </section>
