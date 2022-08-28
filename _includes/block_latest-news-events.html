@@ -9,10 +9,12 @@
             <a class="latest-news-events__intro-link latest-news-events__intro-link-events button-simple" href="{{ "" | relative_url }}/events/">View All Events</a>
         </div>
         <div class="latest-news-events__listings latest-news-events__listings-news active">
+	  {% if site.news %}
             {% assign news_collection = site.news | sort: 'date' | reverse %}
             {% for item in news_collection limit:3 %}
                 {% include news-events__post.html %}
-            {% endfor %}
+          {% endfor %}
+	  {%endif%}
         </div>
         <div class="latest-news-events__listings latest-news-events__listings-events">
             {% assign todayDate = 'now' | date: '%Y%m%d' %}
