@@ -32,7 +32,11 @@ layout: page
                     <div>
                         <img src="{{ item.icon }}">
                         <h3>{{ item.title }}</h3>
-			<p>{{ item.date }}</p>
+			<p>{{ item.date | date: "%Y-%m-%d"}}</p>
+			<p>{% for person in item.author %}
+			  {% include listperson.html %}
+			  {% endfor %}</p>
+			
                     </div>
                     <p>View Case Study</p>
                 </a>
