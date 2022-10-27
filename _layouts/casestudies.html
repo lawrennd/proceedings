@@ -27,15 +27,15 @@ layout: page
             {% endfor %}
         </div>
         <div class="resources__grid">
-            {% for item in site.special_topics reversed %}
+            {% for item in site.special_topics  %}
                 <a href="{{ item.url | relative_url }}" target="_blank" rel="noreferrer" class="resources__resource all {{ item.week }} active">
                     <div>
                         <img src="{{ item.icon | relative_url }}">
                         <h3>{{ item.title }}</h3>
-			<div>{{ item.date | date: "%Y-%m-%d"}}</div>
-			<div>{% for person in item.author %}
+			{{ item.date | date: "%Y-%m-%d"}}
+			{% for person in item.author %}
 			  {% include listperson.html %}
-			  {% endfor %}</div>
+			{% endfor %}
 			
                     </div>
                     <p>View Case Study</p>
