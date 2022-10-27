@@ -24,23 +24,19 @@ layout: page
         </div>
         <div class="projects__grid">
             {% for item in site.casestudies reversed  %}
-                <a href="{{ item.url | relative_url }}" target="_blank" rel="noreferrer" class="projects__item">
+                <a href="{{ item.url }}" class="projects__item">
                     <div class="projects__item-image">
-                      <img src="{{ item.icon | relative_url }}">
-		    </div>
-		    <div class="projects__item-details">
-		      <div>
-                        <h2>{{ item.title }}</h2>
-			<p>{{ item.date | date: "%Y-%m-%d"}}</p>
-			<p>{% for person in item.author %}
-			  {% include listperson.html %}
-			{% endfor %}</p>
-			
-                      </div>
-                      <span>View Case Study</span>
-		    </div>
+                        <img src="{{site.data.images.directory | relative_url }}/{{item.featured_image}}" alt="Image of {{item.title}}">
+                    </div>
+                    <div class="projects__item-details">
+                        <div>
+                            <h2>{{ item.title }}</h2>
+                            <p>{{ item.excerpt }}</p>
+                        </div>
+                        <span>View Details</span>
+                    </div>
                 </a>
-            {% endfor %}
+		{% endfor %}
         </div>
     </div>
 </section>
