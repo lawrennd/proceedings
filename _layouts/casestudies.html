@@ -32,9 +32,6 @@ layout: page
                         <div>
                             <h2>{{ item.title }}</h2>
                             <p>{{ item.date | date: "%Y-%m-%d"}}</p>
-			<p>{% for person in item.author %}
-			  {% include listperson.html %}
-			  {% endfor %}</p>
                         </div>
                         <span>View Case Study</span>
                     </div>
