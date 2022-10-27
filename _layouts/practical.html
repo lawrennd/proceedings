@@ -1,0 +1,61 @@
+---
+layout: page
+---
+
+<script src="{{ "/assets/js/figure-magnify.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/figure-animate.js" | relative_url }}"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<section class="block block__hero block__hero--standard">
+  <div class="hero__bg">
+    <img src="{{site.data.images.directory | relative_url }}/{{ page.featured_image }}">
+  </div>
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav-post.html title=page.title back_to_url="/lectures/" back_to_text="Back to lecture list" %}
+  </div>
+</section>
+
+<section class="block block__text">
+    <div class="container">
+    {% include talklinks.html %}
+    <div id="authors">
+      {% assign lastone = page.author | last %}
+      {% for person in page.author %}
+      {% include listfullperson.html %}
+      {% endfor %}
+    </div>
+    
+    {% if page.tagline %}
+    <p><b>{{ page.tagline }}</b> </p>
+    {% endif %}
+
+
+  {% if page.abstract %}
+  <h4>Abstract</h4>
+    
+  <p>{{ page.abstract | markdownify }}</p>
+  {% endif %}
+
+    </div>
+    </section>
+<section class="block block__text">
+    <div class="container">
+  {{ content }}
+    
+  {%- if site.disqus.shortname -%}
+  {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+    </div>
+</section>
