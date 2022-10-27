@@ -24,7 +24,7 @@ layout: page
         </div>
         <div class="projects__grid">
             {% for item in site.casestudies reversed  %}
-                <a href="{{ item.url }}" class="projects__item">
+                <a href="{{ item.url | relative_url }}" class="projects__item">
                     <div class="projects__item-image">
                         <img src="{{site.data.images.directory | relative_url }}/{{item.icon}}" alt="Image of {{item.title}}">
                     </div>
