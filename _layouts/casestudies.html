@@ -26,7 +26,7 @@ layout: page
             {% for item in site.casestudies reversed  %}
                 <a href="{{ item.url | relative_url }}" class="projects__item">
                     <div class="projects__item-image">
-                        <img src="{{ item.icon | relative_url }}" alt="Image of {{item.title}}">
+                        <img src="{% if item.featured_image %}{{ item.featured_image | relative_url }}{% else %}{{ site.featured_image | relative_url }}{%endif%}" alt="Image of {{item.title}}">
                     </div>
                     <div class="projects__item-details">
                         <div>
