@@ -26,17 +26,38 @@ layout: page
             {% for item in site.casestudies reversed  %}
                 <a href="{{ item.url }}" class="projects__item">
                     <div class="projects__item-image">
-                        <img src="{{site.data.images.directory | relative_url }}/{{item.featured_image}}" alt="Image of {{item.title}}">
+                        <img src="{{site.data.images.directory | relative_url }}/{{item.icon}}" alt="Image of {{item.title}}">
                     </div>
                     <div class="projects__item-details">
                         <div>
                             <h2>{{ item.title }}</h2>
-                            <p>{{ item.excerpt }}</p>
+                            <p>{{ item.date | date: "%Y-%m-%d"}}</p>
+			<p>{% for person in item.author %}
+			  {% include listperson.html %}
+			  {% endfor %}</p>
                         </div>
-                        <span>View Details</span>
+                        <span>View Case Study</span>
                     </div>
                 </a>
 		{% endfor %}
         </div>
     </div>
 </section>
+
+
+                <a href="{{ item.url | relative_url }}" class="projects__item">
+                    <div class="projects__item-image">
+                      <img src="{{ item.icon | relative_url }}" alt="Image of {{ item.title }}">
+		    </div>
+		    <div class="projects__item-details">
+		      <div>
+                        <h2>{{ item.title }}</h2>
+			<p>{{ item.date | date: "%Y-%m-%d"}}</p>
+			<p>{% for person in item.author %}
+			  {% include listperson.html %}
+			  {% endfor %}</p>
+			
+                      </div>
+                      <span>View Case Study</span>
+		    </div>
+                </a>
