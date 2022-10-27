@@ -27,7 +27,7 @@ layout: page
             {% endfor %}
         </div>
         <div class="resources__grid">
-            {% for item in site.special_topics %}
+            {% for item in site.special_topics reversed %}
                 <a href="{{ item.url | relative_url }}" target="_blank" rel="noreferrer" class="resources__resource all {{ item.week }} active">
                     <div>
                         <img src="{{ item.icon }}">
