@@ -7,6 +7,6 @@
     <code class="citecode" id="{{ button_name | downcase }}">{{ filetext }}</code>
   </div>
   <button class="button"  id="button-{{ button_name | downcase }}1" onclick="CopyToClipboard('{{ button_name | downcase }}');  ga('send', 'event', 'Ref Copy', 'CopyToClipboard', '{{ "" | relative_url }}/{{ id }}.{{ filetype }}', 15);">Copy to Clipboard</button>
-  <button class="button" id="button-{{ button_name | downcase }}2" onclick="DownloadTexToFile('{{ id }}.{{ filetype }}', '{{ button_name | downcase }}'); ga('send', 'event', 'Ref Downloads', 'Download', '{{ "" | relative_url }}/{{ id }}.{{ filetype }}', 16);">Download</button>
+  <button class="button" id="button-{{ button_name | downcase }}2" onclick="DownloadToFile('{{ id }}.{{ filetype }}', '{{ button_name | downcase }}'); ga('send', 'event', 'Ref Downloads', 'Download', '{{ "" | relative_url }}/{{ id }}.{{ filetype }}', 16);">Download</button>
   </div>
 </div>
