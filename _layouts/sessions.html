@@ -1,0 +1,42 @@
+---
+layout: page
+---
+
+<section class="block block__hero block__hero--standard">
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav-post.html title=page.title back_to_url="/" back_to_text="Back to overview" %}
+  </div>
+</section>
+{%if content %}
+<section class="block block__text">
+    <div class="container">
+      {{ content }}
+    </div>
+</section>
+{% endif %}
+
+<section class="block block__projects">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Lectures</h2>
+            <span></span>
+        </div>
+        <div class="projects__grid">
+            {% for item in site.lectures %}
+                <a href="{{ item.url | relative_url }}" class="projects__item">
+                    <div class="projects__item-image">
+                        <img src="{% if item.featured_image %}{{ item.featured_image | relative_url }}{% else %}{{ site.featured_image | relative_url }}{%endif%}" alt="Image of {{item.title}}">
+                    </div>
+                    <div class="projects__item-details">
+                        <div>
+                            <h2>Week {{ item.week }}: {{ item.title }}</h2>
+                            <p>{{ item.date | date: "%Y-%m-%d"}}</p>
+                        </div>
+                        <span>View lecture</span>
+                    </div>
+                </a>
+		{% endfor %}
+        </div>
+    </div>
+</section>
