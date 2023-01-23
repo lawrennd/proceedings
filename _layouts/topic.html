@@ -37,7 +37,9 @@ layout: page
 {% include listperson.html %}
 {% endfor %}</p>
 
-{% if page.description %}<p>{{ page.description }} </p>
+{% if page.description %}<p>{{ page.description }} </p>{% endif %}
+
+{% if page.abstract %}<p><b>Abstract</b>: {{ page.abstract }} </p>{% endif %}
 
 {% assign lectures = site.lectures | where_exp "item", "item.topic contains page.topic" %}
 <li>
