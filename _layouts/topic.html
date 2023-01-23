@@ -41,7 +41,7 @@ layout: page
 
 {% if page.abstract %}<p><b>Abstract</b>: {{ page.abstract }} </p>{% endif %}
 
-{% assign lectures = site.lectures | where_exp "item", "item.topic contains page.topic" %}
+{% assign lectures = site.lectures | where_exp: "item", "item.topic == page.topic" %}
 <li>
   {% for lecture in lectures %}
 <ul>{{ lecture.title }}</ul>
