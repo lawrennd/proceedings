@@ -1,0 +1,163 @@
+// News/Events Archive
+.block__news-events {
+	padding: 5rem 0;
+
+    @include bp(desktop) {
+        padding: 10rem 0;
+    }
+}
+
+// News/Events Archive Single Post
+.news-events__post {
+	margin-bottom: 2rem;
+	background-color: $lightest;
+	text-decoration: none;
+
+	@include bp(tablet) {
+		margin-bottom: 4rem;
+	}
+
+	&-image {
+		position: relative;
+		background-color: $dark-grey;
+
+		&::after {
+			content: "";
+			padding-top: 56.25%;
+			display: block;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			object-fit: cover;
+		}
+
+		.post-date {
+			margin: 0;
+			padding: .5rem 1rem;
+			position: absolute;
+			bottom: 2rem;
+			left: 2rem;
+			background-color: $primary-blue;
+			font-size: 1.4rem;
+			line-height: 1.8rem;
+			color: $lightest;
+		}
+	}
+
+	&-content {
+		padding: 2rem 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		@include bp(tablet) {
+			padding: 2rem;
+		}
+
+		@include bp(desktop) {
+			padding: 3rem 4rem;
+		}
+
+		h3 {
+			margin-bottom: 1rem;
+			font-size: 1.8rem;
+			font-weight: 400;
+			line-height: 2.5rem;
+			color: $primary-blue;
+
+			@include bp(tablet) {
+				font-size: 2rem;
+				line-height: 2.7rem;
+			}
+
+			@include bp(desktop) {
+				font-size: 2.4rem;
+				line-height: 3.1rem;
+			}
+		}
+
+		p {
+			margin-top: 0;
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+
+			@include bp(tablet) {
+				line-height: 3rem;
+			}
+
+			@include bp(desktop) {
+				font-size: 1.8rem;
+				line-height: 3.2rem;
+			}
+		}
+	}
+}
+
+// News/Events Single Post
+.block__post-single {
+	padding: 0 0 2.5rem 0;
+
+	@include bp(tablet) {
+		padding: 0 0 5rem 0;
+	}
+
+	&.block__post-single--padtop {
+		padding: 2.5rem 0;
+
+		@include bp(tablet) {
+			padding: 5rem 0;
+		}
+	}
+
+	.container {
+		width: 90%;
+		max-width: 940px;
+
+		@include bp(tablet) {
+			width: 60%;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		a,
+		li {
+			color: $primary-blue;
+		}
+
+		p,
+		a,
+		li {
+			font-size: 1.6rem;
+			line-height: 2.6rem;
+
+			@include bp(tablet) {
+				font-size: 2rem;
+				line-height: 3.2rem;
+			}
+		}
+
+		img {
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 2.5rem auto;
+
+			@include bp(tablet) {
+				margin: 5rem auto;
+			}
+		}
+	}
+}

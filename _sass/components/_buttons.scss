@@ -1,0 +1,58 @@
+// Custom Button Styles
+
+.button {
+    padding: .8rem 2rem;
+    position: relative;
+    display: inline-block;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: $orange;
+    text-decoration: none;
+    cursor: pointer;
+
+    .dot {
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        display: block;
+        background-color: $orange;
+
+        &--top-left {
+            top: 0;
+            left: 0;
+        }
+
+        &--top-right {
+            top: 0;
+            right: 0;
+        }
+
+        &--bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        &--bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &.button--white {
+        color: $lightest;
+
+        .dot {
+            background-color: $lightest;
+        }
+    }
+}
+
+.button-simple {
+    padding: 0 0 3rem 0;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+    color: $orange;
+    text-decoration: none;
+    border-bottom: 4px solid $cream;
+}

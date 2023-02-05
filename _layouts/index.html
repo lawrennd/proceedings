@@ -1,0 +1,61 @@
+---
+layout: base
+width: large
+title: Home
+---
+
+<section class="block block__hero block__hero--large">
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav.html %}
+    {% include third-row-index.html %}
+    <h1 class="hero__title">{{ site.data.homepage.hero.title }}</h1>
+  </div>
+  {% include animation-particles.html %}
+</section>
+<section class="block block__media-text block__media-text--padded">
+  <div class="container">
+    <div class="media-text__text">
+      <div class="section-heading">
+        <h2>{{ site.data.homepage.about.title }}</h2>
+        <span></span>
+      </div>
+      <h3>{{ site.data.homepage.about.heading }}</h3>
+      <p>{{ site.data.homepage.about.content }}</p>
+      <a class="button" href="{{ site.data.homepage.about.link_url }}">
+        {{ site.data.homepage.about.link_label }}
+        <span class="dot dot--top-left"></span>
+        <span class="dot dot--top-right"></span>
+        <span class="dot dot--bottom-left"></span>
+        <span class="dot dot--bottom-right"></span>
+      </a>
+    </div>
+    <div class="media-text__media">
+      <img src="{{ site.data.homepage.about.image }}">
+    </div>
+  </div>
+</section>
+<section class="block block__media-text block__media-text--bg-white">
+    <div class="container">
+        <div class="media-text__text">
+            <div class="section-heading">
+                <h2>{{ site.data.homepage.research.title }}</h2>
+                <span></span>
+            </div>
+            <h3>{{ site.data.homepage.research.heading }}</h3>
+            <p>{{ site.data.homepage.research.content }}</p>
+            <a class="button" href="{{ site.data.homepage.research.link_url }}">
+                {{ site.data.homepage.research.link_label }}
+                <span class="dot dot--top-left"></span>
+                <span class="dot dot--top-right"></span>
+                <span class="dot dot--bottom-left"></span>
+                <span class="dot dot--bottom-right"></span>
+            </a>
+        </div>
+        <div class="media-text__media">
+            <img src="{{ site.data.homepage.research.image }}">
+        </div>
+    </div>
+</section>
+{% include listpartners.html %}
+{% include block_latest-news-events.html %}

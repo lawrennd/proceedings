@@ -1,0 +1,69 @@
+---
+layout: page
+---
+
+<script src="{{ "/assets/js/figure-magnify.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/figure-animate.js" | relative_url }}"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+
+<section class="block block__hero block__hero--standard">
+  <div class="hero__bg">
+    <img src="{{ page.featured_image | relative_url }}">
+  </div>
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav-post.html title=page.title back_to_url="/casestudies/" back_to_text="Back to case studies list" %}
+  </div>
+</section>
+
+<section class="block block__text">
+    <div class="container">
+
+{%-assign background_lectures=false-%}
+{% capture background_contents %}
+{%-for background in site.background-%}
+{%-if background.week == page.week and background.session==page.session-%}
+{%-assign background_lectures=true-%}
+{% include listbackground.html %}
+{%-endif-%}
+{%-endfor-%}
+{% endcapture %}
+
+<h1>{{ page.title }}</h1>
+
+<p>{%- include talklinks.html -%}</p>
+
+<p>
+{% for person in page.author %}
+{% include listperson.html %}
+{% endfor %}</p>
+
+<p><b>Abstract</b>: {{ page.abstract }} </p>
+
+{% include showslides.html %}
+{% include showvideo.html %}
+    
+{% if background_lectures %}
+<h4>Background Material</h4>
+<ul>
+  {{ background_contents }}
+</ul>
+{% endif %}
+    </div>
+    </section>
+<section class="block block__text">
+    <div class="container">
+{{ content }}
+    </div>
+</section>

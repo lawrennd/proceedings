@@ -1,0 +1,181 @@
+.block__contact {
+    margin: 5rem 0;
+
+    @include bp(desktop) {
+        margin: 8rem 0;
+    }
+
+    .contact__details {
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background-color: $lightest;
+
+        @include bp(tablet) {
+            padding: 4rem 4rem;
+            align-items: center;
+        }
+
+        @include bp(desktop) {
+            padding: 4.5rem 8rem;
+            align-items: flex-start;
+        }
+
+        p, 
+        a {
+            font-size: 1.6rem;
+            color: $primary-blue;
+
+            @include bp(tablet) {
+                font-size: 1.8rem;
+                line-height: 3.2rem;
+            }
+        }
+
+        .contact__details-content {
+            width: 100%;
+            margin-bottom: 2rem;
+
+            @include bp(tablet) {
+                width: calc(50% - 1rem);
+                margin-bottom: 0;
+            }
+
+            @include bp(desktop) {
+                width: calc(50% - 2rem);
+                padding: 3rem 0;
+            }
+            
+            .contact__details-address {
+                margin-bottom: 3rem;
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .contact__details-tel,
+            .contact__details-fax,
+            .contact__details-email {
+                display: block;
+                text-decoration: none;
+            }
+
+            .contact__details-email {
+                margin-top: 3rem;
+            }
+        }
+
+        .contact__details-image {
+            width: 100%;
+
+            @include bp(tablet) {
+                width: calc(50% - 1rem);
+            }
+
+            @include bp(desktop) {
+                width: calc(50% - 2rem);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+
+    .contact__form {
+        max-width: 1160px;
+        margin: 4rem auto;
+
+        @include bp(tablet) {
+            margin: 5rem auto;
+        }
+
+        @include bp(desktop) {
+            margin: 7rem auto;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .form-field--half {
+                width: 100%;
+
+                @include bp(tablet) {
+                    width: calc(50% - 1.5rem);
+                }
+
+                @include bp(desktop) {
+                    width: calc(50% - 3.5rem);
+                }
+            }
+
+            .form-field--full {
+                width: 100%;
+            }
+
+            label {
+                font-size: 1.6rem;
+                color: $dark;
+
+                @include bp(tablet) {
+                    font-size: 1.8rem;
+                    line-height: 2.8rem;
+                }
+            }
+
+            input,
+            textarea {
+                margin-top: .8rem;
+                background-color: $lightest;
+                border: solid 1px $regular-grey;
+
+                @include bp(tablet) {
+                    margin-top: 1.5rem;
+                }
+
+                @include bp(desktop) {
+                    margin-top: 2rem;
+                }
+            }
+
+            input {
+                height: 40px;
+
+                @include bp(tablet) {
+                    height: 60px;
+                }
+
+                @include bp(desktop) {
+                    height: 80px;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                min-height: 150px;
+                resize: none;
+            }
+
+            button {
+                margin-top: 2rem;
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+
+                @include bp(tablet) {
+                    margin-top: 5rem;
+                }
+
+                @include bp(desktop) {
+                    margin-top: 6.5rem;
+                }
+            }
+        }
+    }
+}

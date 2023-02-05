@@ -1,0 +1,38 @@
+<section class="block block__latest-news-events">
+    <div class="container">
+        <div class="latest-news-events__intro">
+            <div class="latest-news-events__intro-toggle">
+                <button class="active" data-toggle="news">News</button>
+                <button class="" data-toggle="events">Events</button>
+            </div>
+            <a class="latest-news-events__intro-link latest-news-events__intro-link-news button-simple active" href="{{ "" | relative_url }}/news/">View All News</a>
+            <a class="latest-news-events__intro-link latest-news-events__intro-link-events button-simple" href="{{ "" | relative_url }}/events/">View All Events</a>
+        </div>
+        <div class="latest-news-events__listings latest-news-events__listings-news active">
+	  {% if site.news %}
+            {% assign news_collection = site.news | sort: 'date' | reverse %}
+            {% for item in news_collection limit:3 %}
+                {% include news-events__post.html %}
+          {% endfor %}
+	  {%endif%}
+        </div>
+        <div class="latest-news-events__listings latest-news-events__listings-events">
+          {% assign todayDate = 'now' | date: '%Y%m%d' %}
+	  {% if site.events %}
+            {% assign events = site.events | sort: "date" %}
+            {% assign counter = 1 %}
+
+            {% for post in events %}
+              {% assign eventDate = post.event_date | date: '%Y%m%d' %}
+              {% if todayDate <= eventDate  %}
+	        {% include events__post.html %}
+                {% assign counter = counter | plus: 1 %}
+	        {% if counter == 4 %}
+                   {% break %}
+                {% endif %}
+              {% endif %}
+	    {% endfor %}
+	  {%endif%}
+        </div>
+    </div>
+</section>

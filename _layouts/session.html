@@ -1,0 +1,54 @@
+---
+layout: page
+---
+
+<script src="{{ "/assets/js/figure-magnify.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/figure-animate.js" | relative_url }}"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+
+<section class="block block__hero block__hero--standard">
+  <div class="hero__bg">
+    <img src="{{ page.featured_image | relative_url }}">
+  </div>
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav-post.html title=page.title back_to_url="/topics/" back_to_text="Back to topic list" %}
+  </div>
+</section>
+
+<section class="block block__text">
+    <div class="container">
+
+<h1>Topic {{page.topic}}: {{ page.title }}</h1>
+
+<p>
+{% for person in page.author %}
+{% include listperson.html %}
+{% endfor %}</p>
+
+{% if page.description %}<p>{{ page.description }} </p>
+
+{% assign lectures = site.lectures | where_exp "item", "item.topic contains page.topic" %}
+<li>
+  {% for lecture in lectures %}
+<ul>{{ lecture.title }}</ul>
+{%endfor%}
+</li>
+    </div>
+    </section>
+<section class="block block__text">
+    <div class="container">
+{{ content }}
+    </div>
+</section>

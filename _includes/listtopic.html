@@ -1,5 +1,5 @@
 <div class="lecture">
-  <h3>{%-if topic.label-%}<b>Topic:</b>&nbsp;{{ topic.label }}&nbsp;{%-endif-%}<a href="{{site.baseurl}}{{topic.url}}"><b>{%-if topic.week and topic.week>0-%}Week {{ topic.week }}{%-endif-%}{%-if topic.session and topic.session>0-%}{%-if topic.week and topic.week>0-%}&nbsp;{%-endif-%}Session {{ topic.session }}{%-endif-%}:</b> {{ topic.title }}</a></h3>
+  <h3>{%-if topic.label-%}<b>Topic:</b>&nbsp;{{ topic.label }}&nbsp;{%-endif-%}<a href="{{ "" | relative_url }}{{topic.url}}"><b>{%-if topic.week and topic.week>0-%}Week {{ topic.week }}{%-endif-%}{%-if topic.session and topic.session>0-%}{%-if topic.week and topic.week>0-%}&nbsp;{%-endif-%}Session {{ topic.session }}{%-endif-%}:</b> {{ topic.title }}</a></h3>
   <p><b>Lecturer:</b>&nbsp;{%- assign authors = topic.author -%}{%- include listauthors.html -%}
   {%-if topic.room -%}<br><b>Room:</b>&nbsp;{{topic.room }}{%-endif-%}
   {%-if topic.venue -%}<br><b>Venue:</b>&nbsp;{{topic.venue }}{%-endif-%}

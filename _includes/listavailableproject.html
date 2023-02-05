@@ -1,0 +1,10 @@
+<div class="publications__item">
+  <div class="publications__item-left column-t-9">
+    <h2 class="publications__item-title">{{ project.title }}</h2>
+    <p>{{ project.overview | markdownify }}</p>
+    <div class="publications__item-right column-t-2">
+      {% if project.url %}
+      <a href="{{ project.url }}" class="publications__item-link">Read More ></a>{% endif %}
+    </div>
+  </div>
+</div>

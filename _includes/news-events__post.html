@@ -1,0 +1,19 @@
+<a class="news-events__post row row--justified" href="{{ item.url }}">
+    <div class="news-events__post-image column-m-12-nest column-t-4-nest">
+        <img src="{{site.data.images.directory | relative_url }}/{{ item.featured_image }}" alt="">
+        <p class="post-date">{{ item.date | date: "%-d %B %Y" }}</p>
+    </div>
+    <div class="news-events__post-content column-m-12-nest column-t-8-nest">
+        <div>
+            <h3>{{ item.title}}</h3>
+            <p>{{ item.excerpt }}</p>
+        </div>
+        <div class="button">
+            Read More
+            <span class="dot dot--top-left"></span>
+            <span class="dot dot--top-right"></span>
+            <span class="dot dot--bottom-left"></span>
+            <span class="dot dot--bottom-right"></span>
+        </div>
+    </div>
+</a>

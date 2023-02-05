@@ -1,64 +1,59 @@
 ---
-layout: default
+layout: page
 ---
 
-{% include layout.html include="home.html" %}
-{% if default_include %}
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
-
-
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
-
-
-  {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
+<section class="block block__hero block__hero--large">
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav.html %}
+    {% include third-row-index.html %}
+    <h1 class="hero__title">{{ site.data.homepage.hero.title }}</h1>
+  </div>
+  {% include animation-particles.html %}
+</section>
+<section class="block block__media-text block__media-text--padded">
+  <div class="container">
+    <div class="media-text__text">
+      <div class="section-heading">
+        <h2>{{ site.data.homepage.about.title }}</h2>
+        <span></span>
       </div>
-    {%- endif %}
-
-  {%- endif -%}
-
-</div>
-{% endif %}
+      <h3>{{ site.data.homepage.about.heading }}</h3>
+      <p>{{ site.data.homepage.about.content }}</p>
+      <a class="button" href="{{ site.data.homepage.about.link_url }}">
+        {{ site.data.homepage.about.link_label }}
+        <span class="dot dot--top-left"></span>
+        <span class="dot dot--top-right"></span>
+        <span class="dot dot--bottom-left"></span>
+        <span class="dot dot--bottom-right"></span>
+      </a>
+    </div>
+    <div class="media-text__media">
+      <img src="{{ site.data.homepage.about.image }}">
+    </div>
+  </div>
+</section>
+<section class="block block__media-text block__media-text--bg-white">
+    <div class="container">
+        <div class="media-text__text">
+            <div class="section-heading">
+                <h2>{{ site.data.homepage.research.title }}</h2>
+                <span></span>
+            </div>
+            <h3>{{ site.data.homepage.research.heading }}</h3>
+            <p>{{ site.data.homepage.research.content }}</p>
+            <a class="button" href="{{ site.data.homepage.research.link_url }}">
+                {{ site.data.homepage.research.link_label }}
+                <span class="dot dot--top-left"></span>
+                <span class="dot dot--top-right"></span>
+                <span class="dot dot--bottom-left"></span>
+                <span class="dot dot--bottom-right"></span>
+            </a>
+        </div>
+        <div class="media-text__media">
+            <img src="{{ site.data.homepage.research.image }}">
+        </div>
+    </div>
+</section>
+{% include listpartners.html %}
+{% include block_latest-news-events.html %}

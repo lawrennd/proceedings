@@ -1,1 +1,10 @@
-{% if job.url %}<a href="{{ job.url }}">{% endif %}{% if job.title %}{{ job.title }}{% endif %}{% if job.name %}{{ job.name }}{% elsif job.given %}{{ job.given }} {{ job.family }}{% endif %}{% if job.url %}</a>{% endif %}{% if job.institute %} {{ job.institute }}{% endif %}{% unless job == lastone %}, {% endunless %}
+<div class="publications__item">
+  <div class="publications__item-left column-t-9">
+    <h2 class="publications__item-title">{{ job.title }}</h2>
+    <p>{{ job.overview }}</p>
+    <div class="publications__item-right column-t-2">
+      {% if job.url %}
+      <a href="{{ job.url }}" class="publications__item-link">Read More ></a>{% endif %}
+    </div>
+  </div>
+</div>

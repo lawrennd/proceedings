@@ -9,7 +9,90 @@ $grey-color:       #828282;
 }
 
 
-@import
-  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
-  "minima/initialize",
-  "code-button";
+// Font settings
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Lato:wght@300;400;700&family=Space+Monofamily=Space+Grotesk:wght@700&display=swap');
+
+// Load settings
+@import "settings";
+@import "mixins";
+
+// Import common styles
+@import "common/reset";
+@import "common/grid";
+@import "common/global";
+@import "common/typography";
+@import "common/animations";
+@import "common/vendor";
+
+// Import compnent styles
+@import "components/buttons";
+@import "components/forms";
+@import "components/lists";
+@import "components/tables";
+
+// Import layout styles
+@import "layouts/header";
+@import "layouts/navigation";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+
+// Import block styles
+@import "blocks/blocks";
+@import "blocks/hero";
+@import "blocks/media-text";
+@import "blocks/grid";
+@import "blocks/logo-grid";
+@import "blocks/text";
+@import "blocks/latest-news-events";
+@import "blocks/related-news";
+@import "blocks/team";
+@import "blocks/team-profile";
+@import "blocks/research";
+@import "blocks/research-overview";
+@import "blocks/projects";
+@import "blocks/project-overview";
+@import "blocks/publications";
+@import "blocks/current-opportunities";
+@import "blocks/contact";
+@import "blocks/pagination";
+@import "blocks/resources";
+
+// Define defaults for each variable.
+
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
+$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px;
+
+$text-color:       #303030;
+$background-color: #fff;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+$on-mobile:        480px !default;
+
+$on-medium:        $on-palm !default;
+$on-large:         $on-laptop !default;
+
+
+@import "code-button",
+  "technical",
+  "figure-box",
+  "icons";
+

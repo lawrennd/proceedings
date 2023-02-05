@@ -1,0 +1,59 @@
+.block__current-opportunities {
+    margin: 5rem 0;
+
+    @include bp(desktop) {
+        margin: 8.5rem 0;
+    }
+
+    .current-opportunities__item {
+        margin-bottom: 3rem;
+        padding-bottom: 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $regular-grey;
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        h2 {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 3.2rem;
+            color: $dark;
+
+            @include bp(tablet) {
+                font-size: 2.8rem;
+                line-height: 4.2rem;
+            }
+        }
+
+        p {
+            width: 100%;
+            margin: 0;
+            font-size: 1.6rem;
+            color: $dark;
+
+            @include bp(tablet) {
+                width: 75%;
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+            }
+        }
+
+        .button {
+            margin-top: 2rem;
+
+            @include bp(tablet) {
+                margin-top: 0;
+                transform: translateY(-5px);
+            }
+        }
+    }
+}

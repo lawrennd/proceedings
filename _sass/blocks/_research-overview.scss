@@ -1,0 +1,110 @@
+.block__research-overview {
+    margin: 5rem 0;
+    
+    @include bp(desktop) {
+        margin: 10rem 0;
+    }
+
+    &.expanded {
+        
+        .research-overview__short-expand {
+            
+            .expand-summary {
+                transform: translateY(-101%);
+            }
+
+            .minimise-summary {
+                transform: translateY(0%);
+            }
+        }
+
+        .research-overview__long {
+            display: block;
+        }
+    }
+
+    .container {
+        max-width: 930px;
+    }
+
+    .section-heading {
+        margin-bottom: 2rem;
+
+        @include bp(tablet) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    li {
+        color: $primary-blue;
+    }
+
+    p,
+    a,
+    li {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+
+        @include bp(tablet) {
+            font-size: 2rem;
+            line-height: 3.2rem;
+        }
+    }
+
+    .research-overview__short {
+
+        &-expand {
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+
+            @include bp(tablet) {
+                margin: 4rem 0;
+            }
+
+            button {
+                margin: 2rem 0 0 0;
+                margin: 0;
+                padding: 0;
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+                font-size: 1.6rem;
+                font-weight: 700;
+                line-height: 2.1rem;
+                color: $orange;
+                text-align: left;
+                transition: 400ms;
+                cursor: pointer;
+
+                @include bp(tablet) {
+                    font-size: 1.8rem;
+                    line-height: 2.3rem;
+                }
+            }
+
+            .expand-summary {
+                transform: translateY(0%);
+            }
+
+            .minimise-summary {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateY(101%);
+            }
+        }
+    }
+
+    .research-overview__long {
+        display: none;
+    }
+}

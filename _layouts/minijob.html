@@ -1,0 +1,65 @@
+---
+layout: page
+---
+<section class="block block__hero block__hero--standard">
+  <div class="hero__bg">
+    <img src="{{site.data.images.directory | relative_url }}/{{ page.featured_image }}">
+  </div>
+  <div class="container">
+    {% include top-row-logo-and-menu.html %}
+    {% include second-row-nav-post.html title=page.title back_to_url="/internal/" back_to_text="Back to internal" %}
+  </div>
+</section>
+
+<section class="block block__research-overview">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Overview</h2>
+      <span></span>
+    </div>
+    <div class="research-overview__short">
+      {{ page.overview | markdownify }}
+    </div>
+    <div class="research-overview__long">
+      {{ page.content | markdownify }}
+    </div>
+    <div class="research-overview__short-expand">
+      <!-- SVGS into buttons -->
+      <button class="expand-summary">Expand Summary</button>
+      <button class="minimise-summary">Minimise Summary</button>
+    </div>
+  </div>
+</section>
+
+
+{% if page.assignee != nil %}
+<section class="block block__team">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Assignee</h2>
+      <span></span>
+    </div>
+    <div class="team__grid">
+      {% for person_slug in page.assignee %}
+      {% for person in site.people %}
+      {% if person.slug == person_slug %}
+      {% include extractname.html entry=person %}
+      <a href="{{ person.url }}" class="team__member">
+        <div class="team__member-image">
+	  <img src="{{site.data.images.directory | relative_url }}/{%if person.image and person.image != "" %}{{person.image}}{% else %}{{site.data.images.person_placeholder}}{%endif%}" alt="Image of {{name}}">
+        </div>
+        <div class="team__member-details">
+          <div>
+            <h2>{{ name }}</h2>
+            <p>{{ person.position }}{% if person.institution %}, {{ person.institution }}{%endif%}</p>
+          </div>
+          <span>View Profile</span>
+        </div>
+      </a>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,22 @@
+{%-if include.prefix-%}
+{{ include.prefix }}
+{%-endif-%}
+{%-if job.url-%}
+<a href="{{ job.url }}">
+{%-endif-%}
+{%-if job.title-%}
+{{ job.title }}
+{%-endif-%}
+{%-if job.url-%}
+</a>
+{%-endif-%}
+{%-unless forloop.last-%}
+{%-if include.separator-%}
+{{ include.separator }}
+{%-else-%}
+,&nbsp;
+{%-endif-%}
+{%-endunless-%}
+{%-if include.postfix-%}
+{{ include.postfix }}
+{%-endif-%}

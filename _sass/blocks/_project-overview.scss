@@ -1,0 +1,43 @@
+.block__project-overview {
+    margin: 5rem 0;
+    
+    @include bp(desktop) {
+        margin: 10rem 0;
+    }
+
+    .container {
+        max-width: 870px;
+    }
+
+    .section-heading {
+        margin-bottom: 2rem;
+
+        @include bp(tablet) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    li {
+        color: $primary-blue;
+    }
+
+    p,
+    a,
+    li {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+
+        @include bp(tablet) {
+            font-size: 2rem;
+            line-height: 3.2rem;
+        }
+    }
+}
