@@ -147,7 +147,7 @@ layout: page
                 </g>
               </g>
             </svg>
-            <p>{{ page.date | date: "%-d %B %Y" }}</p>
+            <p>{{ page.start | date: "%-d %B %Y %H:%M" }}</p>
           </div>
           <span class="hero__post-border"></span>
         </div>
@@ -172,6 +172,8 @@ layout: page
 
 <section class="block block__post-single">
   <div class="container">
+    {{page.excerpt | markdownify}}
+    {{page.description | markdownify}}
     {{ content }}
   </div>
 </section>
