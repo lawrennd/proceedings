@@ -1,0 +1,8 @@
+<table border="0" cellpadding="2" cellspacing="0" width="90%">
+  {% for deadline in site.conference.deadlines %}
+
+  <tr><td>{{ deadline.name }}</td><td>{% if deadline.text %}{{ deadline.text }}{% elsif deadline.time %}<time datetime="{{ deadline.time }}">{{ deadline.time | date: "%A, %-d %B %Y %I:%M%P (%Z)" }}</time>{% elsif deadline.date %}<time datetime="{{ deadline.date }}">{{ deadline.date | date: "%A, %B %-d, %Y" }}</time>{% endif %}</td></tr>
+
+  {% endfor %}
+  <tr><td>Conference start</td><td>{{ site.conference.dates[0] | date: "%A, %B %-d, %Y" }}</td></tr>
+</table>

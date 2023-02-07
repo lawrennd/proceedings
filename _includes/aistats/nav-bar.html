@@ -19,6 +19,11 @@
     {% if site.conference.submission.url %}<li><a class="page-link" href="{{ site.conference.submission.url }}" target="_blank">Submission Site</a></li>{% endif %}{% endif %}
     {% if site.conference.proceedings.show %}
     {% if site.conference.proceedings.url %}<li><a class="page-link" href="{{ site.conference.proceedings.url }}" target="_blank">Proceedings</a></li>{% endif %}{% endif %}
+{% if site.conference.registration.show %}
+    {% if site.conference.registration.url %}<li><a class="page-link" href="{{ site.conference.registration.url }}" target="_blank">Registration and Logistics</a></li>{% endif %}{% endif %}
+    {% if site.conference.sponsors.show %}
+    {% if site.conference.sponsors.url %}<li><a class="page-link" href="{{ site.conference.sponsors.url }}" target="_blank">Sponsors</a></li>{% endif %}{% endif %}
+    <li><a class="page-link" href="{{ 'other.html' | remote_url }}">Past Meetings</a></li>
   </ul>
   </div>
 </nav>
