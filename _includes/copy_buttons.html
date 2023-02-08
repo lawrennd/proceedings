@@ -1,12 +1,3 @@
-<div class="bibbuttongroup row row--justified">
-  <div class="bibbuttontext column">
-    {{ button_name }}
-  </div>
-  <div class="column">
-  <div class="codebox">
-    <code class="citecode" id="{{ button_name | downcase }}">{{ filetext }}</code>
-  </div>
-  <button class="button"  id="button-{{ button_name | downcase }}1" onclick="CopyToClipboard('{{ button_name | downcase }}');  ga('send', 'event', 'Ref Copy', 'CopyToClipboard', '{{ "" | relative_url }}/{{ id }}.{{ filetype }}', 15);">Copy to Clipboard</button>
-  <button class="button" id="button-{{ button_name | downcase }}2" onclick="DownloadToFile('{{ id }}.{{ filetype }}', '{{ button_name | downcase }}'); ga('send', 'event', 'Ref Downloads', 'Download', '{{ "" | relative_url }}/{{ id }}.{{ filetype }}', 16);">Download</button>
-  </div>
-</div>
+<div class="bibbuttongroup"><div class="bibbuttontext"> {{ button_name }}</div> <div class="codebox">
+  <code class="citecode" id="{{ button_name | downcase }}">{{ filetext }}</code></div>
+<button class="bibbutton"  id="button-{{ button_name | downcase }}1" onclick="CopyToClipboard('{{ button_name | downcase }}');  ga('send', 'event', 'Ref Copy', 'CopyToClipboard', '{{ site.url }}{{site.baseurl}}/{{ id }}.{{ filetype }}', 15);">Copy to Clipboard</button><button class="bibbutton" id="button-{{ button_name | downcase }}2" onclick="DownloadToFile('{{ id }}.{{ filetype }}', '{{ button_name | downcase }}'); ga('send', 'event', 'Ref Downloads', 'Download', '{{ site.url }}{{site.baseurl}}/{{ id }}.{{ filetype }}', 16);">Download</button></div>
